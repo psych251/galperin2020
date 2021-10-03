@@ -1,6 +1,6 @@
 ---
-title: "Reproducibility Report for Study X by Sample & Sample (20xx, Psychological Science)"
-author: "Reproducibility Project Author[s] (contact information)"
+title: "Reproducibility Report for Study X by Galperin, Hahl, Stering, & Guo (2020, Administrative Science Quarterly)"
+author: "Jiwon Byun (jwbyun@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document:
@@ -28,9 +28,11 @@ Do you anticipate running into any challenges when attempting to reproduce these
 
 ### Links
 
-Project repository (on Github): 
+Project repository (on Github): [Link to project repository](https://github.com/psych251/galperin2020.git)
 
-Original paper (as hosted in your repo): 
+Original paper (as hosted in your repo): [Link to original paper](https://github.com/psych251/galperin2020/blob/1176bad85fcced90757aa9a19be77c14f0b70a5f/original_paper/galperin_et_al_2020.pdf)
+
+
 
 ## Methods
 
