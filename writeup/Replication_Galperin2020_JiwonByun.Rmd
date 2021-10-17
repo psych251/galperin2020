@@ -44,5 +44,76 @@ Second, survey design might be difficult. The main part of this replication stud
 
 
 
+## Methods
+
+### Description of the steps required to reproduce the results
+
+Please describe all the steps necessary to reproduce the key result(s) of this study. 
+
+### Differences from original study
+
+Explicitly describe known differences in the analysis pipeline between the original paper and yours (e.g., computing environment). The goal, of course, is to minimize those differences, but differences may occur. Also, note whether such differences are anticipated to influence your ability to reproduce the original results.
+
+
+```
+## Project Progress Check 1
+
+### Measure of success
+
+Please describe the outcome measure for the success or failure of your reproduction and how this outcome will be computed.
+
+
+### Pipeline progress
+
+Earlier in this report, you described the steps necessary to reproduce the key result(s) of this study. Please describe your progress on each of these steps (e.g., data preprocessing, model fitting, model evaluation).
+```
+
+
+## Results
+
+### Data preparation
+
+Data preparation following the analysis plan.
+	
+```{r include=F}
+### Data Preparation
+
+#### Load Relevant Libraries and Functions
+
+#### Import data
+
+#### Data exclusion / filtering
+
+#### Prepare data for analysis - create columns etc.
+```
+
+
+### Key analysis
+
+The analyses as specified in the analysis plan.  
+
+*Side-by-side graph with original graph is ideal here*
+
+
+
+```
+
+###Exploratory analyses
+
+Any follow-up analyses desired (not required).  
+
+## Discussion
+
+### Summary of Reproduction Attempt
+
+Open the discussion section with a paragraph summarizing the primary result from the key analysis and assess whether you successfully reproduced it, partially reproduced it, or failed to reproduce it.  
+
+### Commentary
+
+Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis of the dataset, (b) assessment of the meaning of the successful or unsuccessful reproducibility attempt - e.g., for a failure to reproduce the original findings, are the differences between original and present analyses ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the reproducibility attempt (if you contacted them).  None of these need to be long.
+
+
+```
+
 
 
