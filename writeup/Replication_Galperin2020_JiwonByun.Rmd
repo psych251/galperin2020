@@ -1,5 +1,6 @@
 ---
-title: "Reproducibility Report for Study 2 by Galperin, Hahl, Stering, & Guo (2020, Administrative Science Quarterly)"
+title: Reproducibility Report for Study 2 by Galperin, Hahl, Stering, & Guo (2020,
+  Administrative Science Quarterly)
 author: "Jiwon Byun (jwbyun@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
@@ -7,7 +8,10 @@ output:
     toc: yes
     toc_depth: 3
     toc_float:
-      collapsed: false
+      collapsed: no
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
 ---
 
 <!-- Reproducibility reports should all use this template to standardize reporting across projects. These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
@@ -42,17 +46,35 @@ Second, survey design might be difficult. The main part of this replication stud
 * Original paper (as hosted in your repo): [Link to original paper](https://github.com/psych251/galperin2020/blob/1176bad85fcced90757aa9a19be77c14f0b70a5f/original_paper/galperin_et_al_2020.pdf)
 
 
+\
+\
+
 
 
 ## Methods
 
 ### Description of the steps required to reproduce the results
 
-Please describe all the steps necessary to reproduce the key result(s) of this study. 
+To replicate the results of Study 2, I plan to run the same online experiment on Prolific. Prior to running the main study, I plan to run two pilot studies. The first pilot study will involve non-naive participants, whereas the second pilot study will have naive participants on MTurk. \
+For the main study, participants will be recruited to fill out a "survey for hiring managers" through Prolific in October-November 2021. I intend to have a sample size of 200 in order to have a similar sample size with the original study, but the sample size may be changed depending on the results of the power analysis. (Power analysis is to be conducted.) \
+The study will have the same structure as that of the original study: 2 by 2 between-subjects design. Participants will be randomly assigned to one of the four conditions. (2 capability conditions X 2 commitment conditions) Finally given the same stimuli as the original study. \
+I plan to conduct a manipulation check for both candidate's perceived capability and perceived commitment by combining the questionnaires included in the survey. \
+With the data acquired from the survey experiment, I plan to conduct a two-way ANOVA analysis to replicate the key results of Study 2. \
+\
+
+
+
+
 
 ### Differences from original study
 
 Explicitly describe known differences in the analysis pipeline between the original paper and yours (e.g., computing environment). The goal, of course, is to minimize those differences, but differences may occur. Also, note whether such differences are anticipated to influence your ability to reproduce the original results.
+
+First of all, the most important difference would be that I will be using a different sample. While the original work recruited participants through Qualtrics panel, I will recruit participants through Prolific. While I do not foresee any systematic differences between two platforms, some substantial differences may exist when filtering for the target participants. This may cause differences between the sample of this study and that of original paper. \
+Second, I plan to use a different main model to find the key results. While the original work ran two t-tests to find the results, I will run a two-way ANOVA test. The diffrence in model choice may result in different results. \
+Finally, I intend to conduct statistical analyses using programming language R, while the original work seems to have used Stata. R and Stata should not have systematic differences for t-tests or ANOVA, but the use of different statistical software may result in trivial divergences. \
+I acknowledge that any unforeseen issues are the sole responsiblitity of mine.
+
 
 
 ```
@@ -66,15 +88,25 @@ Please describe the outcome measure for the success or failure of your reproduct
 ### Pipeline progress
 
 Earlier in this report, you described the steps necessary to reproduce the key result(s) of this study. Please describe your progress on each of these steps (e.g., data preprocessing, model fitting, model evaluation).
+
 ```
 
+\
+\
+\
 
 ## Results
 
 ### Data preparation
 
-Data preparation following the analysis plan.
-	
+First, when the study is done, download data from Qualtrics using `qualtRics` package. (Other than `qualtRics` package, load other essential packages for data analysis and visualization, such as: `tidyverse`, `knitr`, `ggplot2`, `stats`, and etc.) \
+Second, clean the data. Check for missing values and exclude observations with missing values. If needed, conduct data manipulation. Clean and manipulate data so that I have a clean tidy data. \
+Third, conduct descriptive analyses. Before running the main statistical models, run some descriptive analysis and show the descriptives as needed. \
+Fourth, conduct main statistical analysis. Present the findings in a table. \
+Fifth, do some data visualization so that the readers can view the results easily. \
+Lastly, if needed, run some additional analysis. (Check for homoscedasticity, conduct robustness checks, more explaratory analysis, etc.) \
+
+
 ```{r include=F}
 ### Data Preparation
 
@@ -90,14 +122,12 @@ Data preparation following the analysis plan.
 
 ### Key analysis
 
-The analyses as specified in the analysis plan.  
-
-*Side-by-side graph with original graph is ideal here*
+The main statistical model is going to be a two-way ANOVA analysis. Two-way ANOVA is the best statitical model since I am trying to examine the interation effect of candidate's capability and commitment (Capability X Commitment) on the likelihood of receiving an offer. By using the two-way factorial design, I can effectively examine the potential interaction effect between Capability and Commitment (given by the hypothesis).
+Since the original paper ran two t-tests, I also plan to conduct the two t-tests as a supplement.
 
 
 
 ```
-
 ###Exploratory analyses
 
 Any follow-up analyses desired (not required).  
@@ -111,8 +141,6 @@ Open the discussion section with a paragraph summarizing the primary result from
 ### Commentary
 
 Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis of the dataset, (b) assessment of the meaning of the successful or unsuccessful reproducibility attempt - e.g., for a failure to reproduce the original findings, are the differences between original and present analyses ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the reproducibility attempt (if you contacted them).  None of these need to be long.
-
-
 ```
 
 
