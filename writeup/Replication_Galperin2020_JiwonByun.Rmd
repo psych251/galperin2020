@@ -16,6 +16,12 @@ output:
 
 <!-- Reproducibility reports should all use this template to standardize reporting across projects. These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = "/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020")
+```
+
+
 ## Introduction
 
 Employers' selection of job applicants is an important labor market proesses for both employers and individuals. For organizations, access to high-quality workers is a source of competitive advantage. For individuals, access to certain jobs at certain timing can have a large impact on one's career trajectories. Job signaling is the most fundamental and important aspect of selection processes in labor market. Information asymmetries between employers and job applicants provide challenges for both ends. \
@@ -76,19 +82,27 @@ I acknowledge that any unforeseen issues are the sole responsiblitity of mine.
 
 
 
-```
+
 ## Project Progress Check 1
 
 ### Measure of success
 
 Please describe the outcome measure for the success or failure of your reproduction and how this outcome will be computed.
 
+The objective of this replication project is to re-run the Study 2 of the original paper and compute the main effect. The main effect will be computed by running two separate t-tests. One for neutral-level commitment group, and the other for high-level commitment group.
+
 
 ### Pipeline progress
 
 Earlier in this report, you described the steps necessary to reproduce the key result(s) of this study. Please describe your progress on each of these steps (e.g., data preprocessing, model fitting, model evaluation).
 
-```
+(October 24, 2021) I have survey experiment ready in the Qualtrics form. I ran the first pilot (Pilot A) with 8 people and confirmed that the survey experiment runs and collects data. I identified some minor problems with Qualtrics survey, so I am trying to fix the issues.
+\
+The original survey experiment includes quite a few items and I have not been able to use all the variables. The original work included manipulation checks for each item (commitment and capability), and I plan to include them in the next draft.
+\
+I was able to run one of the main models (t-test), but I could not run the other model because I did not have all the conditions in the pilot A sample. 
+\
+
 
 \
 \
@@ -104,7 +118,7 @@ Third, conduct descriptive analyses. Before running the main statistical models,
 Fourth, conduct main statistical analysis. Present the findings in a table. \
 Fifth, do some data visualization so that the readers can view the results easily. \
 Lastly, if needed, run some additional analysis. (Check for homoscedasticity, conduct robustness checks, more explaratory analysis, etc.) \
-
+\
 
 #### Load Relevant Libraries and Functions
 
@@ -115,6 +129,7 @@ library(knitr)
 library(psych)
 ```
 
+\
 
 #### Import data
 
@@ -125,13 +140,15 @@ qualtricsData_pilotA <- fetch_survey(surveyID = "SV_3CP4lUkXb73NVSm", force_requ
 
 ```{r, echo = TRUE}
 # save data
-write_csv(qualtricsData_pilotA, "./data/pilotA.csv")
+write_csv(qualtricsData_pilotA, "/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/pilotA.csv")
 ```
 
 ```{r, echo = TRUE}
 # load data from csv
-pilotA_df <- read_csv("./galperin2020/data/pilotA.csv")
+pilotA_df <- read_csv("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/pilotA.csv")
 ```
+
+\
 
 #### Data exclusion / filtering
 
@@ -145,6 +162,7 @@ pilotA_cleaning <- pilotA_df |>
 pilotA_cleaning <- tibble::rowid_to_column(pilotA_cleaning, "id")
 ```
 
+\
 
 #### Prepare data for analysis - create columns etc.
 
@@ -198,8 +216,11 @@ pilotA_high_commit <- pilotA_offer_condition |>
 
 ```
 
+\
 
 ### Descriptive statistics
+
+\
 
 #### Pilot A
 
@@ -212,6 +233,7 @@ pilotA_summary <- pilotA_cleaning |>
 describe(pilotA_summary)
 ```
 
+\
 
 
 ### Key analysis
@@ -219,20 +241,27 @@ describe(pilotA_summary)
 The main statistical model is going to be two t-tests, the same as that from original study. One t-test is to be conducted for Capability and the other t-test is to be conducted for Commitment.
 
 Below are the key analysis results from Pilot A.
+\
 
-```{r}
-neutral_t <- t.test(offer_score ~ cond1_high_overqual, data = pilotA_neutral)
-neutral_t
+```{r, echo = TRUE}
+#neutral_t <- t.test(offer_score ~ cond1_high_overqual, data = pilotA_neutral)
+#neutral_t
 
 # could not run the model because I do not have different conditions for neutral commitment
 ```
 
+\
+
 For the first t-test, I could not run the model because I did not have both condition groups (highly overqualified / not overqualified) for neutral commitment groups. This is due to small sample size and randomization. I expect this problem to be resolved itself when I get enough sample size for the study.
 
-```{r}
+```{r, echo = TRUE}
 high_t <- t.test(offer_score ~ cond1_high_overqual, data = pilotA_high_commit)
 high_t
 ```
+
+The above shows the results for the second t-test. (For high commitment group.)
+\
+
 
 ```
 (This part comes from a previous draft. To be deleted)
