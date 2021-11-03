@@ -76,8 +76,7 @@ With the data acquired from the survey experiment, I plan to conduct two t-tests
 
 Explicitly describe known differences in the analysis pipeline between the original paper and yours (e.g., computing environment). The goal, of course, is to minimize those differences, but differences may occur. Also, note whether such differences are anticipated to influence your ability to reproduce the original results.
 
-First of all, the most important difference would be that I will be using a different sample. While the original work recruited participants through Qualtrics panel, I will recruit participants through Prolific. While I do not foresee any systematic differences between two platforms, some substantial differences may exist when filtering for the target participants. This may cause differences between the sample of this study and that of original paper. \
-Second, I intend to conduct statistical analyses using programming language R, while the original work seems to have used Stata. R and Stata should not have systematic differences for t-tests or ANOVA, but the use of different statistical software may result in trivial divergences. \
+The most important difference would be that I will be using a different sample. While the original work recruited participants through Qualtrics panel, I will recruit participants through Prolific. While I do not foresee any systematic differences between two platforms, some substantial differences may exist when filtering for the target participants. This may cause differences between the sample of this study and that of original paper. \
 I acknowledge that any unforeseen issues are the sole responsiblitity of mine.
 
 
@@ -96,12 +95,18 @@ The objective of this replication project is to re-run the Study 2 of the origin
 
 Earlier in this report, you described the steps necessary to reproduce the key result(s) of this study. Please describe your progress on each of these steps (e.g., data preprocessing, model fitting, model evaluation).
 
-(October 24, 2021) I have survey experiment ready in the Qualtrics form. I ran the first pilot (Pilot A) with 8 people and confirmed that the survey experiment runs and collects data. I identified some minor problems with Qualtrics survey, so I am trying to fix the issues.
+(October 24, 2021) I have survey experiment ready in the Qualtrics form. I ran the first pilot (Pilot A) with 9 people and confirmed that the survey experiment runs and collects data. I identified some minor problems with Qualtrics survey, so I am trying to fix the issues.
 \
 The original survey experiment includes quite a few items and I have not been able to use all the variables. The original work included manipulation checks for each item (commitment and capability), and I plan to include them in the next draft.
 \
-I was able to run one of the main models (t-test), but I could not run the other model because I did not have all the conditions in the pilot A sample. 
-\
+I was able to run one of the main models (t-test), but I could not run the other model because I did not have enough y observations in the pilot A sample. 
+
+
+#### Power analysis
+
+```
+INCLUDE POWER ANALYSIS HERE
+```
 
 
 \
@@ -127,6 +132,15 @@ library(qualtRics)
 library(tidyverse)
 library(knitr)
 library(psych)
+library(haven)
+library(readxl)
+library(Rmisc)
+library(purrr)
+library(broom)
+library(car)
+library(psych)
+library(rstatix)
+
 ```
 
 \
@@ -135,7 +149,7 @@ library(psych)
 
 ```{r, echo = TRUE}
 # load survey
-qualtricsData_pilotA <- fetch_survey(surveyID = "SV_3CP4lUkXb73NVSm", force_request = T)
+#qualtricsData_pilotA <- fetch_survey(surveyID = "SV_3CP4lUkXb73NVSm", force_request = T)
 ```
 
 ```{r, echo = TRUE}
@@ -152,7 +166,8 @@ pilotA_df <- read_csv("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/dat
 
 #### Data exclusion / filtering
 
-```{r, echo = TRUE}
+
+```{r}
 # clean data (first step)
 
 pilotA_cleaning <- pilotA_df |>
@@ -160,13 +175,7 @@ pilotA_cleaning <- pilotA_df |>
 
 # add id column
 pilotA_cleaning <- tibble::rowid_to_column(pilotA_cleaning, "id")
-```
 
-\
-
-#### Prepare data for analysis - create columns etc.
-
-```{r, echo = TRUE}
 # likelyhood of getting an offer (score)
 pilotA_cleaning <- pilotA_cleaning |>
   mutate(offer_score = ifelse(offer == "Very Unlikely", 1,
@@ -182,41 +191,52 @@ pilotA_cleaning <- pilotA_cleaning |>
 pilotA_cleaning <- pilotA_cleaning |>
   mutate(cond1_high_overqual = ifelse(is.na(Profile_DO_high_overqual_profil), 0, 1))
 
+pilotA_cleaning <- pilotA_cleaning |>
+  mutate(cond1_low_overqual = ifelse(is.na(Profile_DO_low_overqual_profile), 0, 1))
+
 # commit - high (condition2)
 
 pilotA_cleaning <- pilotA_cleaning |>
   mutate(cond2_high_commit = ifelse(is.na(CommitmentManipulation_DO_highcommitment_HR), 0, 1))
 
+pilotA_cleaning <- pilotA_cleaning |>
+  mutate(cond2_neutral_commit = ifelse(is.na(CommitmentManipulation_DO_neutralcommitment_HR), 0, 1))
 
+
+
+```
+
+
+```{r}
+# clean data (first step)
+pilotA_brief <- pilotA_cleaning |>
+  select(c('offer_score', 'cond1_high_overqual', 'cond1_low_overqual', 'cond2_high_commit', 'cond2_neutral_commit', 'Profile_DO_high_overqual_profil', 'Profile_DO_low_overqual_profile', 'CommitmentManipulation_DO_highcommitment_HR', 'CommitmentManipulation_DO_neutralcommitment_HR'))
+
+pilotA_brief <- pilotA_cleaning |>
+  select(c('offer_score', 'cond1_high_overqual', 'cond1_low_overqual', 'cond2_high_commit', 'cond2_neutral_commit'))
 
 ```
 
 
-```{r, echo = TRUE}
-# clean data and make a clean df
-
-pilotA_offer_condition <- pilotA_cleaning |> 
-  select(c('offer_score', 'cond1_high_overqual', 'cond2_high_commit', 'Profile_DO_high_overqual_profil', 'Profile_DO_low_overqual_profile', 'CommitmentManipulation_DO_highcommitment_HR', 'CommitmentManipulation_DO_neutralcommitment_HR'))
-
-# checked the conditions. now drop original columns
-pilotA_offer_condition <- pilotA_offer_condition |>
-  select(c('offer_score', 'cond1_high_overqual', 'cond2_high_commit'))
-```
+```{r}
+#pilotA_brief <- pilotA_brief |>
+#  mutate(cond1_high_overqual = factor(cond1_high_overqual, levels = c(0, 1), labels = c("Low", "High")))
 
 
-```{r, echo = TRUE}
+# only for neutral commitment condition
+pilotA_neutral <- pilotA_brief |>
+  filter(cond2_high_commit == 0) |>
+  select(c("offer_score", "cond1_high_overqual")) |>
+  mutate(cond1_high_overqual = factor(cond1_high_overqual, levels = c(0, 1), labels = c("Low", "High")))
+  
 
-# df only for neutral commitment condition
-pilotA_neutral <- pilotA_offer_condition |>
-  filter(cond2_high_commit == 0)
-
-# df only for high commitment condition
-pilotA_high_commit <- pilotA_offer_condition |>
-  filter(cond2_high_commit == 1)
+# only for high commitment condition
+pilotA_high <- pilotA_brief |>
+  filter(cond2_high_commit == 1) |>
+  select(c("offer_score", "cond1_high_overqual")) |>
+  mutate(cond1_high_overqual = factor(cond1_high_overqual, levels = c(0, 1), labels = c("Low", "High")))
 
 ```
-
-\
 
 ### Descriptive statistics
 
@@ -224,38 +244,68 @@ pilotA_high_commit <- pilotA_offer_condition |>
 
 #### Pilot A
 
-```{r, echo = TRUE}
-pilotA_summary <- pilotA_cleaning |>
-  select(gender, Age, cond1_high_overqual, cond2_high_commit)
+```{r}
+library(psych)
+describe(pilotA_brief)
 ```
 
-```{r, echo = TRUE}
-describe(pilotA_summary)
+```{r}
+describe(pilotA_neutral)
 ```
 
-\
+
+```{r}
+describe(pilotA_high)
+```
+
+```{r}
+commit_labels <- c("Neutral Commitment", "High Commitment")
+names(commit_labels) <- c("0", "1")
+
+ggplot(data = pilotA_brief, aes(x = cond1_high_overqual, y = offer_score, group = cond1_high_overqual, fill = cond1_high_overqual)) +
+  geom_boxplot(alpha = 0.7) +
+  geom_jitter(width = 0.08, alpha = .8) +
+  guides(fill = "none") +
+  scale_y_continuous(breaks = 1:7, limits = c(1, 7)) +
+  theme(legend.position = c(0.9, 0.15),
+        legend.direction = "vertical",
+        legend.background = element_rect(fill = "transparent"),
+        legend.title = element_blank(),
+        axis.line = element_line(),
+        panel.grid = element_blank(), 
+        panel.background = element_blank(),
+        plot.title = element_text(hjust = 0.5)) +
+  facet_wrap(~cond2_high_commit, labeller = labeller(cond2_high_commit = commit_labels)) +
+  ggtitle("Pilot A Results (n = 9)") +
+  labs(x = "Capability", y = "Likely to get an offer")
+
+ggsave("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/pilotA_boxplot.png")
+```
 
 
 ### Key analysis
 
 The main statistical model is going to be two t-tests, the same as that from original study. One t-test is to be conducted for Capability and the other t-test is to be conducted for Commitment.
 
+
+#### Pilot A
+
 Below are the key analysis results from Pilot A.
 \
 
 ```{r, echo = TRUE}
-#neutral_t <- t.test(offer_score ~ cond1_high_overqual, data = pilotA_neutral)
-#neutral_t
+neutral_t <- t.test(offer_score ~ cond1_high_overqual, data = pilotA_neutral)
+neutral_t
 
 # could not run the model because I do not have different conditions for neutral commitment
 ```
 
 \
 
-For the first t-test, I could not run the model because I did not have both condition groups (highly overqualified / not overqualified) for neutral commitment groups. This is due to small sample size and randomization. I expect this problem to be resolved itself when I get enough sample size for the study.
+For the first t-test, I could not run the model because I did not have enough observations. This is due to small sample size and randomization. I expect this problem to be resolved itself when I get enough sample size for the study.
 
-```{r, echo = TRUE}
-high_t <- t.test(offer_score ~ cond1_high_overqual, data = pilotA_high_commit)
+```{r}
+high_t <- t.test(offer_score ~ cond1_high_overqual, data = pilotA_high, paired = FALSE)
 high_t
 ```
 
