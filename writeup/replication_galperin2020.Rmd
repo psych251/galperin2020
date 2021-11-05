@@ -4,14 +4,14 @@ title: Replication Report for Study 2 by Galperin, Hahl, Stering, & Guo (2020, A
 author: "Jiwon Byun (jwbyun@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: '3'
   html_document:
     toc: yes
     toc_depth: 3
     toc_float:
       collapsed: no
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
 ---
 
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
@@ -25,7 +25,7 @@ knitr::opts_knit$set(root.dir = "/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galper
 
 
 
-##Introduction
+## Introduction
 
 Employers' selection of job applicants is an important labor market proesses for both employers and individuals. For organizations, access to high-quality workers is a source of competitive advantage. For individuals, access to certain jobs at certain timing can have a large impact on one's career trajectories. Job signaling is the most fundamental and important aspect of selection processes in labor market. Information asymmetries between employers and job applicants provide challenges for both ends. \
 Most studies have focused on job signaling and applicant capabilities when trying to understand selection processes in labor markets. On the other hand, increasing number of studies suggest that selection decisions are affected not only by perceptions of applicantss' capability but also by perceptions of applicants' commitment to the organization. \
