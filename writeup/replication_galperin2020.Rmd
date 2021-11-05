@@ -1,20 +1,21 @@
 ---
-title: Replication Report for Study 2 by Galperin, Hahl, Stering, & Guo (2020,
-  Administrative Science Quarterly)
+title: Replication Report for Study 2 by Galperin, Hahl, Stering, & Guo (2020, Administrative
+  Science Quarterly)
 author: "Jiwon Byun (jwbyun@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
   html_document:
     toc: yes
     toc_depth: 3
     toc_float:
       collapsed: no
-  pdf_document:
-    toc: yes
-    toc_depth: '3'
 ---
 
-<!-- Reproducibility reports should all use this template to standardize reporting across projects. These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
+<!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -22,14 +23,15 @@ knitr::opts_knit$set(root.dir = "/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galper
 ```
 
 
-## Introduction
+
+
+##Introduction
 
 Employers' selection of job applicants is an important labor market proesses for both employers and individuals. For organizations, access to high-quality workers is a source of competitive advantage. For individuals, access to certain jobs at certain timing can have a large impact on one's career trajectories. Job signaling is the most fundamental and important aspect of selection processes in labor market. Information asymmetries between employers and job applicants provide challenges for both ends. \
 Most studies have focused on job signaling and applicant capabilities when trying to understand selection processes in labor markets. On the other hand, increasing number of studies suggest that selection decisions are affected not only by perceptions of applicantss' capability but also by perceptions of applicants' commitment to the organization. \
 While previous literature investigated both the effect of perceptions of applicants' capability and the effect of perceptions of applicants' commitment on the likelihood of a candidate's being selected for a job, the relationship between the two dimensions had been understudied. In an attempt to shed light on such a gap in the literature, Galperin, Hahl, Sterling, and Guo (Gelperin et al. henceforth) conducted a series of online field experiments and published an article in ASQ in the year of 2020. (For reference, see `Links` section in the below.) \
 Galperin et al. (2020) suggested that signals that influence perceptions of capability in labor markets may have discernable effects of the perceptions of a candidate's commitment, which also affects the likelihood of the candidate's being selected for the job. The paper included four studies, three of which were online field experiments. In this study, I plan to replicate Study 2. \
 \
-
 
 ### Justification for choice of study
 
@@ -53,13 +55,12 @@ Second, survey design might be difficult. The main part of this replication stud
 
 
 \
-\
 
 
+##Methods
 
-## Methods
 
-### Description of the steps required to reproduce the results
+### Description of the steps required to replicate the results (EDITING)
 
 To replicate the results of Study 2, I plan to run the same online experiment on Prolific. Prior to running the main study, I plan to run two pilot studies. The first pilot study will involve non-naive participants, whereas the second pilot study will have naive participants on MTurk. \
 For the main study, participants will be recruited to fill out a "survey for hiring managers" through Prolific in October-November 2021. I intend to have a sample size of 200 in order to have a similar sample size with the original study, but the sample size may be changed depending on the results of the power analysis. (Power analysis is to be conducted.) \
@@ -70,52 +71,51 @@ With the data acquired from the survey experiment, I plan to conduct two t-tests
 
 
 
+###Power Analysis
 
+Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.
 
-### Differences from original study
+###Planned Sample
 
-Explicitly describe known differences in the analysis pipeline between the original paper and yours (e.g., computing environment). The goal, of course, is to minimize those differences, but differences may occur. Also, note whether such differences are anticipated to influence your ability to reproduce the original results.
+Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any.
+
+###Materials
+
+All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+
+###Procedure	
+
+Can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+
+###Analysis Plan
+
+Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.  
+
+**Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
+
+###Differences from Original Study
 
 The most important difference would be that I will be using a different sample. While the original work recruited participants through Qualtrics panel, I will recruit participants through Prolific. While I do not foresee any systematic differences between two platforms, some substantial differences may exist when filtering for the target participants. This may cause differences between the sample of this study and that of original paper. \
-I acknowledge that any unforeseen issues are the sole responsiblitity of mine.
+I acknowledge that any unforeseen issues are the sole responsiblitity of mine. \
 
 
+### Methods Addendum (Post Data Collection)
+
+You can comment this section out prior to final report with data collection.
+
+#### Actual Sample
+  Sample size, demographics, data exclusions based on rules spelled out in analysis plan
+
+#### Differences from pre-data collection methods plan
+  Any differences from what was described as the original plan, or “none”.
 
 
-## Project Progress Check 1
+##Results
 
-### Measure of success
-
-Please describe the outcome measure for the success or failure of your reproduction and how this outcome will be computed.
-
-The objective of this replication project is to re-run the Study 2 of the original paper and compute the main effect. The main effect will be computed by running two separate t-tests. One for neutral-level commitment group, and the other for high-level commitment group.
-
-
-### Pipeline progress
-
-Earlier in this report, you described the steps necessary to reproduce the key result(s) of this study. Please describe your progress on each of these steps (e.g., data preprocessing, model fitting, model evaluation).
-
-(October 24, 2021) I have survey experiment ready in the Qualtrics form. I ran the first pilot (Pilot A) with 9 people and confirmed that the survey experiment runs and collects data. I identified some minor problems with Qualtrics survey, so I am trying to fix the issues.
-\
-The original survey experiment includes quite a few items and I have not been able to use all the variables. The original work included manipulation checks for each item (commitment and capability), and I plan to include them in the next draft.
-\
-I was able to run one of the main models (t-test), but I could not run the other model because I did not have enough y observations in the pilot A sample. 
-
-
-#### Power analysis
-
-```
-INCLUDE POWER ANALYSIS HERE
-```
-
-
-\
-\
-\
-
-## Results
 
 ### Data preparation
+
+Data preparation following the analysis plan.
 
 First, when the study is done, download data from Qualtrics using `qualtRics` package. (Other than `qualtRics` package, load other essential packages for data analysis and visualization, such as: `tidyverse`, `knitr`, `ggplot2`, `stats`, and etc.) \
 Second, clean the data. Check for missing values and exclude observations with missing values. If needed, conduct data manipulation. Clean and manipulate data so that I have a clean tidy data. \
@@ -154,7 +154,7 @@ library(rstatix)
 
 ```{r, echo = TRUE}
 # save data
-write_csv(qualtricsData_pilotA, "/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/pilotA.csv")
+#write_csv(qualtricsData_pilotA, "/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/pilotA.csv")
 ```
 
 ```{r, echo = TRUE}
@@ -218,6 +218,8 @@ pilotA_brief <- pilotA_cleaning |>
 ```
 
 
+#### Prepare data for analysis - create columns etc.
+
 ```{r}
 #pilotA_brief <- pilotA_brief |>
 #  mutate(cond1_high_overqual = factor(cond1_high_overqual, levels = c(0, 1), labels = c("Low", "High")))
@@ -240,7 +242,6 @@ pilotA_high <- pilotA_brief |>
 
 ### Descriptive statistics
 
-\
 
 #### Pilot A
 
@@ -283,7 +284,13 @@ ggsave("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/pilotA_boxplo
 ```
 
 
-### Key analysis
+
+
+### Confirmatory analysis
+
+The analyses as specified in the analysis plan.  
+
+*Side-by-side graph with original graph is ideal here*
 
 The main statistical model is going to be two t-tests, the same as that from original study. One t-test is to be conducted for Capability and the other t-test is to be conducted for Commitment.
 
@@ -294,10 +301,10 @@ Below are the key analysis results from Pilot A.
 \
 
 ```{r, echo = TRUE}
-neutral_t <- t.test(offer_score ~ cond1_high_overqual, data = pilotA_neutral)
-neutral_t
+#neutral_t <- t.test(offer_score ~ cond1_high_overqual, data = pilotA_neutral)
+#neutral_t
 
-# could not run the model because I do not have different conditions for neutral commitment
+# could not run the model because I do not have enough observations.
 ```
 
 \
@@ -320,21 +327,17 @@ Since the original paper ran two t-tests, I also plan to conduct the two t-tests
 ```
 
 
-```
+
 ###Exploratory analyses
 
 Any follow-up analyses desired (not required).  
 
 ## Discussion
 
-### Summary of Reproduction Attempt
+### Summary of Replication Attempt
 
-Open the discussion section with a paragraph summarizing the primary result from the key analysis and assess whether you successfully reproduced it, partially reproduced it, or failed to reproduce it.  
+Open the discussion section with a paragraph summarizing the primary result from the confirmatory analysis and the assessment of whether it replicated, partially replicated, or failed to replicate the original result.  
 
 ### Commentary
 
-Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis of the dataset, (b) assessment of the meaning of the successful or unsuccessful reproducibility attempt - e.g., for a failure to reproduce the original findings, are the differences between original and present analyses ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the reproducibility attempt (if you contacted them).  None of these need to be long.
-```
-
-
-
+Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.
