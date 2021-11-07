@@ -60,13 +60,13 @@ Second, survey design might be difficult. The main part of this replication stud
 ##Methods
 
 
-### Description of the steps required to replicate the results (EDITING)
+### Description of the steps required to replicate the results
 
 To replicate the results of Study 2, I plan to run the same online experiment on Prolific. Prior to running the main study, I plan to run two pilot studies. The first pilot study will involve non-naive participants, whereas the second pilot study will have naive participants on MTurk. \
 For the main study, participants will be recruited to fill out a "survey for hiring managers" through Prolific in October-November 2021. \
 The study will have the same structure as that of the original study: 2 by 2 between-subjects design. Participants will be randomly assigned to one of the four conditions. (2 capability conditions X 2 commitment conditions) They will be given the same stimuli as the original study. \
 I plan to conduct a manipulation check for both candidate's perceived capability and perceived commitment by combining the questionnaires included in the survey. \
-With the data acquired from the survey experiment, I plan to conduct two t-tests to replicate the key results of Study 2. \
+With the data acquired from the survey experiment, I plan to conduct two t-tests to replicate the key results of Study 2. As an exploratory analysis, I plan to conduct a two-way ANOVA to examine the interaction effects. \
 \
 
 
@@ -98,21 +98,42 @@ The sample size for the 80% power (based on the original effect of the second t-
 
 ###Planned Sample
 
-Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any.
+The sample consists of 123 participants recruited from Prolific. In order to participate in the study, individuals should have an experience hiring people for the organization because this study addresses job decision making processes of hiring managers in the labor market. 
+\
 
 ###Materials
 
 All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+\
+* `What do we need to put here? (Jiwon)`
 
-###Procedure	
 
-Can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+###Procedure 
 
-###Analysis Plan
+"The procedure for Study 2 was very similar to that for Study 1. We used the same job candidate profiles as in Study 1, but instead of evaluating both candidates, participants viewed only one profile and were asked to evaluate only that candidate applying to a 'corporate finance position in a medium-size health care company.' To verify that participants understood the directions, we asked them a series of attention-check questions. If they answered incorrectly, the context was repeated to them as a reinforcement.
+
+One additional difference between Study 1 and Study 2 was that in this experiment, participants were told that their job as 'line manager' meant they 'should not concern themselves with negotiating the offer, but should only consider this candidate's potential performance on the job.' This was repeated before the participant was asked about his or her likelihood of giving the candidate an offer. We also asked participants to rate from 1 (low) to 7 (high) how concerned they were about the candidate accepting the job. There was no difference across conditions in this measure, and results presented below are robust to controlling for this measure. This indicates that participants behaved as intended and focused on post-hire commitment rather than concerns about the candidate’s acceptance of a job offer.
+
+Participants were randomly assigned to view either the extremely highcapability candidate or the moderately high-capability candidate, who were presented in the same way as they were in Study 1. Next, participants were randomly assigned to one of two commitment-information conditions: neutral or high. All participants were told, 'As part of the application process, the candidate completed an assessment delivered by your firm’s HR department,' that the candidate scored a 75 on the assessment, and that 'candidates that have scored at least 60 points have skills that match the requirements of the job.' In the neutral-commitment condition, nothing was mentioned about the assessment’s relationship with commitment. Participants were told that 'this assessment was able to predict the candidate's ability to do the job in your firm.' In contrast, participants randomly assigned to the high-commitment condition were told that 'this assessment was able to predict the candidate's likely commitment to your organization (e.g., likelihood to stay with your firm, be motivated and work well with others).' This procedure resulted in a 2 (extremely high capability/moderately high capability) by 2 (high commitment/neutral commitment) between-subject design.
+
+Participants were then asked about their likelihood of giving the candidate a job offer based on the same scale used in Study 1. This variable served as the dependent variable." (Galperin et al., 2020)
+
+For this replication, the original work's procedure (described above in quotation) was followed precisely.
+
+\
+
+#### Link:
+
+* Survey for Pilot B: [Link to the survey for Pilot B](https://stanforduniversity.qualtrics.com/jfe/preview/SV_d4LnrTl3Leh1WDQ?Q_CHL=preview&Q_SurveyVersionID=current)
+
+
+
+###Analysis Plan (EDITING)
 
 Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.  
 
 **Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
+
 
 ###Differences from Original Study
 
@@ -131,7 +152,7 @@ You can comment this section out prior to final report with data collection.
   Any differences from what was described as the original plan, or “none”.
 
 
-##Results
+##Results (EDITING)
 
 
 ### Data preparation
@@ -307,7 +328,7 @@ ggsave("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/pilotA_boxplo
 
 
 
-### Confirmatory analysis
+### Confirmatory analysis (EDITING)
 
 The analyses as specified in the analysis plan.  
 
