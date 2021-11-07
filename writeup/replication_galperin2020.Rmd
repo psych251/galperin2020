@@ -57,7 +57,7 @@ Second, survey design might be difficult. The main part of this replication stud
 \
 
 
-##Methods
+## Methods
 
 
 ### Description of the steps required to replicate the results
@@ -71,7 +71,7 @@ With the data acquired from the survey experiment, I plan to conduct two t-tests
 
 
 
-###Power Analysis
+### Power Analysis
 
 The original study had a sample size of 212. For the first t-test (neutral commitment condition), the statistics were: `t = 3.66`, `p < 0.001`. For the second t-test (high commitment condition), the results were: `t = -3.34`, `p = 0.001`.
 
@@ -96,19 +96,19 @@ The sample size for the 80% power (based on the original effect of the second t-
 \
 
 
-###Planned Sample
+### Planned Sample
 
 The sample consists of 123 participants recruited from Prolific. In order to participate in the study, individuals should have an experience hiring people for the organization because this study addresses job decision making processes of hiring managers in the labor market. 
 \
 
-###Materials
+### Materials
 
 All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
 \
 * `What do we need to put here? (Jiwon)`
 
 
-###Procedure 
+### Procedure 
 
 "The procedure for Study 2 was very similar to that for Study 1. We used the same job candidate profiles as in Study 1, but instead of evaluating both candidates, participants viewed only one profile and were asked to evaluate only that candidate applying to a 'corporate finance position in a medium-size health care company.' To verify that participants understood the directions, we asked them a series of attention-check questions. If they answered incorrectly, the context was repeated to them as a reinforcement.
 
@@ -128,14 +128,14 @@ For this replication, the original work's procedure (described above in quotatio
 
 
 
-###Analysis Plan (EDITING)
+### Analysis Plan (EDITING)
 
 Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.  
 
 **Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
 
 
-###Differences from Original Study
+### Differences from Original Study
 
 The most important difference would be that I will be using a different sample. While the original work recruited participants through Qualtrics panel, I will recruit participants through Prolific. While I do not foresee any systematic differences between two platforms, some substantial differences may exist when filtering for the target participants. This may cause differences between the sample of this study and that of original paper. \
 I acknowledge that any unforeseen issues are the sole responsiblitity of mine. \
@@ -370,7 +370,7 @@ Since the original paper ran two t-tests, I also plan to conduct the two t-tests
 
 
 
-###Exploratory analyses
+### Exploratory analyses
 
 Any follow-up analyses desired (not required).  
 
