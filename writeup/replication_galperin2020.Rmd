@@ -63,8 +63,8 @@ Second, survey design might be difficult. The main part of this replication stud
 ### Description of the steps required to replicate the results (EDITING)
 
 To replicate the results of Study 2, I plan to run the same online experiment on Prolific. Prior to running the main study, I plan to run two pilot studies. The first pilot study will involve non-naive participants, whereas the second pilot study will have naive participants on MTurk. \
-For the main study, participants will be recruited to fill out a "survey for hiring managers" through Prolific in October-November 2021. I intend to have a sample size of 200 in order to have a similar sample size with the original study, but the sample size may be changed depending on the results of the power analysis. (Power analysis is to be conducted.) \
-The study will have the same structure as that of the original study: 2 by 2 between-subjects design. Participants will be randomly assigned to one of the four conditions. (2 capability conditions X 2 commitment conditions) Finally given the same stimuli as the original study. \
+For the main study, participants will be recruited to fill out a "survey for hiring managers" through Prolific in October-November 2021. \
+The study will have the same structure as that of the original study: 2 by 2 between-subjects design. Participants will be randomly assigned to one of the four conditions. (2 capability conditions X 2 commitment conditions) They will be given the same stimuli as the original study. \
 I plan to conduct a manipulation check for both candidate's perceived capability and perceived commitment by combining the questionnaires included in the survey. \
 With the data acquired from the survey experiment, I plan to conduct two t-tests to replicate the key results of Study 2. \
 \
@@ -73,7 +73,28 @@ With the data acquired from the survey experiment, I plan to conduct two t-tests
 
 ###Power Analysis
 
-Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.
+The original study had a sample size of 212. For the first t-test (neutral commitment condition), the statistics were: `t = 3.66`, `p < 0.001`. For the second t-test (high commitment condition), the results were: `t = -3.34`, `p = 0.001`.
+
+Since I have two t-test for the study, I chose the t-test with smaller t value and used the study for the power analysis, which is the second t-test with `t = -3.34`. Then I did a calculation assuming a balanced cell size.
+
+Results of the effect size calculation for the second t-test (calculated by using mean and s.d.) was as follows: `Cohen's d = 0.6554`,  `effect-size r = 0.3114`. I conducted the effect size calculation using the t-value and df as well and obtained very similar results.
+
+Based on the effect size, I conducted a power analysis for samples. Results for the power analysis for 80%, 90%, 95% power are as follows:
+
+* 80% power: 76
+* 90% power: 100
+* 95% power: 124
+
+Since I did have two t-tests, I needed to take the results and multiply by 2 to get the results for power analysis for the whole study. Therefore, the final results for the power analysis were as follows:
+
+* 80% power: 152
+* 90% power: 200
+* 95% power: 248
+
+The sample size for the 80% power (based on the original effect of the second t-test) was 152. I could not have 152 participants due to some constraints (mainly financial.) The original study paid the participants high compensation (`$6.00`) for this cognitively engaging study, I want to provide a reasonable amount of compensation to each participant. Considering the approximate time needed to complete the study and the hourly pay, I decided to pay `$3.25` each. My budget is limited at about `$400.00` for the study, so I decided have a sample size of 123.
+\
+\
+
 
 ###Planned Sample
 
