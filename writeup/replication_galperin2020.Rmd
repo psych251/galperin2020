@@ -77,9 +77,9 @@ The original study had a sample size of 212. For the first t-test (neutral commi
 
 Since I have two t-test for the study, I chose the t-test with smaller t value and used the study for the power analysis, which is the second t-test with `t = -3.34`. Then I did a calculation assuming a balanced cell size.
 
-Results of the effect size calculation for the second t-test (calculated by using mean and s.d.) was as follows: `Cohen's d = 0.6554`,  `effect-size r = 0.3114`. I conducted the effect size calculation using the t-value and df as well and obtained very similar results.
+Results of the effect size calculation for the second t-test (calculated by using mean and s.d.) were as follows: `Cohen's d = 0.6554`,  `effect-size r = 0.3114`. I conducted the effect size calculation using the t-value and degrees of freedom as well and obtained very similar results.
 
-Based on the effect size, I conducted a power analysis for samples. Results for the power analysis for 80%, 90%, 95% power are as follows:
+Based on the effect size, I conducted a power analysis. Results for the power analysis for 80%, 90%, 95% power (for the second t-test) are as follows:
 
 * 80% power: 76
 * 90% power: 100
@@ -91,14 +91,14 @@ Since I did have two t-tests, I needed to take the results and multiply by 2 to 
 * 90% power: 200
 * 95% power: 248
 
-The sample size for the 80% power (based on the original effect of the second t-test) was 152. I could not have 152 participants due to some constraints (mainly financial.) The original study paid the participants high compensation (`$6.00`) for this cognitively engaging study, I want to provide a reasonable amount of compensation to each participant. Considering the approximate time needed to complete the study and the hourly pay, I decided to pay `$3.25` each. My budget is limited at about `$400.00` for the study, so I decided have a sample size of 123.
+The sample size for the 80% power (based on the original effect of the second t-test) was 152. I could not have 152 participants due to some constraints (mainly financial.) The original study paid the participants high compensation (`$6.00`) for this cognitively engaging study, I want to provide a reasonable amount of compensation to each participant. Considering the approximate time needed to complete the study and the hourly pay, I decided to pay `$2.50` each. My budget is limited at about `$400.00` for the study, so I decided have a sample size of `120`.
 \
 \
 
 
 ### Planned Sample
 
-The sample consists of 123 participants recruited from Prolific. In order to participate in the study, individuals should have an experience hiring people for the organization because this study addresses job decision making processes of hiring managers in the labor market. 
+The sample consists of `120` participants recruited from Prolific. In order to participate in the study, individuals should have an experience hiring people for the organization because this study addresses job decision making processes of hiring managers in the labor market. 
 \
 
 ### Materials
@@ -118,7 +118,7 @@ Participants were randomly assigned to view either the extremely highcapability 
 
 Participants were then asked about their likelihood of giving the candidate a job offer based on the same scale used in Study 1. This variable served as the dependent variable." (Galperin et al., 2020)
 
-For this replication, the original work's procedure (described above in quotation) was followed precisely.
+For this replication, the original work's procedure (described in the quotation above) was followed precisely.
 
 \
 
@@ -130,9 +130,14 @@ For this replication, the original work's procedure (described above in quotatio
 
 ### Analysis Plan (EDITING)
 
-Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.  
+Confirmatory statistical analysis is going to involve two t-tests, following the methods used in the original work. I run a t-test for High-commitment conditions, and another t-test for Neutral-commitment conditions. By doing so, I can test differential effects of extremely high capability on likelihood of getting an offer for different commitment conditions.
 
-**Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
+I plan to conduct the same manipulation check analyses of those from original work. There are 4 measures for capability and 4 measures for commitment. As the original authors did, I will average the ratings for capability and commitment (separately for each manipulation) and created a perceived capability measure and a perceived commitment measure. Then I will examine Cronbach's alpha value and conduct t-tests across different treatment groups.
+
+Since the original work aims to explore the interactional effects of capability and commitment on a candidate's likelihood of getting an offer, I plan to conduct a two-wawy ANOVA as an exploratogy analysis. Two-way ANOVA can be a good statitical model since I am trying to examine the interation effect of candidate's capability and commitment (Capability X Commitment) on the likelihood of receiving an offer. By using the two-way factorial design, I can effectively examine the potential interaction effect between Capability and Commitment.
+
+
+
 
 
 ### Differences from Original Study
@@ -150,6 +155,8 @@ You can comment this section out prior to final report with data collection.
 
 #### Differences from pre-data collection methods plan
   Any differences from what was described as the original plan, or “none”.
+
+
 
 
 ##Results (EDITING)
@@ -361,12 +368,6 @@ high_t
 The above shows the results for the second t-test. (For high commitment group.)
 \
 
-
-```
-(This part comes from a previous draft. To be deleted)
-The main statistical model is going to be a two-way ANOVA analysis. Two-way ANOVA is the best statitical model since I am trying to examine the interation effect of candidate's capability and commitment (Capability X Commitment) on the likelihood of receiving an offer. By using the two-way factorial design, I can effectively examine the potential interaction effect between Capability and Commitment (given by the hypothesis).
-Since the original paper ran two t-tests, I also plan to conduct the two t-tests as a supplement.
-```
 
 
 
