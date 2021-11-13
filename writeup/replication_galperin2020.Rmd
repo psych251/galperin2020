@@ -91,14 +91,14 @@ Since I did have two t-tests, I needed to take the results and multiply by 2 to 
 * 90% power: 200
 * 95% power: 248
 
-The sample size for the 80% power (based on the original effect of the second t-test) was 152. I could not have 152 participants due to some constraints (mainly financial.) The original study paid the participants high compensation (`$6.00`) for this cognitively engaging study, I want to provide a reasonable amount of compensation to each participant. Considering the approximate time needed to complete the study and the hourly pay, I decided to pay `$2.50` each. My budget is limited at about `$400.00` for the study, so I decided have a sample size of `120`.
+The sample size for the 80% power (based on the original effect of the second t-test) was 152. I could not have 152 participants due to some constraints (mainly financial.) The original study paid the participants high compensation (`$6.00`) for this cognitively engaging study, I want to provide a reasonable amount of compensation to each participant. Considering the approximate time needed to complete the study and the hourly pay, I decided to pay `$2.00` each. My budget is limited at about `$400.00` for the study, so I decided have a sample size of `150`.
 \
 \
 
 
 ### Planned Sample
 
-The sample consists of `120` participants recruited from Prolific. In order to participate in the study, individuals should have an experience hiring people for the organization because this study addresses job decision making processes of hiring managers in the labor market. 
+The sample consists of `150` participants recruited from Prolific. In order to participate in the study, individuals should have an experience hiring people for the organization because this study addresses job decision making processes of hiring managers in the labor market. 
 \
 
 ### Materials
@@ -128,7 +128,7 @@ For this replication, the original work's procedure (described in the quotation 
 
 
 
-### Analysis Plan (EDITING)
+### Analysis Plan
 
 Confirmatory statistical analysis is going to involve two t-tests, following the methods used in the original work. I run a t-test for High-commitment conditions, and another t-test for Neutral-commitment conditions. By doing so, I can test differential effects of extremely high capability on likelihood of getting an offer for different commitment conditions.
 
@@ -144,6 +144,7 @@ Since the original work aims to explore the interactional effects of capability 
 
 The most important difference would be that I will be using a different sample. While the original work recruited participants through Qualtrics panel, I will recruit participants through Prolific. While I do not foresee any systematic differences between two platforms, some substantial differences may exist when filtering for the target participants. This may cause differences between the sample of this study and that of original paper. \
 I acknowledge that any unforeseen issues are the sole responsiblitity of mine. \
+
 
 
 ### Methods Addendum (Post Data Collection)
@@ -373,6 +374,9 @@ The above shows the results for the second t-test. (For high commitment group.)
 
 ### Exploratory analyses
 
+```
+Planning to conduct ANOVA here
+```
 Any follow-up analyses desired (not required).  
 
 ## Discussion
