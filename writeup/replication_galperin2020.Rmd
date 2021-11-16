@@ -43,7 +43,7 @@ Study 2 was conducted to directly manipulated perceived commitment of an applica
 ### Anticipated challenges
 
 I anticipate two challenges while attempting to replicate the results. \
-First, I may run into sample issue. This study is about job signals and hiring managers' decision making in making job offers. Hence, it is important that I only have hiring managers (defined by someone with experiences as a hiring manager) in the sample. Since I have to rely on Qualtrics to do the sampling, less appropriate sample might acquired at the end. Similar issue applies to random assignment of participants. \
+First, I may run into sample issue. This study is about job signals and hiring managers' decision making in making job offers. Hence, it is important that I only have hiring managers (defined by someone with experiences as a hiring manager) in the sample. Since I have to rely on Prolifics to do the sampling, less appropriate sample might be acquired in the end. Similar issue applies to random assignment of participants. \
 Second, survey design might be difficult. The main part of this replication study is manipulating commitment of a job applicant. Since commitment could mean different things both conceptually and practically, it is essential that I manipulate the main concepts elaborately. To overcome this challenge, I plan to reach out to original authors and try to acquire survey items that they used for the original study. \
 \
 
@@ -98,10 +98,17 @@ The sample size for the 80% power (based on the original effect of the second t-
 
 ### Planned Sample
 
-The sample consists of `150` participants recruited from Prolific. In order to participate in the study, individuals should have an experience hiring people for the organization because this study addresses job decision making processes of hiring managers in the labor market. 
+The sample consists of `150` participants recruited from Prolific. In order to participate in the study, individuals should have an experience hiring people for the organization because this study addresses job decision making processes of hiring managers in the labor market. They also have to be residents of U.S. or Canada because job candidate's qualification and evaluations depend on the nuiances in the labor market, which may be different across different regions.
 \
 
 ### Materials
+
+The survey experiment materials were coded in Qualtrics. Participants recuited on Prolific could click on the link to the survey on Qualtrics. Participants were randomly assigned to `2 capability conditions` that involved two different job candidate resumes. Participants were also randomly assigned to `2 commitment conditions` given by information from HR department. The procedure for the study is described below.
+
+
+#### Link:
+
+* Survey material: [Link to the survey](https://stanforduniversity.qualtrics.com/jfe/preview/SV_3egYJH4CkorsKzk?Q_CHL=preview&Q_SurveyVersionID=current)
 
 All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
 \
@@ -122,9 +129,6 @@ For this replication, the original work's procedure (described in the quotation 
 
 \
 
-#### Link:
-
-* Survey for Pilot B: [Link to the survey for Pilot B](https://stanforduniversity.qualtrics.com/jfe/preview/SV_d4LnrTl3Leh1WDQ?Q_CHL=preview&Q_SurveyVersionID=current)
 
 
 
@@ -138,12 +142,29 @@ Since the original work aims to explore the interactional effects of capability 
 
 
 
+#### Pilot B and Sampling
+
+`I did not know where to put procedures of Pilot B so I am adding a subsection here.`
+
+While the first pilot (Pilot A) went smoothly, I had some issues with Pilot B. So I had to run Pilot B three times to identify the appropriate strategy to run the study on Prolific. Three pilots were conducted on Prolific between November 12, 2021 and November 14, 2021. All three pilots were conducted with sample size of N=4. The participants were recruited on Prolific. They had to have hiring experience to be eligible for the study.
+The original plan was to recruit participants internationally on Prolific. After the first Pilot B, I realized that this sampling strategy was not appropriate. Even with the language filter, (fluency in English) international participants were taking too long to complete the study. The median value for the duration of the stuay was approximately 24 minutes for a 10-minute study.
+Therefore I conducted the second Pilot B with different sampling strategy. I added another filter so that only residents of U.S. or Canada can participate in the study. I also deleted all the open-ended questions from the survey. After running the second pilot, I could see that the problem was more about participants' country of residence than having open-ended questions in the survey.
+Hence, I ran the third Pilot B with the original survey design. The sampling strategy was the same as the second pilot (individuals with hiring experience who live in the U.S. or Canada, fluent in English). The third pilot ran without any problem and I was able to collect data.
+\
 
 
-### Differences from Original Study
+
+
+
+### Differences from Original Study (EDITING)
 
 The most important difference would be that I will be using a different sample. While the original work recruited participants through Qualtrics panel, I will recruit participants through Prolific. While I do not foresee any systematic differences between two platforms, some substantial differences may exist when filtering for the target participants. This may cause differences between the sample of this study and that of original paper. \
 I acknowledge that any unforeseen issues are the sole responsiblitity of mine. \
+
+```
+DIFFERENCES BETWEEN SAMPLES ARE VERY IMPORTANT HERE. So I probably need to elaborate on how and why sampling is important and how I might end up with a very different sample.
+```
+
 
 
 
@@ -174,6 +195,12 @@ Fourth, conduct main statistical analysis. Present the findings in a table. \
 Fifth, do some data visualization so that the readers can view the results easily. \
 Lastly, if needed, run some additional analysis. (Check for homoscedasticity, conduct robustness checks, more explaratory analysis, etc.) \
 \
+
+
+```
+(JIWON)
+I plan to delete all the codes and results from Pilot A from the manuscript and make descriptive statistics and figures Appendix, if that's okay. I think it's cleaner to include only the data from the actual study and not include pilots in the report. If it's better practice to include pilots, I want to have them as Appendix.
+```
 
 #### Load Relevant Libraries and Functions
 
@@ -342,12 +369,12 @@ The analyses as specified in the analysis plan.
 
 *Side-by-side graph with original graph is ideal here*
 
-The main statistical model is going to be two t-tests, the same as that from original study. One t-test is to be conducted for Capability and the other t-test is to be conducted for Commitment.
+The main statistical model is going to be two t-tests, the same as that from original study. One t-test is to be conducted for Neutral commitment condition and the other t-test is going to be conducted for High commitment condition.
 
 
 #### Pilot A
 
-Below are the key analysis results from Pilot A.
+Below are the key analyses results from Pilot A.
 \
 
 ```{r, echo = TRUE}
@@ -375,7 +402,7 @@ The above shows the results for the second t-test. (For high commitment group.)
 ### Exploratory analyses
 
 ```
-Planning to conduct ANOVA here
+Planning to conduct ANOVA or ANCOVA here
 ```
 Any follow-up analyses desired (not required).  
 
