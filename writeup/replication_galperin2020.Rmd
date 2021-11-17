@@ -197,10 +197,6 @@ Lastly, if needed, run some additional analysis. (Check for homoscedasticity, co
 \
 
 
-```
-(JIWON)
-I plan to delete all the codes and results from Pilot A from the manuscript and make descriptive statistics and figures Appendix, if that's okay. I think it's cleaner to include only the data from the actual study and not include pilots in the report. If it's better practice to include pilots, I want to have them as Appendix.
-```
 
 #### Load Relevant Libraries and Functions
 
@@ -226,17 +222,17 @@ library(rstatix)
 
 ```{r, echo = TRUE}
 # load survey
-#qualtricsData_pilotA <- fetch_survey(surveyID = "SV_3CP4lUkXb73NVSm", force_request = T)
+qualtricsData_pilotB <- fetch_survey(surveyID = "SV_d4LnrTl3Leh1WDQ", force_request = T)
 ```
 
 ```{r, echo = TRUE}
 # save data
-#write_csv(qualtricsData_pilotA, "/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/pilotA.csv")
+write_csv(qualtricsData_pilotB, "/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/pilotB_full.csv")
 ```
 
 ```{r, echo = TRUE}
 # load data from csv
-pilotA_df <- read_csv("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/pilotA.csv")
+pilotB_df <- read_csv("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/pilotB_full.csv")
 ```
 
 \
@@ -247,14 +243,16 @@ pilotA_df <- read_csv("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/dat
 ```{r}
 # clean data (first step)
 
-pilotA_cleaning <- pilotA_df |>
+data <- pilotB_df
+
+data_cleaning <- data |>
   select(c('Progress', 'Duration (in seconds)', 'Finished', 'companychk', 'candatchk', 'Location', 'interview', 'offer', 'referral', 'competent', 'productive', 'skilled', 'finexp', 'committed', 'commit_ind', 'extrhrs', 'teamwork', 'stay', 'flightrsk', 'gender', 'race_1', 'race_2', 'race_3', 'race_4', 'race_5', 'race_6', 'race_7', 'educ', 'Age', 'Profile_DO_high_overqual_profil', 'Profile_DO_low_overqual_profile', 'CommitmentManipulation_DO_highcommitment_HR', 'CommitmentManipulation_DO_neutralcommitment_HR', 'Competence_DO_skilled', 'Competence_DO_competent', 'Competence_DO_introcomp', 'Competence_DO_finexp', 'Competence_DO_productive', 'commitment_DO_teamwork', 'commitment_DO_committed', 'commitment_DO_intrcommt', 'commitment_DO_extrhrs', 'commitment_DO_stay', 'commitment_DO_flightrsk', 'commitment_DO_commit_ind'))
 
 # add id column
-pilotA_cleaning <- tibble::rowid_to_column(pilotA_cleaning, "id")
+data_cleaning <- tibble::rowid_to_column(data_cleaning, "id")
 
 # likelyhood of getting an offer (score)
-pilotA_cleaning <- pilotA_cleaning |>
+data_cleaning <- data_cleaning |>
   mutate(offer_score = ifelse(offer == "Very Unlikely", 1,
                               ifelse(offer == "Unlikely", 2,
                                      ifelse(offer == "Somewhat Unlikely", 3,
@@ -265,18 +263,18 @@ pilotA_cleaning <- pilotA_cleaning |>
 
 # overqual - high (condition1)
 
-pilotA_cleaning <- pilotA_cleaning |>
+data_cleaning <- data_cleaning |>
   mutate(cond1_high_overqual = ifelse(is.na(Profile_DO_high_overqual_profil), 0, 1))
 
-pilotA_cleaning <- pilotA_cleaning |>
+data_cleaning <- data_cleaning |>
   mutate(cond1_low_overqual = ifelse(is.na(Profile_DO_low_overqual_profile), 0, 1))
 
 # commit - high (condition2)
 
-pilotA_cleaning <- pilotA_cleaning |>
+data_cleaning <- data_cleaning |>
   mutate(cond2_high_commit = ifelse(is.na(CommitmentManipulation_DO_highcommitment_HR), 0, 1))
 
-pilotA_cleaning <- pilotA_cleaning |>
+data_cleaning <- data_cleaning |>
   mutate(cond2_neutral_commit = ifelse(is.na(CommitmentManipulation_DO_neutralcommitment_HR), 0, 1))
 
 
@@ -286,10 +284,10 @@ pilotA_cleaning <- pilotA_cleaning |>
 
 ```{r}
 # clean data (first step)
-pilotA_brief <- pilotA_cleaning |>
+data_brief <- data_cleaning |>
   select(c('offer_score', 'cond1_high_overqual', 'cond1_low_overqual', 'cond2_high_commit', 'cond2_neutral_commit', 'Profile_DO_high_overqual_profil', 'Profile_DO_low_overqual_profile', 'CommitmentManipulation_DO_highcommitment_HR', 'CommitmentManipulation_DO_neutralcommitment_HR'))
 
-pilotA_brief <- pilotA_cleaning |>
+data_brief <- data_cleaning |>
   select(c('offer_score', 'cond1_high_overqual', 'cond1_low_overqual', 'cond2_high_commit', 'cond2_neutral_commit'))
 
 ```
@@ -298,19 +296,19 @@ pilotA_brief <- pilotA_cleaning |>
 #### Prepare data for analysis - create columns etc.
 
 ```{r}
-#pilotA_brief <- pilotA_brief |>
+#data_brief <- data_brief |>
 #  mutate(cond1_high_overqual = factor(cond1_high_overqual, levels = c(0, 1), labels = c("Low", "High")))
 
 
 # only for neutral commitment condition
-pilotA_neutral <- pilotA_brief |>
+data_neutral <- data_brief |>
   filter(cond2_high_commit == 0) |>
   select(c("offer_score", "cond1_high_overqual")) |>
   mutate(cond1_high_overqual = factor(cond1_high_overqual, levels = c(0, 1), labels = c("Low", "High")))
   
 
 # only for high commitment condition
-pilotA_high <- pilotA_brief |>
+data_high <- data_brief |>
   filter(cond2_high_commit == 1) |>
   select(c("offer_score", "cond1_high_overqual")) |>
   mutate(cond1_high_overqual = factor(cond1_high_overqual, levels = c(0, 1), labels = c("Low", "High")))
@@ -320,27 +318,27 @@ pilotA_high <- pilotA_brief |>
 ### Descriptive statistics
 
 
-#### Pilot A
+#### Pilot B
 
 ```{r}
 library(psych)
-describe(pilotA_brief)
+describe(data_brief)
 ```
 
 ```{r}
-describe(pilotA_neutral)
+describe(data_neutral)
 ```
 
 
 ```{r}
-describe(pilotA_high)
+describe(data_high)
 ```
 
 ```{r}
 commit_labels <- c("Neutral Commitment", "High Commitment")
 names(commit_labels) <- c("0", "1")
 
-ggplot(data = pilotA_brief, aes(x = cond1_high_overqual, y = offer_score, group = cond1_high_overqual, fill = cond1_high_overqual)) +
+ggplot(data = data_brief, aes(x = cond1_high_overqual, y = offer_score, group = cond1_high_overqual, fill = cond1_high_overqual)) +
   geom_boxplot(alpha = 0.7) +
   geom_jitter(width = 0.08, alpha = .8) +
   guides(fill = "none") +
@@ -354,10 +352,10 @@ ggplot(data = pilotA_brief, aes(x = cond1_high_overqual, y = offer_score, group 
         panel.background = element_blank(),
         plot.title = element_text(hjust = 0.5)) +
   facet_wrap(~cond2_high_commit, labeller = labeller(cond2_high_commit = commit_labels)) +
-  ggtitle("Pilot A Results (n = 9)") +
+  ggtitle("Pilot B Results (pooled)") +
   labs(x = "Capability", y = "Likely to get an offer")
 
-ggsave("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/pilotA_boxplot.png")
+ggsave("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/data_boxplot.png")
 ```
 
 
@@ -372,13 +370,13 @@ The analyses as specified in the analysis plan.
 The main statistical model is going to be two t-tests, the same as that from original study. One t-test is to be conducted for Neutral commitment condition and the other t-test is going to be conducted for High commitment condition.
 
 
-#### Pilot A
+#### Pilot B
 
-Below are the key analyses results from Pilot A.
+Below are the key analyses results from Pilot B.
 \
 
 ```{r, echo = TRUE}
-#neutral_t <- t.test(offer_score ~ cond1_high_overqual, data = pilotA_neutral)
+#neutral_t <- t.test(offer_score ~ cond1_high_overqual, data = data_neutral)
 #neutral_t
 
 # could not run the model because I do not have enough observations.
@@ -389,7 +387,7 @@ Below are the key analyses results from Pilot A.
 For the first t-test, I could not run the model because I did not have enough observations. This is due to small sample size and randomization. I expect this problem to be resolved itself when I get enough sample size for the study.
 
 ```{r}
-high_t <- t.test(offer_score ~ cond1_high_overqual, data = pilotA_high, paired = FALSE)
+high_t <- t.test(offer_score ~ cond1_high_overqual, data = data_high, paired = FALSE)
 high_t
 ```
 
