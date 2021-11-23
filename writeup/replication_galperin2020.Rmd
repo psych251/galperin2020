@@ -85,7 +85,7 @@ Based on the effect size, I conducted a power analysis. Results for the power an
 * 90% power: 100
 * 95% power: 124
 
-Since I did have two t-tests, I needed to take the results and multiply by 2 to get the results for power analysis for the whole study. Therefore, the final results for the power analysis were as follows:
+Since the original work did have two t-tests, I needed to take the results and multiply by 2 to get the results for power analysis for the whole study. Therefore, the final results for the power analysis were as follows:
 
 * 80% power: 152
 * 90% power: 200
@@ -98,7 +98,7 @@ The sample size for the 80% power (based on the original effect of the second t-
 
 ### Planned Sample
 
-The sample consists of `150` participants recruited from Prolific. In order to participate in the study, individuals should have an experience hiring people for the organization because this study addresses job decision making processes of hiring managers in the labor market. They also have to be residents of U.S. or Canada because job candidate's qualification and evaluations depend on the nuiances in the labor market, which may be different across different regions.
+The sample consists of `150` participants recruited from Prolific. In order to participate in the study, individuals should have an experience hiring people for the organization because this study addresses job decision making processes of hiring managers in the labor market. They also have to be residents of U.S. because job candidate's qualification and evaluations depend on the nuiances in the labor market, which may be different across different regions.
 \
 
 ### Materials
@@ -144,12 +144,10 @@ Since the original work aims to explore the interactional effects of capability 
 
 #### Pilot B and Sampling
 
-`I did not know where to put procedures of Pilot B so I am adding a subsection here.`
-
 While the first pilot (Pilot A) went smoothly, I had some issues with Pilot B. So I had to run Pilot B three times to identify the appropriate strategy to run the study on Prolific. Three pilots were conducted on Prolific between November 12, 2021 and November 14, 2021. All three pilots were conducted with sample size of N=4. The participants were recruited on Prolific. They had to have hiring experience to be eligible for the study.
 The original plan was to recruit participants internationally on Prolific. After the first Pilot B, I realized that this sampling strategy was not appropriate. Even with the language filter, (fluency in English) international participants were taking too long to complete the study. The median value for the duration of the stuay was approximately 24 minutes for a 10-minute study.
-Therefore I conducted the second Pilot B with different sampling strategy. I added another filter so that only residents of U.S. or Canada can participate in the study. I also deleted all the open-ended questions from the survey. After running the second pilot, I could see that the problem was more about participants' country of residence than having open-ended questions in the survey.
-Hence, I ran the third Pilot B with the original survey design. The sampling strategy was the same as the second pilot (individuals with hiring experience who live in the U.S. or Canada, fluent in English). The third pilot ran without any problem and I was able to collect data.
+Therefore I conducted the second Pilot B with different sampling strategy. I added another filter so that only residents of U.S. can participate in the study. I also deleted all the open-ended questions from the survey. After running the second pilot, I could see that the problem was more about participants' country of residence than having open-ended questions in the survey.
+Hence, I ran the third Pilot B with the original survey design. The sampling strategy was the same as the second pilot (individuals with hiring experience who live in the U.S., fluent in English). The third pilot ran without any problem and I was able to collect data.
 \
 
 
@@ -181,12 +179,10 @@ You can comment this section out prior to final report with data collection.
 
 
 
-##Results (EDITING)
+## Results (EDITING)
 
 
 ### Data preparation
-
-Data preparation following the analysis plan.
 
 First, when the study is done, download data from Qualtrics using `qualtRics` package. (Other than `qualtRics` package, load other essential packages for data analysis and visualization, such as: `tidyverse`, `knitr`, `ggplot2`, `stats`, and etc.) \
 Second, clean the data. Check for missing values and exclude observations with missing values. If needed, conduct data manipulation. Clean and manipulate data so that I have a clean tidy data. \
@@ -222,45 +218,275 @@ library(rstatix)
 
 ```{r, echo = TRUE}
 # load survey
-qualtricsData_pilotB <- fetch_survey(surveyID = "SV_d4LnrTl3Leh1WDQ", force_request = T)
+#data_fin_raw <- fetch_survey(surveyID = "SV_82M7ojjd1rLcGPA", force_request = T)
 ```
 
 ```{r, echo = TRUE}
 # save data
-write_csv(qualtricsData_pilotB, "/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/pilotB_full.csv")
+#write_csv(data_fin_raw, "/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/data_fin_raw.csv")
 ```
 
 ```{r, echo = TRUE}
 # load data from csv
-pilotB_df <- read_csv("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/pilotB_full.csv")
+data_fin_raw <- read_csv("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/data_fin_raw.csv")
 ```
 
 \
 
 #### Data exclusion / filtering
 
+```{r}
+data_raw <- data_fin_raw
+```
 
 ```{r}
-# clean data (first step)
+# exclude participants who did not meet the eligibility requirement
+# or those who might have been included by accident (i.e. myself) who did not go through Prolific
+# 6 obs dropped
+data <- data_raw %>%
+  filter(hiringexperience == "Yes") %>%
+  filter(!is.na(prolific_id))
 
-data <- pilotB_df
-
-data_cleaning <- data |>
-  select(c('Progress', 'Duration (in seconds)', 'Finished', 'companychk', 'candatchk', 'Location', 'interview', 'offer', 'referral', 'competent', 'productive', 'skilled', 'finexp', 'committed', 'commit_ind', 'extrhrs', 'teamwork', 'stay', 'flightrsk', 'gender', 'race_1', 'race_2', 'race_3', 'race_4', 'race_5', 'race_6', 'race_7', 'educ', 'Age', 'Profile_DO_high_overqual_profil', 'Profile_DO_low_overqual_profile', 'CommitmentManipulation_DO_highcommitment_HR', 'CommitmentManipulation_DO_neutralcommitment_HR', 'Competence_DO_skilled', 'Competence_DO_competent', 'Competence_DO_introcomp', 'Competence_DO_finexp', 'Competence_DO_productive', 'commitment_DO_teamwork', 'commitment_DO_committed', 'commitment_DO_intrcommt', 'commitment_DO_extrhrs', 'commitment_DO_stay', 'commitment_DO_flightrsk', 'commitment_DO_commit_ind'))
+describe(data)
 
 # add id column
-data_cleaning <- tibble::rowid_to_column(data_cleaning, "id")
+data <- tibble::rowid_to_column(data, "id")
+```
 
-# likelyhood of getting an offer (score)
-data_cleaning <- data_cleaning |>
-  mutate(offer_score = ifelse(offer == "Very Unlikely", 1,
-                              ifelse(offer == "Unlikely", 2,
-                                     ifelse(offer == "Somewhat Unlikely", 3,
-                                            ifelse(offer == "Undecided", 4,
+
+
+
+```{r}
+### Clean data (first step)
+
+# select needed columns
+data <- data %>%
+  select(c('ResponseId', 'id', 'companychk', 'candatchk', 'Location', 'interview', 'offer', 'opencncrn', 'openresolv', 'referral', 'competent', 'productive', 'skilled', 'finexp', 'committed', 'commit_ind', 'extrhrs', 'teamwork', 'stay', 'flightrsk', 'oe_qual', 'oe_comm', 'oe_interview', 'oe_offer', 'oe_referral', 'ethnicity', 'race_1', 'race_2', 'race_3', 'race_4', 'race_5', 'race_6', 'race_7', 'race_8', 'race_8_TEXT', 'gender', 'Age', 'educ', 'workexperience', 'Profile_DO_high_overqual_profil', 'Profile_DO_low_overqual_profile', 'CommitmentManipulation_DO_highcommitment_HR', 'CommitmentManipulation_DO_neutralcommitment_HR'))
+
+
+# data manipulation - scores
+
+# likelihood of getting an interview (score)
+data <- data %>%
+  mutate(interview_score = ifelse(interview == "Very Unlikely", 1,
+                                  ifelse(interview == "Unlikely", 2,
+                                         ifelse(interview == "Somewhat Unlikely", 3,
+                                                ifelse(interview == "Undecided", 4,
+                                                       ifelse(interview == "Somewhat Likely", 5,
+                                                              ifelse(interview == "Likely", 6, 
+                                                                     ifelse(interview == "Very Likely", 7, NA))))))))
+
+# likelihood of getting an offer (score)
+data <- data %>%
+  mutate(offer_score = ifelse(offer == "Very Unlikely", 1, 
+                              ifelse(offer == "Unlikely", 2, 
+                                     ifelse(offer == "Somewhat Unlikely", 3, 
+                                            ifelse(offer == "Undecided", 4, 
                                                    ifelse(offer == "Somewhat Likely", 5, 
-                                                          ifelse(offer == "Likely", 6,
+                                                          ifelse(offer == "Likely", 6,  
                                                                  ifelse(offer == "Very Likely", 7, NA))))))))
 
+
+# referral or not
+data <- data %>%
+  mutate(refer = ifelse(referral == "Yes", 1, 0)) %>%
+  mutate(refer = as.factor(refer))
+
+
+### Manipulation checks
+
+# competent
+data <- data %>%
+  mutate(competent_score = ifelse(competent == "Strongly disagree", 1, 
+                                  ifelse(competent == "Disagree", 2, 
+                                         ifelse(competent == "Somewhat disagree", 3, 
+                                                ifelse(competent == "Neither agree nor disagree", 4, 
+                                                       ifelse(competent == "Somewhat agree", 5, 
+                                                              ifelse(competent == "Agree", 6, 
+                                                                     ifelse(competent == "Strongly agree", 7, NA))))))))
+
+
+# productive
+data <- data %>%
+  mutate(productive_score = ifelse(productive == "Strongly disagree", 1, 
+                                   ifelse(productive == "Disagree", 2, 
+                                          ifelse(productive == "Somewhat disagree", 3, 
+                                                 ifelse(productive == "Neither agree nor disagree", 4, 
+                                                        ifelse(productive == "Somewhat agree", 5, 
+                                                               ifelse(productive == "Agree", 6,
+                                                                      ifelse(productive == "Strongly agree", 7, NA))))))))
+
+# skilled
+data <- data %>%
+  mutate(skilled_score = ifelse(skilled == "Strongly disagree", 1,
+                                ifelse(skilled == "Disagree", 2,
+                                       ifelse(skilled == "Somewhat disagree", 3,
+                                              ifelse(skilled == "Neither agree nor disagree", 4,
+                                                     ifelse(skilled == "Somewhat agree", 5,
+                                                            ifelse(skilled == "Agree", 6,
+                                                                   ifelse(skilled == "Strongly agree", 7, NA))))))))
+
+# finexp
+data <- data %>%
+  mutate(finexp_score = ifelse(finexp == "Strongly disagree", 1,
+                               ifelse(finexp == "Disagree", 2,
+                                      ifelse(finexp == "Somewhat disagree", 3,
+                                             ifelse(finexp == "Neither agree nor disagree", 4,
+                                                    ifelse(finexp == "Somewhat agree", 5,
+                                                           ifelse(finexp == "Agree", 6,
+                                                                  ifelse(finexp == "Strongly agree", 7, NA))))))))
+
+# committed
+data <- data %>%
+  mutate(commit_score = ifelse(committed == "Highly uncommitted", 1,
+                               ifelse(committed == "Uncommitted", 2,
+                                      ifelse(committed == "Somewhat uncommitted", 3,
+                                             ifelse(committed == "Neither committed nor uncommitted", 4,
+                                                    ifelse(committed == "Somewhat committed", 5,
+                                                           ifelse(committed == "Committed", 6,
+                                                                  ifelse(committed == "Highly committed", 7, NA))))))))
+
+# commit_ind
+data <- data %>%
+  mutate(commit_ind_score = ifelse(commit_ind == "Highly uncommitted", 1,
+                                   ifelse(commit_ind == "Uncommitted", 2,
+                                          ifelse(commit_ind == "Somewhat uncommitted", 3,
+                                                 ifelse(commit_ind == "Neither committed nor uncommitted", 4,
+                                                        ifelse(commit_ind == "Somewhat committed", 5,
+                                                               ifelse(commit_ind == "Committed", 6,
+                                                                      ifelse(commit_ind == "Highly committed", 7, NA))))))))
+
+
+
+# extra hours score
+data <- data %>%
+  mutate(extrhrs_score = ifelse(extrhrs == "Very unlikely", 1,
+                                ifelse(extrhrs == "Unlikely", 2,
+                                       ifelse(extrhrs == "Somewhat unlikely", 3,
+                                              ifelse(extrhrs == "Neither likely nor unlikely", 4,
+                                                     ifelse(extrhrs == "Somewhat likely", 5,
+                                                            ifelse(extrhrs == "Likely", 6,
+                                                                   ifelse(extrhrs == "Very likely", 7, NA))))))))
+
+# teamwork score
+data <- data %>%
+  mutate(teamwork_score = ifelse(teamwork == "Very Unlikely", 1, 
+                                 ifelse(teamwork == "Unlikely", 2, 
+                                        ifelse(teamwork == "Somewhat unlikely", 3, 
+                                               ifelse(teamwork == "Neither likely nor unlikely", 4, 
+                                                      ifelse(teamwork == "Somewhat likely", 5, 
+                                                             ifelse(teamwork == "Likely", 6, 
+                                                                    ifelse(teamwork == "Very likely", 7, NA))))))))
+
+
+
+# likelihood of staying score
+data <- data %>%
+  mutate(stay_score = ifelse(stay == "Less than 1 year", 1,
+                             ifelse(stay == "1-2 years", 2,
+                                    ifelse(stay == "2-3 years", 3,
+                                           ifelse(stay == "3-4 years", 4,
+                                                  ifelse(stay == "4-5 years", 5,
+                                                         ifelse(stay == "5-6 years", 6,
+                                                                ifelse(stay == "Greater than 6 years", 7, NA))))))))
+
+
+
+
+
+# flight risk score (flightrsk)
+data <- data %>%
+  mutate(flight_score = ifelse(flightrsk == "Very unlikely", 1, 
+                               ifelse(flightrsk == "Unlikely", 2,
+                                      ifelse(flightrsk == "Somewhat unlikely", 3,
+                                             ifelse(flightrsk == "Neither likely nor unlikely", 4, 
+                                                    ifelse(flightrsk == "Somewhat likely", 5,
+                                                           ifelse(flightrsk == "Likely", 6,
+                                                                  ifelse(flightrsk == "Very likely", 7, NA))))))))
+
+```
+
+```{r}
+### Data cleaning continuted - demographic information
+
+#summary(as.factor(data$race_1))
+#summary(as.factor(data$race_2))
+#summary(as.factor(data$race_3))
+#summary(as.factor(data$race_4))
+#summary(as.factor(data$race_5))
+##summary(as.factor(data$race_6))
+#summary(as.factor(data$race_7))
+##summary(as.factor(data$race_8))
+##summary(as.factor(data$race_8_TEXT))
+
+
+# ethnicity
+data <- data %>%
+  mutate(ethnic_hispanic = ifelse(is.na(ethnicity), 0, ifelse(ethnicity == "Hispanic", 1, 0)))
+
+# race
+data <- data %>%
+  mutate(White = ifelse(!is.na(race_1), 1, 0)) %>%
+  mutate(Black = ifelse(!is.na(race_2), 1, 0)) %>%
+  mutate(Hispanic = ifelse(!is.na(race_3), 1, 0)) %>%
+  mutate(Asian = ifelse(!is.na(race_4), 1, 0)) %>%
+  mutate(Native = ifelse(!is.na(race_5), 1, 0)) %>%
+  mutate(Decline = ifelse(!is.na(race_6), 1, 0))
+
+# variables with no obs dropped
+
+# gender
+data <- data %>%
+  mutate(gender = as.factor(gender))
+
+# education
+data <- data %>%
+  mutate(educ = as.factor(educ))
+
+
+summary(data$educ)
+
+# add education level (ordinal variable)
+
+# educ_ordinal
+data <- data %>%
+  mutate(educ_ordinal = ifelse(educ == "Less than High School", 1,
+                               ifelse(educ == "High School / GED", 2,
+                                      ifelse(educ == "Some College", 3,
+                                             ifelse(educ == "2-year College Degree", 4,
+                                                    ifelse(educ == "4-year College Degree", 5,
+                                                           ifelse(educ == "Masters Degree", 6,
+                                                                  ifelse(educ == "Doctoral Degree", 7,
+                                                                         ifelse(educ == "Professional Degree (JD, MD)", 8, NA)))))))))
+```
+
+
+
+```{r}
+# Treatment conditions
+
+# Overqual condition (Capability)
+data <- data %>%
+  mutate(Overqual = ifelse(is.na(Profile_DO_high_overqual_profil), "Low", "High")) %>%
+  mutate(Overqual = as.factor(Overqual))
+
+data <- data %>%
+  mutate(Commitment = ifelse(is.na(CommitmentManipulation_DO_highcommitment_HR), "Neutral", "High")) %>%
+  mutate(Commitment = as.factor(Commitment))
+
+
+# Check number of participants in each condition
+table(data$Overqual, data$Commitment)
+
+```
+
+###### Nov 23, 2021 (EDITING)
+
+
+
+
+
+```{r}
 # overqual - high (condition1)
 
 data_cleaning <- data_cleaning |>
@@ -393,6 +619,19 @@ high_t
 
 The above shows the results for the second t-test. (For high commitment group.)
 \
+
+
+```{r}
+data_highcommit <- data %>%
+  filter(Commitment == "High")
+
+t.test(offer_score ~ Overqual, data = data_highcommit)
+
+data_neutralcommit <- data %>%
+  filter(Commitment == "Neutral")
+t.test(offer_score ~ Overqual, data = data_neutralcommit)
+
+```
 
 
 
