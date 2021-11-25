@@ -1,0 +1,3046 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdftitle={Replication Report for Study 2 by Galperin, Hahl, Stering, \& Guo (2020, Administrative Science Quarterly)},
+            pdfauthor={Jiwon Byun (jwbyun@stanford.edu)},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\title{Replication Report for Study 2 by Galperin, Hahl, Stering, \& Guo (2020,
+Administrative Science Quarterly)}
+\author{Jiwon Byun
+(\href{mailto:jwbyun@stanford.edu}{\nolinkurl{jwbyun@stanford.edu}})}
+\date{November 24, 2021}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\hypertarget{introduction}{%
+\subsection{Introduction}\label{introduction}}
+
+Employers' selection of job applicants is an important labor market
+proesses for both employers and individuals. For organizations, access
+to high-quality workers is a source of competitive advantage. For
+individuals, access to certain jobs at certain timing can have a large
+impact on one's career trajectories. Job signaling is the most
+fundamental and important aspect of selection processes in labor market.
+Information asymmetries between employers and job applicants provide
+challenges for both ends.\\
+Most studies have focused on job signaling and applicant capabilities
+when trying to understand selection processes in labor markets. On the
+other hand, increasing number of studies suggest that selection
+decisions are affected not only by perceptions of applicantss'
+capability but also by perceptions of applicants' commitment to the
+organization.\\
+While previous literature investigated both the effect of perceptions of
+applicants' capability and the effect of perceptions of applicants'
+commitment on the likelihood of a candidate's being selected for a job,
+the relationship between the two dimensions had been understudied. In an
+attempt to shed light on such a gap in the literature, Galperin, Hahl,
+Sterling, and Guo (Gelperin et al.~henceforth) conducted a series of
+online field experiments and published an article in ASQ in the year of
+2020. (For reference, see \texttt{Links} section in the below.)\\
+Galperin et al. (2020) suggested that signals that influence perceptions
+of capability in labor markets may have discernable effects of the
+perceptions of a candidate's commitment, which also affects the
+likelihood of the candidate's being selected for the job. The paper
+included four studies, three of which were online field experiments. In
+this study, I plan to replicate Study 2.\\
+~\\
+
+\hypertarget{justification-for-choice-of-study}{%
+\subsubsection{Justification for choice of
+study}\label{justification-for-choice-of-study}}
+
+In the original paper, the authors conducted a direct test of the effect
+of applicants' commitment and high-capability rejection.\\
+Study 2 was conducted to directly manipulated perceived commitment of an
+applicant to complement one of the other studies where they could not
+directly manipulate commitment. This is important because the main
+contribution of the study is suggested (and proved) mediation effect of
+commitment on likelihood of a job offer.\\
+~\\
+
+\hypertarget{anticipated-challenges}{%
+\subsubsection{Anticipated challenges}\label{anticipated-challenges}}
+
+I anticipate two challenges while attempting to replicate the results.\\
+First, I may run into sample issue. This study is about job signals and
+hiring managers' decision making in making job offers. Hence, it is
+important that I only have hiring managers (defined by someone with
+experiences as a hiring manager) in the sample. Since I have to rely on
+Prolifics to do the sampling, less appropriate sample might be acquired
+in the end. Similar issue applies to random assignment of
+participants.\\
+Second, survey design might be difficult. The main part of this
+replication study is manipulating commitment of a job applicant. Since
+commitment could mean different things both conceptually and
+practically, it is essential that I manipulate the main concepts
+elaborately. To overcome this challenge, I plan to reach out to original
+authors and try to acquire survey items that they used for the original
+study.\\
+~\\
+
+\hypertarget{links}{%
+\subsubsection{Links}\label{links}}
+
+\begin{itemize}
+\tightlist
+\item
+  Project repository (on Github):
+  \href{https://github.com/psych251/galperin2020.git}{Link to project
+  repository}
+\item
+  Original paper (as hosted in your repo):
+  \href{https://github.com/psych251/galperin2020/blob/1176bad85fcced90757aa9a19be77c14f0b70a5f/original_paper/galperin_et_al_2020.pdf}{Link
+  to original paper}
+\end{itemize}
+
+\hypertarget{methods}{%
+\subsection{Methods}\label{methods}}
+
+\hypertarget{description-of-the-steps-required-to-replicate-the-results}{%
+\subsubsection{Description of the steps required to replicate the
+results}\label{description-of-the-steps-required-to-replicate-the-results}}
+
+To replicate the results of Study 2, I plan to run the same online
+experiment on Prolific. Prior to running the main study, I plan to run
+two pilot studies. The first pilot study will involve non-naive
+participants, whereas the second pilot study will have naive
+participants on MTurk.\\
+For the main study, participants will be recruited to fill out a
+``survey for hiring managers'' through Prolific in October-November
+2021.\\
+The study will have the same structure as that of the original study: 2
+by 2 between-subjects design. Participants will be randomly assigned to
+one of the four conditions. (2 capability conditions X 2 commitment
+conditions) They will be given the same stimuli as the original study.\\
+I plan to conduct a manipulation check for both candidate's perceived
+capability and perceived commitment by combining the questionnaires
+included in the survey.\\
+With the data acquired from the survey experiment, I plan to conduct two
+t-tests to replicate the key results of Study 2. As an exploratory
+analysis, I plan to conduct a two-way ANOVA to examine the interaction
+effects.\\
+~\\
+
+\hypertarget{power-analysis}{%
+\subsubsection{Power Analysis}\label{power-analysis}}
+
+The original study had a sample size of 212. For the first t-test
+(neutral commitment condition), the statistics were:
+\texttt{t\ =\ 3.66}, \texttt{p\ \textless{}\ 0.001}. For the second
+t-test (high commitment condition), the results were:
+\texttt{t\ =\ -3.34}, \texttt{p\ =\ 0.001}.
+
+Since I have two t-test for the study, I chose the t-test with smaller t
+value and used the study for the power analysis, which is the second
+t-test with \texttt{t\ =\ -3.34}. Then I did a calculation assuming a
+balanced cell size.
+
+Results of the effect size calculation for the second t-test (calculated
+by using mean and s.d.) were as follows:
+\texttt{Cohen\textquotesingle{}s\ d\ =\ 0.6554},
+\texttt{effect-size\ r\ =\ 0.3114}. I conducted the effect size
+calculation using the t-value and degrees of freedom as well and
+obtained very similar results.
+
+Based on the effect size, I conducted a power analysis. Results for the
+power analysis for 80\%, 90\%, 95\% power (for the second t-test) are as
+follows:
+
+\begin{itemize}
+\tightlist
+\item
+  80\% power: 76
+\item
+  90\% power: 100
+\item
+  95\% power: 124
+\end{itemize}
+
+Since the original work did have two t-tests, I needed to take the
+results and multiply by 2 to get the results for power analysis for the
+whole study. Therefore, the final results for the power analysis were as
+follows:
+
+\begin{itemize}
+\tightlist
+\item
+  80\% power: 152
+\item
+  90\% power: 200
+\item
+  95\% power: 248
+\end{itemize}
+
+The sample size for the 80\% power (based on the original effect of the
+second t-test) was 152. I could not have 152 participants due to some
+constraints (mainly financial.) The original study paid the participants
+high compensation (\texttt{\$6.00}) for this cognitively engaging study,
+I want to provide a reasonable amount of compensation to each
+participant. Considering the approximate time needed to complete the
+study and the hourly pay, I decided to pay \texttt{\$2.00} each. My
+budget is limited at about \texttt{\$400.00} for the study, so I decided
+have a sample size of \texttt{150}.\\
+~\\
+
+\hypertarget{planned-sample}{%
+\subsubsection{Planned Sample}\label{planned-sample}}
+
+The sample will consist of \texttt{150} participants recruited from
+Prolific. In order to participate in the study, individuals should have
+an experience hiring people for the organization because this study
+addresses job decision making processes of hiring managers in the labor
+market.\\
+
+\hypertarget{materials}{%
+\subsubsection{Materials}\label{materials}}
+
+The survey experiment materials were coded in Qualtrics. Participants
+recuited on Prolific could click on the link to the survey on Qualtrics.
+Participants were randomly assigned to
+\texttt{2\ capability\ conditions} that involved two different job
+candidate resumes. Participants were also randomly assigned to
+\texttt{2\ commitment\ conditions} given by information from HR
+department. The procedure for the study is described below.
+
+\hypertarget{link}{%
+\paragraph{Link:}\label{link}}
+
+\begin{itemize}
+\tightlist
+\item
+  Survey material:
+  \href{https://stanforduniversity.qualtrics.com/jfe/preview/SV_3egYJH4CkorsKzk?Q_CHL=preview\&Q_SurveyVersionID=current}{Link
+  to the survey}
+\end{itemize}
+
+All materials - can quote directly from original article - just put the
+text in quotations and note that this was followed precisely. Or, quote
+directly and just point out exceptions to what was described in the
+original article.\\
+
+\hypertarget{procedure}{%
+\subsubsection{Procedure}\label{procedure}}
+
+"The procedure for Study 2 was very similar to that for Study 1. We used
+the same job candidate profiles as in Study 1, but instead of evaluating
+both candidates, participants viewed only one profile and were asked to
+evaluate only that candidate applying to a `corporate finance position
+in a medium-size health care company.' To verify that participants
+understood the directions, we asked them a series of attention-check
+questions. If they answered incorrectly, the context was repeated to
+them as a reinforcement.
+
+One additional difference between Study 1 and Study 2 was that in this
+experiment, participants were told that their job as `line manager'
+meant they `should not concern themselves with negotiating the offer,
+but should only consider this candidate's potential performance on the
+job.' This was repeated before the participant was asked about his or
+her likelihood of giving the candidate an offer. We also asked
+participants to rate from 1 (low) to 7 (high) how concerned they were
+about the candidate accepting the job. There was no difference across
+conditions in this measure, and results presented below are robust to
+controlling for this measure. This indicates that participants behaved
+as intended and focused on post-hire commitment rather than concerns
+about the candidate's acceptance of a job offer.
+
+Participants were randomly assigned to view either the extremely
+highcapability candidate or the moderately high-capability candidate,
+who were presented in the same way as they were in Study 1. Next,
+participants were randomly assigned to one of two commitment-information
+conditions: neutral or high. All participants were told, `As part of the
+application process, the candidate completed an assessment delivered by
+your firm's HR department,' that the candidate scored a 75 on the
+assessment, and that `candidates that have scored at least 60 points
+have skills that match the requirements of the job.' In the
+neutral-commitment condition, nothing was mentioned about the
+assessment's relationship with commitment. Participants were told that
+`this assessment was able to predict the candidate's ability to do the
+job in your firm.' In contrast, participants randomly assigned to the
+high-commitment condition were told that `this assessment was able to
+predict the candidate's likely commitment to your organization (e.g.,
+likelihood to stay with your firm, be motivated and work well with
+others).' This procedure resulted in a 2 (extremely high
+capability/moderately high capability) by 2 (high commitment/neutral
+commitment) between-subject design.
+
+Participants were then asked about their likelihood of giving the
+candidate a job offer based on the same scale used in Study 1. This
+variable served as the dependent variable." (Galperin et al., 2020)
+
+For this replication, the original work's procedure (described in the
+quotation above) was followed precisely.
+
+\hypertarget{manipulation-checks}{%
+\paragraph{Manipulation Checks}\label{manipulation-checks}}
+
+"As a manipulation check after rating their likelihood to give the
+candidate an offer, participants were then asked to evaluate the
+candidate's capability by rating him on a 7-point scale (1 = low and 7 =
+high) on four criteria related to capability: ``how competent the
+candidate would be in his job''; ``how productive the candidate was in
+his previous job''; ``how skilled the candidate is''; and ``how much
+finance experience the candidate has.'' We combined these four measures
+to create a measure for the candidate's perceived capability (Cronbach's
+alpha = .88). Participants randomly assigned to the extremely
+high-capability conditions (N = 106, mean = 5.86, S.D. = .82) rated the
+candidate higher in perceived capability (t = − 6.60, d.f. = 210, p
+\textless{} .001, two-tailed test) than those assigned to the moderately
+high-capability condition (N = 106, mean = 4.99, S.D. = 1.08).
+
+Participants were also asked about perceived commitment after these
+ratings. They were asked to rate (1 = low, 7 = high) the candidate on
+the following four dimensions: ``likely commitment to the
+organization,'' ``commitment to the industry,'' ``willingness to stay
+with the company,'' and ``willingness to work extra hours.'' We added
+commitment to the industry to the measure (compared with the Study 1
+scale) to address the change in industry. These ratings were averaged to
+create a perceived organizational commitment score (Cronbach's alpha =
+.89). Participants randomly assigned to the highcommitment conditions (N
+= 105, mean = 5.44, S.D. = 1.16) rated the candidate higher in
+commitment (t = − 5.94, d.f. = 210, p \textless{} .001, two-tailed test)
+than those assigned to the neutral-commitment conditions (N = 107, mean
+= 4.51, S.D. = 1.57)." (Galpein et al., 2020)
+
+For this replication, the original work's procedure (described in the
+quotation above) for manipulation checks was followed precisely.
+
+\hypertarget{analysis-plan}{%
+\subsubsection{Analysis Plan}\label{analysis-plan}}
+
+Confirmatory statistical analysis is going to involve two t-tests,
+following the methods used in the original work. I run a t-test for
+High-commitment conditions, and another t-test for Neutral-commitment
+conditions. By doing so, I can test differential effects of extremely
+high capability on likelihood of getting an offer for different
+commitment conditions.
+
+I plan to conduct the same manipulation check analyses of those from
+original work. There are 4 measures for capability and 4 measures for
+commitment. As the original authors did, I will average the ratings for
+capability and commitment (separately for each manipulation) and created
+a perceived capability measure and a perceived commitment measure. Then
+I will examine Cronbach's alpha value and conduct t-tests across
+different treatment groups.
+
+Since the original work aims to explore the interactional effects of
+capability and commitment on a candidate's likelihood of getting an
+offer, I plan to conduct a two-wawy ANOVA as an exploratogy analysis.
+Two-way ANOVA can be a good statitical model since I am trying to
+examine the interation effect of candidate's capability and commitment
+(Capability X Commitment) on the likelihood of receiving an offer. By
+using the two-way factorial design, I can effectively examine the
+potential interaction effect between Capability and Commitment.
+
+\hypertarget{pilot-b-and-sampling}{%
+\paragraph{Pilot B and Sampling}\label{pilot-b-and-sampling}}
+
+While the first pilot (Pilot A) went smoothly, I had some issues with
+Pilot B. So I had to run Pilot B three times to identify the appropriate
+strategy to run the study on Prolific. Three pilots were conducted on
+Prolific between November 12, 2021 and November 14, 2021. All three
+pilots were conducted with sample size of N=4. The participants were
+recruited on Prolific. They had to have hiring experience to be eligible
+for the study. The original plan was to recruit participants
+internationally on Prolific. After the first Pilot B, I realized that
+this sampling strategy was not appropriate. Even with the language
+filter, (fluency in English) international participants were taking too
+long to complete the study. The median value for the duration of the
+stuay was approximately 24 minutes for a 10-minute study. Therefore I
+conducted the second Pilot B with different sampling strategy. I added
+another filter so that only residents of U.S. can participate in the
+study. I also deleted all the open-ended questions from the survey.
+After running the second pilot, I could see that the problem was more
+about participants' country of residence than having open-ended
+questions in the survey. Hence, I ran the third Pilot B with the
+original survey design. The sampling strategy was the same as the second
+pilot (individuals with hiring experience who live in the U.S., fluent
+in English). The third pilot ran without any problem and I was able to
+collect data.\\
+
+\hypertarget{differences-from-original-study}{%
+\subsubsection{Differences from Original
+Study}\label{differences-from-original-study}}
+
+The most important difference would be that I will be using a different
+sample. While the original work recruited participants through Qualtrics
+panel, I will recruit participants through Prolific. While I do not
+foresee any systematic differences between two platforms, some
+substantial differences may exist when filtering for the target
+participants. This may cause differences between the sample of this
+study and that of original paper.\\
+I acknowledge that any unforeseen issues are the sole responsiblitity of
+mine.\\
+
+\begin{verbatim}
+DIFFERENCES BETWEEN SAMPLES ARE VERY IMPORTANT HERE. So I probably need to elaborate on how and why sampling is important and how I might end up with a very different sample.
+\end{verbatim}
+
+\begin{quote}
+EDITING THIS PART
+\end{quote}
+
+\begin{itemize}
+\item
+  nature of the sample, sample size, how COVID has influenced the way
+  people are thinking about hiring
+\item
+  Sample size. Original study had N = 212. For this study I have N =
+  137. Sample size with 80\% power was 152, I could not even have as
+  many.
+\item
+  Participants really hiring managers? The participants were
+  Qualtrics-verified hiring managers who were U.S. based. All the
+  participants could provide evidence of having served as a hiring
+  manager. (On Prolific it's just self-report.)
+\item
+  Timing is really important. With hiring there are a lot of time
+  sensitivites. Although the original work was published in 2020, Study
+  2 was conducted December 2016 on Qualtrics. My study was conducted
+  November 2021. How people think about hiring could have changed over
+  the 5-year time period, especially after the outbreak of COVID-19
+  pandemic.
+\end{itemize}
+
+\hypertarget{methods-addendum-post-data-collection}{%
+\subsubsection{Methods Addendum (Post Data
+Collection)}\label{methods-addendum-post-data-collection}}
+
+You can comment this section out prior to final report with data
+collection.
+
+\begin{quote}
+EDITING THIS PART
+\end{quote}
+
+\hypertarget{actual-sample}{%
+\paragraph{Actual Sample}\label{actual-sample}}
+
+Sample size, demographics, data exclusions based on rules spelled out in
+analysis plan
+
+\begin{itemize}
+\item
+  sample size: N = 137. Original work had 212, my planned sample was N =
+  150.
+\item
+  demographics: U.S. residents. Original plan was to recruit
+  internationally. However, Pilot B raised concerns. Job candidate's
+  qualification and evaluations depend on the nuiances in the labor
+  market, which may be different across different regions. So I decided
+  to limit the sample to residents of U.S. only, which follows the
+  original work's approach since the original sample had hiring managers
+  who were U.S. based.
+\item
+  data exclusions: Included eligibility check question in the beginning.
+  Those who reported that they did not have any hiring experience were
+  excluded from the study.
+\end{itemize}
+
+\hypertarget{differences-from-pre-data-collection-methods-plan}{%
+\paragraph{Differences from pre-data collection methods
+plan}\label{differences-from-pre-data-collection-methods-plan}}
+
+None.\\
+
+\hypertarget{results}{%
+\subsection{Results}\label{results}}
+
+\hypertarget{data-preparation}{%
+\subsubsection{Data preparation}\label{data-preparation}}
+
+First, when the study is done, download data from Qualtrics using
+\texttt{qualtRics} package. (Other than \texttt{qualtRics} package, load
+other essential packages for data analysis and visualization, such as:
+\texttt{tidyverse}, \texttt{knitr}, \texttt{ggplot2}, \texttt{psych},
+\texttt{stats}, and etc.)\\
+Second, clean the data. Check for missing values and exclude
+observations with missing values. If needed, conduct data manipulation.
+Clean and manipulate data so that I have a clean tidy data.\\
+Third, conduct descriptive analyses. Before running the main statistical
+models, run some descriptive analysis and show the descriptives as
+needed.\\
+Fourth, conduct main statistical analysis. Present the findings in a
+table.\\
+Fifth, do some data visualization so that the readers can view the
+results easily.\\
+Lastly, if needed, run some additional analysis. (Check for
+homoscedasticity, conduct robustness checks, more explaratory analysis,
+etc.)\\
+~\\
+
+\hypertarget{load-relevant-libraries-and-functions}{%
+\paragraph{Load Relevant Libraries and
+Functions}\label{load-relevant-libraries-and-functions}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(qualtRics)}
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching packages --------------------------------------- tidyverse 1.3.1 --
+\end{verbatim}
+
+\begin{verbatim}
+## v ggplot2 3.3.5     v purrr   0.3.4
+## v tibble  3.1.5     v dplyr   1.0.7
+## v tidyr   1.1.4     v stringr 1.4.0
+## v readr   2.0.2     v forcats 0.5.1
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(knitr)}
+\KeywordTok{library}\NormalTok{(psych)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'psych'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:ggplot2':
+## 
+##     %+%, alpha
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(haven)}
+\KeywordTok{library}\NormalTok{(Rmisc)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: lattice
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: plyr
+\end{verbatim}
+
+\begin{verbatim}
+## ------------------------------------------------------------------------------
+\end{verbatim}
+
+\begin{verbatim}
+## You have loaded plyr after dplyr - this is likely to cause problems.
+## If you need functions from both plyr and dplyr, please load plyr first, then dplyr:
+## library(plyr); library(dplyr)
+\end{verbatim}
+
+\begin{verbatim}
+## ------------------------------------------------------------------------------
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'plyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:dplyr':
+## 
+##     arrange, count, desc, failwith, id, mutate, rename, summarise,
+##     summarize
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:purrr':
+## 
+##     compact
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(purrr)}
+\KeywordTok{library}\NormalTok{(broom)}
+\KeywordTok{library}\NormalTok{(rstatix)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'rstatix'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:plyr':
+## 
+##     desc, mutate
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:stats':
+## 
+##     filter
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(ggpubr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'ggpubr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:plyr':
+## 
+##     mutate
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(psych)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{import-data}{%
+\paragraph{Import data}\label{import-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# load survey}
+\CommentTok{#data_fin_raw <- fetch_survey(surveyID = "SV_82M7ojjd1rLcGPA", force_request = T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# save data}
+\CommentTok{#write_csv(data_fin_raw, "/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/data_fin_raw.csv")}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# load data from csv}
+\NormalTok{data_fin_raw <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\StringTok{"/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/data_fin_raw.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: One or more parsing issues, see `problems()` for details
+\end{verbatim}
+
+\begin{verbatim}
+## Rows: 143 Columns: 78
+\end{verbatim}
+
+\begin{verbatim}
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr  (41): Status, IPAddress, ResponseId, DistributionChannel, UserLanguage,...
+## dbl  (22): Progress, Duration (in seconds), LocationLatitude, LocationLongit...
+## lgl  (12): Finished, RecipientLastName, RecipientFirstName, RecipientEmail, ...
+## dttm  (3): StartDate, EndDate, RecordedDate
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\hypertarget{data-exclusion-filtering}{%
+\paragraph{Data exclusion / filtering}\label{data-exclusion-filtering}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data_raw <-}\StringTok{ }\NormalTok{data_fin_raw}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# exclude participants who did not meet the eligibility requirement}
+\CommentTok{# or those who might have been included by accident (i.e. myself) who did not go through Prolific}
+\CommentTok{# 6 obs dropped}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data_raw }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(hiringexperience }\OperatorTok{==}\StringTok{ "Yes"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(prolific_id))}
+
+\KeywordTok{describe}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+\end{verbatim}
+
+\begin{verbatim}
+##                                                vars   n   mean     sd median
+## StartDate                                         1 137    NaN     NA     NA
+## EndDate                                           2 137    NaN     NA     NA
+## Status*                                           3 137   1.00   0.00   1.00
+## IPAddress*                                        4 137  69.00  39.69  69.00
+## Progress                                          5 137 100.00   0.00 100.00
+## Duration (in seconds)                             6 137 783.45 511.62 642.00
+## Finished                                          7 137    NaN     NA     NA
+## RecordedDate                                      8 137    NaN     NA     NA
+## ResponseId*                                       9 137  69.00  39.69  69.00
+## RecipientLastName                                10   0    NaN     NA     NA
+## RecipientFirstName                               11   0    NaN     NA     NA
+## RecipientEmail                                   12   0    NaN     NA     NA
+## ExternalReference                                13   0    NaN     NA     NA
+## LocationLatitude                                 14 137  37.97   5.58  39.17
+## LocationLongitude                                15 137 -95.83  17.15 -90.85
+## DistributionChannel*                             16 137   1.00   0.00   1.00
+## UserLanguage*                                    17 137   1.00   0.00   1.00
+## consent*                                         18 137   1.00   0.00   1.00
+## prolific_id*                                     19 137  69.00  39.69  69.00
+## hiringexperience*                                20 137   1.00   0.00   1.00
+## companychk*                                      21 137   2.00   0.21   2.00
+## candatchk*                                       22 137   2.16   0.39   2.00
+## Location*                                        23 137   2.00   0.12   2.00
+## interview*                                       24 137   3.12   1.92   4.00
+## offer*                                           25 137   2.54   1.87   2.00
+## opencncrn*                                       26 136  68.50  39.40  68.50
+## openresolv*                                      27 134  66.75  38.50  66.50
+## referral*                                        28 137   1.72   0.45   2.00
+## competent*                                       29 137   2.17   1.37   1.00
+## productive*                                      30 137   2.17   1.29   1.00
+## skilled*                                         31 137   2.42   1.67   1.00
+## finexp*                                          32 137   3.19   2.08   4.00
+## committed*                                       33 137   2.39   1.40   2.00
+## commit_ind*                                      34 137   3.78   1.86   4.00
+## extrhrs*                                         35 137   2.47   1.37   3.00
+## teamwork*                                        36 137   3.66   1.62   4.00
+## stay*                                            37 137   3.15   1.51   3.00
+## flightrsk*                                       38 137   3.09   1.90   3.00
+## oe_qual*                                         39 137  69.00  39.69  69.00
+## oe_comm*                                         40 137  69.00  39.69  69.00
+## oe_interview*                                    41 136  68.50  39.40  68.50
+## oe_offer*                                        42 136  68.50  39.40  68.50
+## oe_referral*                                     43 135  68.00  39.12  68.00
+## ethnicity*                                       44 136   2.88   0.37   3.00
+## race_1*                                          45 126   1.00   0.00   1.00
+## race_2*                                          46   5   1.00   0.00   1.00
+## race_3*                                          47   8   1.00   0.00   1.00
+## race_4*                                          48   5   1.00   0.00   1.00
+## race_5*                                          49   3   1.00   0.00   1.00
+## race_6                                           50   0    NaN     NA     NA
+## race_7*                                          51   1   1.00     NA   1.00
+## race_8                                           52   0    NaN     NA     NA
+## race_8_TEXT                                      53   0    NaN     NA     NA
+## gender*                                          54 137   1.25   0.45   1.00
+## gender_5_TEXT                                    55   0    NaN     NA     NA
+## Age                                              56 137  39.18  13.09  37.00
+## educ*                                            57 135   3.53   2.02   2.00
+## workexperience                                   58 137  18.71  11.35  17.00
+## country*                                         59 137  10.06   3.43  12.00
+## PROLIFIC_ID                                      60   0    NaN     NA     NA
+## gc                                               61   0    NaN     NA     NA
+## term                                             62   0    NaN     NA     NA
+## Profile_DO_high_overqual_profil                  63  68   1.00   0.00   1.00
+## Profile_DO_low_overqual_profile                  64  69   1.00   0.00   1.00
+## CommitmentManipulation_DO_highcommitment_HR      65  73   1.00   0.00   1.00
+## CommitmentManipulation_DO_neutralcommitment_HR   66  64   1.00   0.00   1.00
+## Competence_DO_skilled                            67 137   3.47   1.13   3.00
+## Competence_DO_competent                          68 137   3.45   1.10   3.00
+## Competence_DO_introcomp                          69 137   1.00   0.00   1.00
+## Competence_DO_finexp                             70 137   3.52   1.09   4.00
+## Competence_DO_productive                         71 137   3.56   1.16   4.00
+## commitment_DO_teamwork                           72 137   4.53   1.70   4.00
+## commitment_DO_committed                          73 137   4.66   1.66   5.00
+## commitment_DO_intrcommt                          74 137   1.00   0.00   1.00
+## commitment_DO_extrhrs                            75 137   4.30   1.65   4.00
+## commitment_DO_stay                               76 137   4.50   1.80   5.00
+## commitment_DO_flightrsk                          77 137   4.49   1.72   5.00
+## commitment_DO_commit_ind                         78 137   4.53   1.72   5.00
+##                                                trimmed    mad     min     max
+## StartDate                                          NaN     NA     Inf    -Inf
+## EndDate                                            NaN     NA     Inf    -Inf
+## Status*                                           1.00   0.00    1.00    1.00
+## IPAddress*                                       69.00  50.41    1.00  137.00
+## Progress                                        100.00   0.00  100.00  100.00
+## Duration (in seconds)                           685.05 309.86  202.00 2869.00
+## Finished                                           NaN     NA     Inf    -Inf
+## RecordedDate                                       NaN     NA     Inf    -Inf
+## ResponseId*                                      69.00  50.41    1.00  137.00
+## RecipientLastName                                  NaN     NA     Inf    -Inf
+## RecipientFirstName                                 NaN     NA     Inf    -Inf
+## RecipientEmail                                     NaN     NA     Inf    -Inf
+## ExternalReference                                  NaN     NA     Inf    -Inf
+## LocationLatitude                                 37.98   5.23   25.79   61.18
+## LocationLongitude                               -95.02  19.55 -149.95  -71.12
+## DistributionChannel*                              1.00   0.00    1.00    1.00
+## UserLanguage*                                     1.00   0.00    1.00    1.00
+## consent*                                          1.00   0.00    1.00    1.00
+## prolific_id*                                     69.00  50.41    1.00  137.00
+## hiringexperience*                                 1.00   0.00    1.00    1.00
+## companychk*                                       2.00   0.00    1.00    3.00
+## candatchk*                                        2.09   0.00    1.00    3.00
+## Location*                                         2.00   0.00    1.00    3.00
+## interview*                                        3.14   1.48    1.00    6.00
+## offer*                                            2.31   1.48    1.00    7.00
+## opencncrn*                                       68.50  50.41    1.00  136.00
+## openresolv*                                      66.69  49.67    1.00  133.00
+## referral*                                         1.77   0.00    1.00    2.00
+## competent*                                        2.09   0.00    1.00    4.00
+## productive*                                       2.09   0.00    1.00    4.00
+## skilled*                                          2.29   0.00    1.00    5.00
+## finexp*                                           3.12   2.97    1.00    6.00
+## committed*                                        2.30   1.48    1.00    6.00
+## commit_ind*                                       3.80   1.48    1.00    7.00
+## extrhrs*                                          2.26   1.48    1.00    6.00
+## teamwork*                                         3.56   1.48    1.00    7.00
+## stay*                                             3.03   1.48    1.00    7.00
+## flightrsk*                                        3.00   2.97    1.00    6.00
+## oe_qual*                                         69.00  50.41    1.00  137.00
+## oe_comm*                                         69.00  50.41    1.00  137.00
+## oe_interview*                                    68.50  50.41    1.00  136.00
+## oe_offer*                                        68.50  50.41    1.00  136.00
+## oe_referral*                                     68.00  50.41    1.00  135.00
+## ethnicity*                                        2.99   0.00    1.00    3.00
+## race_1*                                           1.00   0.00    1.00    1.00
+## race_2*                                           1.00   0.00    1.00    1.00
+## race_3*                                           1.00   0.00    1.00    1.00
+## race_4*                                           1.00   0.00    1.00    1.00
+## race_5*                                           1.00   0.00    1.00    1.00
+## race_6                                             NaN     NA     Inf    -Inf
+## race_7*                                           1.00   0.00    1.00    1.00
+## race_8                                             NaN     NA     Inf    -Inf
+## race_8_TEXT                                        NaN     NA     Inf    -Inf
+## gender*                                           1.18   0.00    1.00    3.00
+## gender_5_TEXT                                      NaN     NA     Inf    -Inf
+## Age                                              37.98  13.34   19.00   79.00
+## educ*                                             3.41   1.48    1.00    7.00
+## workexperience                                   17.86  11.86    2.00   56.00
+## country*                                         10.34   1.48    1.00   15.00
+## PROLIFIC_ID                                        NaN     NA     Inf    -Inf
+## gc                                                 NaN     NA     Inf    -Inf
+## term                                               NaN     NA     Inf    -Inf
+## Profile_DO_high_overqual_profil                   1.00   0.00    1.00    1.00
+## Profile_DO_low_overqual_profile                   1.00   0.00    1.00    1.00
+## CommitmentManipulation_DO_highcommitment_HR       1.00   0.00    1.00    1.00
+## CommitmentManipulation_DO_neutralcommitment_HR    1.00   0.00    1.00    1.00
+## Competence_DO_skilled                             3.46   1.48    2.00    5.00
+## Competence_DO_competent                           3.44   1.48    2.00    5.00
+## Competence_DO_introcomp                           1.00   0.00    1.00    1.00
+## Competence_DO_finexp                              3.52   1.48    2.00    5.00
+## Competence_DO_productive                          3.58   1.48    2.00    5.00
+## commitment_DO_teamwork                            4.53   1.48    2.00    7.00
+## commitment_DO_committed                           4.70   1.48    2.00    7.00
+## commitment_DO_intrcommt                           1.00   0.00    1.00    1.00
+## commitment_DO_extrhrs                             4.25   1.48    2.00    7.00
+## commitment_DO_stay                                4.50   2.97    2.00    7.00
+## commitment_DO_flightrsk                           4.49   2.97    2.00    7.00
+## commitment_DO_commit_ind                          4.53   1.48    2.00    7.00
+##                                                  range  skew kurtosis    se
+## StartDate                                         -Inf    NA       NA    NA
+## EndDate                                           -Inf    NA       NA    NA
+## Status*                                           0.00   NaN      NaN  0.00
+## IPAddress*                                      136.00  0.00    -1.23  3.39
+## Progress                                          0.00   NaN      NaN  0.00
+## Duration (in seconds)                          2667.00  1.98     4.05 43.71
+## Finished                                          -Inf    NA       NA    NA
+## RecordedDate                                      -Inf    NA       NA    NA
+## ResponseId*                                     136.00  0.00    -1.23  3.39
+## RecipientLastName                                 -Inf    NA       NA    NA
+## RecipientFirstName                                -Inf    NA       NA    NA
+## RecipientEmail                                    -Inf    NA       NA    NA
+## ExternalReference                                 -Inf    NA       NA    NA
+## LocationLatitude                                 35.39  0.36     1.47  0.48
+## LocationLongitude                                78.83 -0.51    -0.74  1.47
+## DistributionChannel*                              0.00   NaN      NaN  0.00
+## UserLanguage*                                     0.00   NaN      NaN  0.00
+## consent*                                          0.00   NaN      NaN  0.00
+## prolific_id*                                    136.00  0.00    -1.23  3.39
+## hiringexperience*                                 0.00   NaN      NaN  0.00
+## companychk*                                       2.00  0.00    19.50  0.02
+## candatchk*                                        2.00  1.45     1.29  0.03
+## Location*                                         2.00  0.00    64.50  0.01
+## interview*                                        5.00 -0.09    -1.92  0.16
+## offer*                                            6.00  0.93    -0.64  0.16
+## opencncrn*                                      135.00  0.00    -1.23  3.38
+## openresolv*                                     132.00  0.01    -1.23  3.33
+## referral*                                         1.00 -0.98    -1.04  0.04
+## competent*                                        3.00  0.43    -1.69  0.12
+## productive*                                       3.00  0.39    -1.61  0.11
+## skilled*                                          4.00  0.60    -1.33  0.14
+## finexp*                                           5.00  0.15    -1.62  0.18
+## committed*                                        5.00  0.37    -1.34  0.12
+## commit_ind*                                       6.00 -0.38    -1.19  0.16
+## extrhrs*                                          5.00  0.99     0.87  0.12
+## teamwork*                                         6.00  0.26    -0.91  0.14
+## stay*                                             6.00  0.62     0.02  0.13
+## flightrsk*                                        5.00  0.49    -1.19  0.16
+## oe_qual*                                        136.00  0.00    -1.23  3.39
+## oe_comm*                                        136.00  0.00    -1.23  3.39
+## oe_interview*                                   135.00  0.00    -1.23  3.38
+## oe_offer*                                       135.00  0.00    -1.23  3.38
+## oe_referral*                                    134.00  0.00    -1.23  3.37
+## ethnicity*                                        2.00 -3.20    10.23  0.03
+## race_1*                                           0.00   NaN      NaN  0.00
+## race_2*                                           0.00   NaN      NaN  0.00
+## race_3*                                           0.00   NaN      NaN  0.00
+## race_4*                                           0.00   NaN      NaN  0.00
+## race_5*                                           0.00   NaN      NaN  0.00
+## race_6                                            -Inf    NA       NA    NA
+## race_7*                                           0.00    NA       NA    NA
+## race_8                                            -Inf    NA       NA    NA
+## race_8_TEXT                                       -Inf    NA       NA    NA
+## gender*                                           2.00  1.39     0.56  0.04
+## gender_5_TEXT                                     -Inf    NA       NA    NA
+## Age                                              60.00  0.74    -0.14  1.12
+## educ*                                             6.00  0.54    -1.15  0.17
+## workexperience                                   54.00  0.65    -0.13  0.97
+## country*                                         14.00 -0.62    -0.99  0.29
+## PROLIFIC_ID                                       -Inf    NA       NA    NA
+## gc                                                -Inf    NA       NA    NA
+## term                                              -Inf    NA       NA    NA
+## Profile_DO_high_overqual_profil                   0.00   NaN      NaN  0.00
+## Profile_DO_low_overqual_profile                   0.00   NaN      NaN  0.00
+## CommitmentManipulation_DO_highcommitment_HR       0.00   NaN      NaN  0.00
+## CommitmentManipulation_DO_neutralcommitment_HR    0.00   NaN      NaN  0.00
+## Competence_DO_skilled                             3.00  0.02    -1.41  0.10
+## Competence_DO_competent                           3.00  0.09    -1.34  0.09
+## Competence_DO_introcomp                           0.00   NaN      NaN  0.00
+## Competence_DO_finexp                              3.00 -0.06    -1.30  0.09
+## Competence_DO_productive                          3.00 -0.05    -1.47  0.10
+## commitment_DO_teamwork                            5.00  0.01    -1.26  0.15
+## commitment_DO_committed                           5.00 -0.08    -1.26  0.14
+## commitment_DO_intrcommt                           0.00   NaN      NaN  0.00
+## commitment_DO_extrhrs                             5.00  0.12    -1.19  0.14
+## commitment_DO_stay                                5.00 -0.03    -1.45  0.15
+## commitment_DO_flightrsk                           5.00  0.03    -1.26  0.15
+## commitment_DO_commit_ind                          5.00 -0.05    -1.29  0.15
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# add id column}
+\NormalTok{data <-}\StringTok{ }\NormalTok{tibble}\OperatorTok{::}\KeywordTok{rowid_to_column}\NormalTok{(data, }\StringTok{"id"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{prepare-data-for-analysis---create-columns-etc.}{%
+\paragraph{Prepare data for analysis - create columns
+etc.}\label{prepare-data-for-analysis---create-columns-etc.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{### Clean data (first step)}
+
+\CommentTok{# select needed columns}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{select}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{'ResponseId'}\NormalTok{, }\StringTok{'id'}\NormalTok{, }\StringTok{'companychk'}\NormalTok{, }\StringTok{'candatchk'}\NormalTok{, }\StringTok{'Location'}\NormalTok{, }\StringTok{'interview'}\NormalTok{, }\StringTok{'offer'}\NormalTok{, }\StringTok{'opencncrn'}\NormalTok{, }\StringTok{'openresolv'}\NormalTok{, }\StringTok{'referral'}\NormalTok{, }\StringTok{'competent'}\NormalTok{, }\StringTok{'productive'}\NormalTok{, }\StringTok{'skilled'}\NormalTok{, }\StringTok{'finexp'}\NormalTok{, }\StringTok{'committed'}\NormalTok{, }\StringTok{'commit_ind'}\NormalTok{, }\StringTok{'extrhrs'}\NormalTok{, }\StringTok{'teamwork'}\NormalTok{, }\StringTok{'stay'}\NormalTok{, }\StringTok{'flightrsk'}\NormalTok{, }\StringTok{'oe_qual'}\NormalTok{, }\StringTok{'oe_comm'}\NormalTok{, }\StringTok{'oe_interview'}\NormalTok{, }\StringTok{'oe_offer'}\NormalTok{, }\StringTok{'oe_referral'}\NormalTok{, }\StringTok{'ethnicity'}\NormalTok{, }\StringTok{'race_1'}\NormalTok{, }\StringTok{'race_2'}\NormalTok{, }\StringTok{'race_3'}\NormalTok{, }\StringTok{'race_4'}\NormalTok{, }\StringTok{'race_5'}\NormalTok{, }\StringTok{'race_6'}\NormalTok{, }\StringTok{'race_7'}\NormalTok{, }\StringTok{'race_8'}\NormalTok{, }\StringTok{'race_8_TEXT'}\NormalTok{, }\StringTok{'gender'}\NormalTok{, }\StringTok{'Age'}\NormalTok{, }\StringTok{'educ'}\NormalTok{, }\StringTok{'workexperience'}\NormalTok{, }\StringTok{'Profile_DO_high_overqual_profil'}\NormalTok{, }\StringTok{'Profile_DO_low_overqual_profile'}\NormalTok{, }\StringTok{'CommitmentManipulation_DO_highcommitment_HR'}\NormalTok{, }\StringTok{'CommitmentManipulation_DO_neutralcommitment_HR'}\NormalTok{))}
+
+
+\CommentTok{# data manipulation - scores}
+
+\CommentTok{# likelihood of getting an interview (score)}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{interview_score =} \KeywordTok{ifelse}\NormalTok{(interview }\OperatorTok{==}\StringTok{ "Very Unlikely"}\NormalTok{, }\DecValTok{1}\NormalTok{,}
+                                  \KeywordTok{ifelse}\NormalTok{(interview }\OperatorTok{==}\StringTok{ "Unlikely"}\NormalTok{, }\DecValTok{2}\NormalTok{,}
+                                         \KeywordTok{ifelse}\NormalTok{(interview }\OperatorTok{==}\StringTok{ "Somewhat Unlikely"}\NormalTok{, }\DecValTok{3}\NormalTok{,}
+                                                \KeywordTok{ifelse}\NormalTok{(interview }\OperatorTok{==}\StringTok{ "Undecided"}\NormalTok{, }\DecValTok{4}\NormalTok{,}
+                                                       \KeywordTok{ifelse}\NormalTok{(interview }\OperatorTok{==}\StringTok{ "Somewhat Likely"}\NormalTok{, }\DecValTok{5}\NormalTok{,}
+                                                              \KeywordTok{ifelse}\NormalTok{(interview }\OperatorTok{==}\StringTok{ "Likely"}\NormalTok{, }\DecValTok{6}\NormalTok{, }
+                                                                     \KeywordTok{ifelse}\NormalTok{(interview }\OperatorTok{==}\StringTok{ "Very Likely"}\NormalTok{, }\DecValTok{7}\NormalTok{, }\OtherTok{NA}\NormalTok{))))))))}
+
+\CommentTok{# likelihood of getting an offer (score)}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{offer_score =} \KeywordTok{ifelse}\NormalTok{(offer }\OperatorTok{==}\StringTok{ "Very Unlikely"}\NormalTok{, }\DecValTok{1}\NormalTok{, }
+                              \KeywordTok{ifelse}\NormalTok{(offer }\OperatorTok{==}\StringTok{ "Unlikely"}\NormalTok{, }\DecValTok{2}\NormalTok{, }
+                                     \KeywordTok{ifelse}\NormalTok{(offer }\OperatorTok{==}\StringTok{ "Somewhat Unlikely"}\NormalTok{, }\DecValTok{3}\NormalTok{, }
+                                            \KeywordTok{ifelse}\NormalTok{(offer }\OperatorTok{==}\StringTok{ "Undecided"}\NormalTok{, }\DecValTok{4}\NormalTok{, }
+                                                   \KeywordTok{ifelse}\NormalTok{(offer }\OperatorTok{==}\StringTok{ "Somewhat Likely"}\NormalTok{, }\DecValTok{5}\NormalTok{, }
+                                                          \KeywordTok{ifelse}\NormalTok{(offer }\OperatorTok{==}\StringTok{ "Likely"}\NormalTok{, }\DecValTok{6}\NormalTok{,  }
+                                                                 \KeywordTok{ifelse}\NormalTok{(offer }\OperatorTok{==}\StringTok{ "Very Likely"}\NormalTok{, }\DecValTok{7}\NormalTok{, }\OtherTok{NA}\NormalTok{))))))))}
+
+
+\CommentTok{# referral or not}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{refer =} \KeywordTok{ifelse}\NormalTok{(referral }\OperatorTok{==}\StringTok{ "Yes"}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{refer =} \KeywordTok{as.factor}\NormalTok{(refer))}
+
+
+\CommentTok{### Manipulation checks}
+
+\CommentTok{# competent}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{competent_score =} \KeywordTok{ifelse}\NormalTok{(competent }\OperatorTok{==}\StringTok{ "Strongly disagree"}\NormalTok{, }\DecValTok{1}\NormalTok{, }
+                                  \KeywordTok{ifelse}\NormalTok{(competent }\OperatorTok{==}\StringTok{ "Disagree"}\NormalTok{, }\DecValTok{2}\NormalTok{, }
+                                         \KeywordTok{ifelse}\NormalTok{(competent }\OperatorTok{==}\StringTok{ "Somewhat disagree"}\NormalTok{, }\DecValTok{3}\NormalTok{, }
+                                                \KeywordTok{ifelse}\NormalTok{(competent }\OperatorTok{==}\StringTok{ "Neither agree nor disagree"}\NormalTok{, }\DecValTok{4}\NormalTok{, }
+                                                       \KeywordTok{ifelse}\NormalTok{(competent }\OperatorTok{==}\StringTok{ "Somewhat agree"}\NormalTok{, }\DecValTok{5}\NormalTok{, }
+                                                              \KeywordTok{ifelse}\NormalTok{(competent }\OperatorTok{==}\StringTok{ "Agree"}\NormalTok{, }\DecValTok{6}\NormalTok{, }
+                                                                     \KeywordTok{ifelse}\NormalTok{(competent }\OperatorTok{==}\StringTok{ "Strongly agree"}\NormalTok{, }\DecValTok{7}\NormalTok{, }\OtherTok{NA}\NormalTok{))))))))}
+
+
+\CommentTok{# productive}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{productive_score =} \KeywordTok{ifelse}\NormalTok{(productive }\OperatorTok{==}\StringTok{ "Strongly disagree"}\NormalTok{, }\DecValTok{1}\NormalTok{, }
+                                   \KeywordTok{ifelse}\NormalTok{(productive }\OperatorTok{==}\StringTok{ "Disagree"}\NormalTok{, }\DecValTok{2}\NormalTok{, }
+                                          \KeywordTok{ifelse}\NormalTok{(productive }\OperatorTok{==}\StringTok{ "Somewhat disagree"}\NormalTok{, }\DecValTok{3}\NormalTok{, }
+                                                 \KeywordTok{ifelse}\NormalTok{(productive }\OperatorTok{==}\StringTok{ "Neither agree nor disagree"}\NormalTok{, }\DecValTok{4}\NormalTok{, }
+                                                        \KeywordTok{ifelse}\NormalTok{(productive }\OperatorTok{==}\StringTok{ "Somewhat agree"}\NormalTok{, }\DecValTok{5}\NormalTok{, }
+                                                               \KeywordTok{ifelse}\NormalTok{(productive }\OperatorTok{==}\StringTok{ "Agree"}\NormalTok{, }\DecValTok{6}\NormalTok{,}
+                                                                      \KeywordTok{ifelse}\NormalTok{(productive }\OperatorTok{==}\StringTok{ "Strongly agree"}\NormalTok{, }\DecValTok{7}\NormalTok{, }\OtherTok{NA}\NormalTok{))))))))}
+
+\CommentTok{# skilled}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{skilled_score =} \KeywordTok{ifelse}\NormalTok{(skilled }\OperatorTok{==}\StringTok{ "Strongly disagree"}\NormalTok{, }\DecValTok{1}\NormalTok{,}
+                                \KeywordTok{ifelse}\NormalTok{(skilled }\OperatorTok{==}\StringTok{ "Disagree"}\NormalTok{, }\DecValTok{2}\NormalTok{,}
+                                       \KeywordTok{ifelse}\NormalTok{(skilled }\OperatorTok{==}\StringTok{ "Somewhat disagree"}\NormalTok{, }\DecValTok{3}\NormalTok{,}
+                                              \KeywordTok{ifelse}\NormalTok{(skilled }\OperatorTok{==}\StringTok{ "Neither agree nor disagree"}\NormalTok{, }\DecValTok{4}\NormalTok{,}
+                                                     \KeywordTok{ifelse}\NormalTok{(skilled }\OperatorTok{==}\StringTok{ "Somewhat agree"}\NormalTok{, }\DecValTok{5}\NormalTok{,}
+                                                            \KeywordTok{ifelse}\NormalTok{(skilled }\OperatorTok{==}\StringTok{ "Agree"}\NormalTok{, }\DecValTok{6}\NormalTok{,}
+                                                                   \KeywordTok{ifelse}\NormalTok{(skilled }\OperatorTok{==}\StringTok{ "Strongly agree"}\NormalTok{, }\DecValTok{7}\NormalTok{, }\OtherTok{NA}\NormalTok{))))))))}
+
+\CommentTok{# finexp}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{finexp_score =} \KeywordTok{ifelse}\NormalTok{(finexp }\OperatorTok{==}\StringTok{ "Strongly disagree"}\NormalTok{, }\DecValTok{1}\NormalTok{,}
+                               \KeywordTok{ifelse}\NormalTok{(finexp }\OperatorTok{==}\StringTok{ "Disagree"}\NormalTok{, }\DecValTok{2}\NormalTok{,}
+                                      \KeywordTok{ifelse}\NormalTok{(finexp }\OperatorTok{==}\StringTok{ "Somewhat disagree"}\NormalTok{, }\DecValTok{3}\NormalTok{,}
+                                             \KeywordTok{ifelse}\NormalTok{(finexp }\OperatorTok{==}\StringTok{ "Neither agree nor disagree"}\NormalTok{, }\DecValTok{4}\NormalTok{,}
+                                                    \KeywordTok{ifelse}\NormalTok{(finexp }\OperatorTok{==}\StringTok{ "Somewhat agree"}\NormalTok{, }\DecValTok{5}\NormalTok{,}
+                                                           \KeywordTok{ifelse}\NormalTok{(finexp }\OperatorTok{==}\StringTok{ "Agree"}\NormalTok{, }\DecValTok{6}\NormalTok{,}
+                                                                  \KeywordTok{ifelse}\NormalTok{(finexp }\OperatorTok{==}\StringTok{ "Strongly agree"}\NormalTok{, }\DecValTok{7}\NormalTok{, }\OtherTok{NA}\NormalTok{))))))))}
+
+\CommentTok{# committed}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{commit_score =} \KeywordTok{ifelse}\NormalTok{(committed }\OperatorTok{==}\StringTok{ "Highly uncommitted"}\NormalTok{, }\DecValTok{1}\NormalTok{,}
+                               \KeywordTok{ifelse}\NormalTok{(committed }\OperatorTok{==}\StringTok{ "Uncommitted"}\NormalTok{, }\DecValTok{2}\NormalTok{,}
+                                      \KeywordTok{ifelse}\NormalTok{(committed }\OperatorTok{==}\StringTok{ "Somewhat uncommitted"}\NormalTok{, }\DecValTok{3}\NormalTok{,}
+                                             \KeywordTok{ifelse}\NormalTok{(committed }\OperatorTok{==}\StringTok{ "Neither committed nor uncommitted"}\NormalTok{, }\DecValTok{4}\NormalTok{,}
+                                                    \KeywordTok{ifelse}\NormalTok{(committed }\OperatorTok{==}\StringTok{ "Somewhat committed"}\NormalTok{, }\DecValTok{5}\NormalTok{,}
+                                                           \KeywordTok{ifelse}\NormalTok{(committed }\OperatorTok{==}\StringTok{ "Committed"}\NormalTok{, }\DecValTok{6}\NormalTok{,}
+                                                                  \KeywordTok{ifelse}\NormalTok{(committed }\OperatorTok{==}\StringTok{ "Highly committed"}\NormalTok{, }\DecValTok{7}\NormalTok{, }\OtherTok{NA}\NormalTok{))))))))}
+
+\CommentTok{# commit_ind}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{commit_ind_score =} \KeywordTok{ifelse}\NormalTok{(commit_ind }\OperatorTok{==}\StringTok{ "Highly uncommitted"}\NormalTok{, }\DecValTok{1}\NormalTok{,}
+                                   \KeywordTok{ifelse}\NormalTok{(commit_ind }\OperatorTok{==}\StringTok{ "Uncommitted"}\NormalTok{, }\DecValTok{2}\NormalTok{,}
+                                          \KeywordTok{ifelse}\NormalTok{(commit_ind }\OperatorTok{==}\StringTok{ "Somewhat uncommitted"}\NormalTok{, }\DecValTok{3}\NormalTok{,}
+                                                 \KeywordTok{ifelse}\NormalTok{(commit_ind }\OperatorTok{==}\StringTok{ "Neither committed nor uncommitted"}\NormalTok{, }\DecValTok{4}\NormalTok{,}
+                                                        \KeywordTok{ifelse}\NormalTok{(commit_ind }\OperatorTok{==}\StringTok{ "Somewhat committed"}\NormalTok{, }\DecValTok{5}\NormalTok{,}
+                                                               \KeywordTok{ifelse}\NormalTok{(commit_ind }\OperatorTok{==}\StringTok{ "Committed"}\NormalTok{, }\DecValTok{6}\NormalTok{,}
+                                                                      \KeywordTok{ifelse}\NormalTok{(commit_ind }\OperatorTok{==}\StringTok{ "Highly committed"}\NormalTok{, }\DecValTok{7}\NormalTok{, }\OtherTok{NA}\NormalTok{))))))))}
+
+
+
+\CommentTok{# extra hours score}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{extrhrs_score =} \KeywordTok{ifelse}\NormalTok{(extrhrs }\OperatorTok{==}\StringTok{ "Very unlikely"}\NormalTok{, }\DecValTok{1}\NormalTok{,}
+                                \KeywordTok{ifelse}\NormalTok{(extrhrs }\OperatorTok{==}\StringTok{ "Unlikely"}\NormalTok{, }\DecValTok{2}\NormalTok{,}
+                                       \KeywordTok{ifelse}\NormalTok{(extrhrs }\OperatorTok{==}\StringTok{ "Somewhat unlikely"}\NormalTok{, }\DecValTok{3}\NormalTok{,}
+                                              \KeywordTok{ifelse}\NormalTok{(extrhrs }\OperatorTok{==}\StringTok{ "Neither likely nor unlikely"}\NormalTok{, }\DecValTok{4}\NormalTok{,}
+                                                     \KeywordTok{ifelse}\NormalTok{(extrhrs }\OperatorTok{==}\StringTok{ "Somewhat likely"}\NormalTok{, }\DecValTok{5}\NormalTok{,}
+                                                            \KeywordTok{ifelse}\NormalTok{(extrhrs }\OperatorTok{==}\StringTok{ "Likely"}\NormalTok{, }\DecValTok{6}\NormalTok{,}
+                                                                   \KeywordTok{ifelse}\NormalTok{(extrhrs }\OperatorTok{==}\StringTok{ "Very likely"}\NormalTok{, }\DecValTok{7}\NormalTok{, }\OtherTok{NA}\NormalTok{))))))))}
+
+\CommentTok{# teamwork score}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{teamwork_score =} \KeywordTok{ifelse}\NormalTok{(teamwork }\OperatorTok{==}\StringTok{ "Very Unlikely"}\NormalTok{, }\DecValTok{1}\NormalTok{, }
+                                 \KeywordTok{ifelse}\NormalTok{(teamwork }\OperatorTok{==}\StringTok{ "Unlikely"}\NormalTok{, }\DecValTok{2}\NormalTok{, }
+                                        \KeywordTok{ifelse}\NormalTok{(teamwork }\OperatorTok{==}\StringTok{ "Somewhat unlikely"}\NormalTok{, }\DecValTok{3}\NormalTok{, }
+                                               \KeywordTok{ifelse}\NormalTok{(teamwork }\OperatorTok{==}\StringTok{ "Neither likely nor unlikely"}\NormalTok{, }\DecValTok{4}\NormalTok{, }
+                                                      \KeywordTok{ifelse}\NormalTok{(teamwork }\OperatorTok{==}\StringTok{ "Somewhat likely"}\NormalTok{, }\DecValTok{5}\NormalTok{, }
+                                                             \KeywordTok{ifelse}\NormalTok{(teamwork }\OperatorTok{==}\StringTok{ "Likely"}\NormalTok{, }\DecValTok{6}\NormalTok{, }
+                                                                    \KeywordTok{ifelse}\NormalTok{(teamwork }\OperatorTok{==}\StringTok{ "Very likely"}\NormalTok{, }\DecValTok{7}\NormalTok{, }\OtherTok{NA}\NormalTok{))))))))}
+
+
+
+\CommentTok{# likelihood of staying score}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{stay_score =} \KeywordTok{ifelse}\NormalTok{(stay }\OperatorTok{==}\StringTok{ "Less than 1 year"}\NormalTok{, }\DecValTok{1}\NormalTok{,}
+                             \KeywordTok{ifelse}\NormalTok{(stay }\OperatorTok{==}\StringTok{ "1-2 years"}\NormalTok{, }\DecValTok{2}\NormalTok{,}
+                                    \KeywordTok{ifelse}\NormalTok{(stay }\OperatorTok{==}\StringTok{ "2-3 years"}\NormalTok{, }\DecValTok{3}\NormalTok{,}
+                                           \KeywordTok{ifelse}\NormalTok{(stay }\OperatorTok{==}\StringTok{ "3-4 years"}\NormalTok{, }\DecValTok{4}\NormalTok{,}
+                                                  \KeywordTok{ifelse}\NormalTok{(stay }\OperatorTok{==}\StringTok{ "4-5 years"}\NormalTok{, }\DecValTok{5}\NormalTok{,}
+                                                         \KeywordTok{ifelse}\NormalTok{(stay }\OperatorTok{==}\StringTok{ "5-6 years"}\NormalTok{, }\DecValTok{6}\NormalTok{,}
+                                                                \KeywordTok{ifelse}\NormalTok{(stay }\OperatorTok{==}\StringTok{ "Greater than 6 years"}\NormalTok{, }\DecValTok{7}\NormalTok{, }\OtherTok{NA}\NormalTok{))))))))}
+
+
+
+
+
+\CommentTok{# flight risk score (flightrsk)}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{flight_score =} \KeywordTok{ifelse}\NormalTok{(flightrsk }\OperatorTok{==}\StringTok{ "Very unlikely"}\NormalTok{, }\DecValTok{1}\NormalTok{, }
+                               \KeywordTok{ifelse}\NormalTok{(flightrsk }\OperatorTok{==}\StringTok{ "Unlikely"}\NormalTok{, }\DecValTok{2}\NormalTok{,}
+                                      \KeywordTok{ifelse}\NormalTok{(flightrsk }\OperatorTok{==}\StringTok{ "Somewhat unlikely"}\NormalTok{, }\DecValTok{3}\NormalTok{,}
+                                             \KeywordTok{ifelse}\NormalTok{(flightrsk }\OperatorTok{==}\StringTok{ "Neither likely nor unlikely"}\NormalTok{, }\DecValTok{4}\NormalTok{, }
+                                                    \KeywordTok{ifelse}\NormalTok{(flightrsk }\OperatorTok{==}\StringTok{ "Somewhat likely"}\NormalTok{, }\DecValTok{5}\NormalTok{,}
+                                                           \KeywordTok{ifelse}\NormalTok{(flightrsk }\OperatorTok{==}\StringTok{ "Likely"}\NormalTok{, }\DecValTok{6}\NormalTok{,}
+                                                                  \KeywordTok{ifelse}\NormalTok{(flightrsk }\OperatorTok{==}\StringTok{ "Very likely"}\NormalTok{, }\DecValTok{7}\NormalTok{, }\OtherTok{NA}\NormalTok{))))))))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{### Data cleaning continuted - demographic information}
+
+\CommentTok{#summary(as.factor(data$race_1))}
+\CommentTok{#summary(as.factor(data$race_2))}
+\CommentTok{#summary(as.factor(data$race_3))}
+\CommentTok{#summary(as.factor(data$race_4))}
+\CommentTok{#summary(as.factor(data$race_5))}
+\CommentTok{##summary(as.factor(data$race_6))}
+\CommentTok{#summary(as.factor(data$race_7))}
+\CommentTok{##summary(as.factor(data$race_8))}
+\CommentTok{##summary(as.factor(data$race_8_TEXT))}
+
+
+\CommentTok{# ethnicity}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{ethnic_hispanic =} \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(ethnicity), }\DecValTok{0}\NormalTok{, }\KeywordTok{ifelse}\NormalTok{(ethnicity }\OperatorTok{==}\StringTok{ "Hispanic"}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)))}
+
+\CommentTok{# race}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{White =} \KeywordTok{ifelse}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(race_}\DecValTok{1}\NormalTok{), }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Black =} \KeywordTok{ifelse}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(race_}\DecValTok{2}\NormalTok{), }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Hispanic =} \KeywordTok{ifelse}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(race_}\DecValTok{3}\NormalTok{), }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Asian =} \KeywordTok{ifelse}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(race_}\DecValTok{4}\NormalTok{), }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Native =} \KeywordTok{ifelse}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(race_}\DecValTok{5}\NormalTok{), }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Decline =} \KeywordTok{ifelse}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(race_}\DecValTok{7}\NormalTok{), }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\CommentTok{# variables with no obs dropped (race_6, race_8, race_8_TEXT)}
+
+\CommentTok{# create multiple race variable}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Race_sum =}\NormalTok{ White }\OperatorTok{+}\StringTok{ }\NormalTok{Black }\OperatorTok{+}\StringTok{ }\NormalTok{Hispanic }\OperatorTok{+}\StringTok{ }\NormalTok{Asian }\OperatorTok{+}\StringTok{ }\NormalTok{Native }\OperatorTok{+}\StringTok{ }\NormalTok{Decline)}
+
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Race_multi =} \KeywordTok{ifelse}\NormalTok{(Race_sum }\OperatorTok{>}\StringTok{ }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+
+\CommentTok{# create one race variable (factor)}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{race =} \KeywordTok{ifelse}\NormalTok{(Race_multi }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{, }\StringTok{"Multirace"}\NormalTok{,}
+                       \KeywordTok{ifelse}\NormalTok{(White }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{, }\StringTok{"White"}\NormalTok{,}
+                              \KeywordTok{ifelse}\NormalTok{(Black }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{, }\StringTok{"Black"}\NormalTok{,}
+                                     \KeywordTok{ifelse}\NormalTok{(Hispanic }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{, }\StringTok{"Hispanic"}\NormalTok{,}
+                                            \KeywordTok{ifelse}\NormalTok{(Asian }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{, }\StringTok{"Asian"}\NormalTok{,}
+                                                   \KeywordTok{ifelse}\NormalTok{(Native }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{, }\StringTok{"Native"}\NormalTok{,}
+                                                          \KeywordTok{ifelse}\NormalTok{(Decline }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{, }\StringTok{"Decline"}\NormalTok{, }\OtherTok{NA}\NormalTok{)))))))) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{race =} \KeywordTok{as.factor}\NormalTok{(race))}
+
+\CommentTok{# gender}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{gender =} \KeywordTok{as.factor}\NormalTok{(gender))}
+
+\CommentTok{# education}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{educ =} \KeywordTok{as.factor}\NormalTok{(educ))}
+
+
+\CommentTok{#summary(data$educ)}
+
+\CommentTok{# add education level (ordinal variable)}
+\CommentTok{# educ_ordinal}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{educ_ordinal =} \KeywordTok{ifelse}\NormalTok{(educ }\OperatorTok{==}\StringTok{ "Less than High School"}\NormalTok{, }\DecValTok{1}\NormalTok{,}
+                               \KeywordTok{ifelse}\NormalTok{(educ }\OperatorTok{==}\StringTok{ "High School / GED"}\NormalTok{, }\DecValTok{2}\NormalTok{,}
+                                      \KeywordTok{ifelse}\NormalTok{(educ }\OperatorTok{==}\StringTok{ "Some College"}\NormalTok{, }\DecValTok{3}\NormalTok{,}
+                                             \KeywordTok{ifelse}\NormalTok{(educ }\OperatorTok{==}\StringTok{ "2-year College Degree"}\NormalTok{, }\DecValTok{4}\NormalTok{,}
+                                                    \KeywordTok{ifelse}\NormalTok{(educ }\OperatorTok{==}\StringTok{ "4-year College Degree"}\NormalTok{, }\DecValTok{5}\NormalTok{,}
+                                                           \KeywordTok{ifelse}\NormalTok{(educ }\OperatorTok{==}\StringTok{ "Masters Degree"}\NormalTok{, }\DecValTok{6}\NormalTok{,}
+                                                                  \KeywordTok{ifelse}\NormalTok{(educ }\OperatorTok{==}\StringTok{ "Doctoral Degree"}\NormalTok{, }\DecValTok{7}\NormalTok{,}
+                                                                         \KeywordTok{ifelse}\NormalTok{(educ }\OperatorTok{==}\StringTok{ "Professional Degree (JD, MD)"}\NormalTok{, }\DecValTok{8}\NormalTok{, }\OtherTok{NA}\NormalTok{)))))))))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Treatment conditions}
+
+\CommentTok{# Overqual condition (Capability)}
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Overqual =} \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(Profile_DO_high_overqual_profil), }\StringTok{"Low"}\NormalTok{, }\StringTok{"High"}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Overqual =} \KeywordTok{as.factor}\NormalTok{(Overqual))}
+
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Commitment =} \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(CommitmentManipulation_DO_highcommitment_HR), }\StringTok{"Neutral"}\NormalTok{, }\StringTok{"High"}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Commitment =} \KeywordTok{as.factor}\NormalTok{(Commitment))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Before selecting out variables, let's save this version as a csv file}
+\CommentTok{#write.csv(data, "/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/data_fin_wrangled.csv", row.names = F)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# clean data (select needed columns only - exclude open-ended questions as well)}
+\NormalTok{data_clean <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{select}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{'id'}\NormalTok{, }\StringTok{'Commitment'}\NormalTok{, }\StringTok{'Overqual'}\NormalTok{, }\StringTok{'offer_score'}\NormalTok{, }\StringTok{'interview_score'}\NormalTok{, }\StringTok{'refer'}\NormalTok{, }\StringTok{'competent_score'}\NormalTok{, }\StringTok{'productive_score'}\NormalTok{, }\StringTok{'skilled_score'}\NormalTok{, }\StringTok{'finexp_score'}\NormalTok{, }\StringTok{'commit_score'}\NormalTok{, }\StringTok{'commit_ind_score'}\NormalTok{, }\StringTok{'extrhrs_score'}\NormalTok{, }\StringTok{'teamwork_score'}\NormalTok{, }\StringTok{'stay_score'}\NormalTok{, }\StringTok{'flight_score'}\NormalTok{, }\StringTok{'gender'}\NormalTok{, }\StringTok{'Age'}\NormalTok{, }\StringTok{'ethnic_hispanic'}\NormalTok{, }\StringTok{'race'}\NormalTok{, }\StringTok{'educ_ordinal'}\NormalTok{, }\StringTok{'workexperience'}\NormalTok{, }\StringTok{'White'}\NormalTok{, }\StringTok{'Black'}\NormalTok{, }\StringTok{'Hispanic'}\NormalTok{, }\StringTok{'Asian'}\NormalTok{, }\StringTok{'Native'}\NormalTok{, }\StringTok{'Decline'}\NormalTok{, }\StringTok{'educ'}\NormalTok{))}
+
+
+\NormalTok{data_clean <-}\StringTok{ }\NormalTok{data_clean }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Commitment =} \KeywordTok{factor}\NormalTok{(Commitment, }\DataTypeTok{levels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Neutral"}\NormalTok{, }\StringTok{"High"}\NormalTok{), }\DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Neutral"}\NormalTok{, }\StringTok{"High"}\NormalTok{))) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Overqual =} \KeywordTok{factor}\NormalTok{(Overqual, }\DataTypeTok{levels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Low"}\NormalTok{, }\StringTok{"High"}\NormalTok{), }\DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Low"}\NormalTok{, }\StringTok{"High"}\NormalTok{)))}
+
+\CommentTok{# save the clean data}
+\CommentTok{#write.csv(data_clean, "/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/data_fin_clean.csv", row.names = F)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Data with neutral commitment condition (for t-test)}
+\NormalTok{data_neutral_commit <-}\StringTok{ }\NormalTok{data_clean }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Commitment }\OperatorTok{==}\StringTok{ "Neutral"}\NormalTok{)}
+
+\CommentTok{# Data with high commitment condition (fot t-test)}
+\NormalTok{data_high_commit <-}\StringTok{ }\NormalTok{data_clean }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Commitment }\OperatorTok{==}\StringTok{ "High"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{descriptive-statistics}{%
+\subsubsection{Descriptive statistics}\label{descriptive-statistics}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Check number of participants in each condition}
+\KeywordTok{kable}\NormalTok{(}\KeywordTok{table}\NormalTok{(data}\OperatorTok{$}\NormalTok{Overqual, data}\OperatorTok{$}\NormalTok{Commitment), }\DataTypeTok{caption =} \StringTok{"Number of participants in each condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}lrr@{}}
+\caption{Number of participants in each condition}\tabularnewline
+\toprule
+& High & Neutral\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+& High & Neutral\tabularnewline
+\midrule
+\endhead
+High & 37 & 31\tabularnewline
+Low & 36 & 33\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{kable}\NormalTok{(}\KeywordTok{describe}\NormalTok{(data_clean), }\DataTypeTok{caption =} \StringTok{"Overall Descriptive Statistics"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}lrrrrrrrrrrrrr@{}}
+\caption{Overall Descriptive Statistics}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.03\columnwidth}\raggedleft
+vars\strut
+\end{minipage} & \begin{minipage}[b]{0.02\columnwidth}\raggedleft
+n\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\raggedleft
+mean\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\raggedleft
+sd\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedleft
+median\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedleft
+trimmed\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedleft
+mad\strut
+\end{minipage} & \begin{minipage}[b]{0.02\columnwidth}\raggedleft
+min\strut
+\end{minipage} & \begin{minipage}[b]{0.02\columnwidth}\raggedleft
+max\strut
+\end{minipage} & \begin{minipage}[b]{0.03\columnwidth}\raggedleft
+range\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\raggedleft
+skew\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedleft
+kurtosis\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedleft
+se\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.03\columnwidth}\raggedleft
+vars\strut
+\end{minipage} & \begin{minipage}[b]{0.02\columnwidth}\raggedleft
+n\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\raggedleft
+mean\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\raggedleft
+sd\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedleft
+median\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedleft
+trimmed\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedleft
+mad\strut
+\end{minipage} & \begin{minipage}[b]{0.02\columnwidth}\raggedleft
+min\strut
+\end{minipage} & \begin{minipage}[b]{0.02\columnwidth}\raggedleft
+max\strut
+\end{minipage} & \begin{minipage}[b]{0.03\columnwidth}\raggedleft
+range\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\raggedleft
+skew\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedleft
+kurtosis\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedleft
+se\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+id\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+69.0000000\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+39.6925686\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+69\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+69.000000\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+50.4084\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+136\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.0000000\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+-1.2263075\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+3.3911650\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+Commitment*\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+1.5328467\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.5007508\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+1.540541\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0.0000\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+-0.1302323\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+-1.9974601\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0427820\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+Overqual*\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+1.4963504\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.5018215\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+1.495496\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0.0000\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.0144394\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+-2.0143352\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0428735\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+offer\_score\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+5.5255474\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+1.1119689\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+5.612613\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+1.4826\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+-1.0034573\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+1.4793318\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0950019\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+interview\_score\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+6.2554745\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.9854023\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+6.441441\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+1.4826\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+-2.1702834\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+6.6260062\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0841886\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+refer*\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+1.7226277\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.4493447\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+1.774775\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0.0000\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+-0.9836667\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+-1.0398305\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0383901\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+competent\_score\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+6.1240876\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.7712219\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+6.216216\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0.0000\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+-0.8811495\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+0.8579431\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0658899\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+productive\_score\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+8\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+5.9270073\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.8457075\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+6.000000\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0.0000\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+-0.5870463\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+-0.1364169\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0722537\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+skilled\_score\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+9\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+5.9562044\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.8213029\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+6.018018\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0.0000\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+-0.7106299\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+0.6174569\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0701686\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+finexp\_score\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+10\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+5.8613139\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.9329151\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+5.927928\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+1.4826\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+-0.9114626\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+1.6547759\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0797043\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+commit\_score\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+11\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+5.4306569\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+1.0346612\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+5.477477\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+1.4826\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+-0.6460966\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+0.1665554\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0883971\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+commit\_ind\_score\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+12\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+4.8321168\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+1.3148996\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+4.882883\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+1.4826\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+-0.5006282\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+0.0434987\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.1123395\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+extrhrs\_score\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+13\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+5.2408759\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.9356151\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+5.252252\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+1.4826\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+-0.4362044\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+0.8888275\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0799350\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+teamwork\_score\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+14\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+3.3357664\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+1.3894422\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+3.252252\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+1.4826\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.4689766\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+-0.0638776\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.1187081\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+stay\_score\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+15\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+3.8978102\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+1.4311897\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+3.846847\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+1.4826\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.1781473\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+-0.3211508\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.1222748\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+flight\_score\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+16\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+5.5328467\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+1.1760546\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+5.612613\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+1.4826\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+-0.4685564\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+-0.4432663\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.1004771\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+gender*\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+17\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+1.2481752\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.4501801\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+1.180180\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0.0000\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+1.3909193\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+0.5608722\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0384615\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+Age\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+39.1824818\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+13.0863754\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+37\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+37.981982\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+13.3434\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+19\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+79\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+60\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.7396705\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+-0.1447146\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+1.1180445\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+ethnic\_hispanic\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+19\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.0875912\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.2837369\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.000000\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0.0000\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+2.8857608\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+6.3743024\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0242413\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+race*\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+20\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+5.6788321\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.9388221\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+5.927928\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0.0000\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+-3.5634947\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+13.1931028\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0802090\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+educ\_ordinal\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+21\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+135\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+4.5259259\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+1.2976996\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+4.623853\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+1.4826\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+8\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+-0.4836182\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+-0.4968797\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.1116882\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+workexperience\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+22\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+18.7080292\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+11.3507972\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+17\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+17.855856\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+11.8608\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+56\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+54\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.6482872\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+-0.1341063\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.9697640\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+White\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+23\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.9197080\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.2727419\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+1.000000\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0.0000\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+-3.0552288\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+7.3885131\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0233019\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+Black\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+24\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.0364964\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.1882098\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.000000\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0.0000\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+4.8894416\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+22.0678782\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0160798\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+Hispanic\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+25\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.0583942\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.2353478\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.000000\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0.0000\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+3.7254011\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+11.9661164\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0201071\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+Asian\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+26\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.0364964\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.1882098\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.000000\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0.0000\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+4.8894416\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+22.0678782\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0160798\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+Native\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+27\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.0218978\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.1468870\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.000000\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0.0000\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+6.4622801\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+40.0535860\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0125494\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+Decline\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+28\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.0072993\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.0854358\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.000000\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+0.0000\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+11.4496399\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+130.0436358\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.0072993\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\raggedright
+educ*\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+29\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+135\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+3.5333333\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+2.0215259\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+3.412844\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft
+1.4826\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedleft
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedleft
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
+0.5410094\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
+-1.1542112\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft
+0.1739853\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{desc_tab <-}\StringTok{ }\NormalTok{data_clean }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{group_by}\NormalTok{(Commitment, Overqual) }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{Age =} \KeywordTok{mean}\NormalTok{(Age, }\DataTypeTok{na.rm =}\NormalTok{ T),}
+            \DataTypeTok{WorkExperience =} \KeywordTok{mean}\NormalTok{(workexperience, }\DataTypeTok{na.rm =}\NormalTok{ T),}
+            \DataTypeTok{Offer =} \KeywordTok{mean}\NormalTok{(offer_score),}
+            \DataTypeTok{Interview =} \KeywordTok{mean}\NormalTok{(interview_score),}
+            \DataTypeTok{Educ_level =} \KeywordTok{mean}\NormalTok{(educ_ordinal, }\DataTypeTok{na.rm =}\NormalTok{ T))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` has grouped output by 'Commitment'. You can override using the `.groups` argument.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{kable}\NormalTok{(desc_tab, }\DataTypeTok{caption =} \StringTok{"Key Descriptive Statistics for Each Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}llrrrrr@{}}
+\caption{Key Descriptive Statistics for Each Condition}\tabularnewline
+\toprule
+Commitment & Overqual & Age & WorkExperience & Offer & Interview &
+Educ\_level\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Commitment & Overqual & Age & WorkExperience & Offer & Interview &
+Educ\_level\tabularnewline
+\midrule
+\endhead
+Neutral & Low & 41.09091 & 20.36364 & 5.242424 & 6.030303 &
+4.545454\tabularnewline
+Neutral & High & 36.77419 & 17.06452 & 5.645161 & 6.548387 &
+4.387097\tabularnewline
+High & Low & 39.83333 & 19.58333 & 5.555556 & 6.138889 &
+4.485714\tabularnewline
+High & High & 38.86486 & 17.75676 & 5.648649 & 6.324324 &
+4.666667\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{summ_mean_sd <-}\StringTok{ }\NormalTok{data_clean }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(Commitment, Overqual) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{get_summary_stats}\NormalTok{(offer_score, }\DataTypeTok{type =} \StringTok{"mean_sd"}\NormalTok{)}
+\KeywordTok{kable}\NormalTok{(summ_mean_sd)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}lllrrr@{}}
+\toprule
+Commitment & Overqual & variable & n & mean & sd\tabularnewline
+\midrule
+\endhead
+Neutral & Low & offer\_score & 33 & 5.242 & 1.173\tabularnewline
+Neutral & High & offer\_score & 31 & 5.645 & 0.985\tabularnewline
+High & Low & offer\_score & 36 & 5.556 & 1.340\tabularnewline
+High & High & offer\_score & 37 & 5.649 & 0.889\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ data_clean, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Age)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_histogram}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ ..density..)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_density}\NormalTok{(}\DataTypeTok{col =} \StringTok{"blue"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{facet_grid}\NormalTok{(Overqual }\OperatorTok{~}\StringTok{ }\NormalTok{Commitment) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_classic}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Density"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Histogram of participant age in each condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\includegraphics{replication_galperin2020_files/figure-latex/unnamed-chunk-17-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ data_clean, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ workexperience)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_histogram}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ ..density..)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_density}\NormalTok{(}\DataTypeTok{col =} \StringTok{"blue"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{facet_grid}\NormalTok{(Overqual }\OperatorTok{~}\StringTok{ }\NormalTok{Commitment) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_classic}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Density"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Work Experience (in years)"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Histogram of participant work experience in each condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\includegraphics{replication_galperin2020_files/figure-latex/unnamed-chunk-18-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ data_clean, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ offer_score)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_histogram}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ ..density..)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_density}\NormalTok{(}\DataTypeTok{col =} \StringTok{"blue"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_classic}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{facet_wrap}\NormalTok{(}\OperatorTok{~}\StringTok{ }\NormalTok{Commitment) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Density"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Likelihood of Offer"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Likelihood of getting an offer in each commitment condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\includegraphics{replication_galperin2020_files/figure-latex/unnamed-chunk-19-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plot_box <-}\StringTok{ }\KeywordTok{ggboxplot}\NormalTok{(}
+  \DataTypeTok{data =}\NormalTok{ data_clean, }\DataTypeTok{x =} \StringTok{"Overqual"}\NormalTok{, }\DataTypeTok{y =} \StringTok{"offer_score"}\NormalTok{,}
+  \DataTypeTok{color =} \StringTok{"Commitment"}\NormalTok{, }\DataTypeTok{palette =} \StringTok{"jco"}
+\NormalTok{)}
+
+\NormalTok{plot_box}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{replication_galperin2020_files/figure-latex/unnamed-chunk-20-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{commit_labels <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Neutral Commitment"}\NormalTok{, }\StringTok{"High Commitment"}\NormalTok{)}
+\KeywordTok{names}\NormalTok{(commit_labels) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Neutral"}\NormalTok{, }\StringTok{"High"}\NormalTok{)}
+
+\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ data_clean, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Overqual, }\DataTypeTok{y =}\NormalTok{ offer_score, }\DataTypeTok{group =}\NormalTok{ Overqual, }\DataTypeTok{fill =}\NormalTok{ Overqual)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_boxplot}\NormalTok{(}\DataTypeTok{alpha =} \FloatTok{0.6}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_jitter}\NormalTok{(}\DataTypeTok{width =} \FloatTok{0.1}\NormalTok{, }\DataTypeTok{alpha =} \FloatTok{0.6}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{guides}\NormalTok{(}\DataTypeTok{fill =} \StringTok{"none"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_y_continuous}\NormalTok{(}\DataTypeTok{breaks =} \DecValTok{1}\OperatorTok{:}\DecValTok{7}\NormalTok{, }\DataTypeTok{limits =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{7}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.position =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.9}\NormalTok{, }\FloatTok{0.15}\NormalTok{),}
+        \DataTypeTok{legend.direction =} \StringTok{"vertical"}\NormalTok{,}
+        \DataTypeTok{legend.background =} \KeywordTok{element_rect}\NormalTok{(}\DataTypeTok{fill =} \StringTok{"transparent"}\NormalTok{),}
+        \DataTypeTok{legend.title =} \KeywordTok{element_blank}\NormalTok{(),}
+        \DataTypeTok{axis.line =} \KeywordTok{element_line}\NormalTok{(),}
+        \DataTypeTok{panel.grid =} \KeywordTok{element_blank}\NormalTok{(), }
+        \DataTypeTok{panel.background =} \KeywordTok{element_blank}\NormalTok{(),}
+        \DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{hjust =} \FloatTok{0.5}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{facet_wrap}\NormalTok{(}\OperatorTok{~}\NormalTok{Commitment, }\DataTypeTok{labeller =} \KeywordTok{labeller}\NormalTok{(}\DataTypeTok{Commitment =}\NormalTok{ commit_labels)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Final Results (N = 137)"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x =} \StringTok{"Capability"}\NormalTok{, }\DataTypeTok{y =} \StringTok{"Likelihood of an Offer"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 11 rows containing missing values (geom_point).
+\end{verbatim}
+
+\includegraphics{replication_galperin2020_files/figure-latex/unnamed-chunk-21-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#ggsave("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/final_data_boxplot.png")}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{manipulation-check}{%
+\paragraph{Manipulation check}\label{manipulation-check}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Capability manipulatio check (Overqual)}
+\KeywordTok{require}\NormalTok{(dplyr)}
+\KeywordTok{require}\NormalTok{(psych)}
+
+\NormalTok{capa_check <-}\StringTok{ }\NormalTok{data_clean }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{select}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{'competent_score'}\NormalTok{, }\StringTok{'productive_score'}\NormalTok{, }\StringTok{'skilled_score'}\NormalTok{, }\StringTok{'finexp_score'}\NormalTok{))}
+
+\KeywordTok{alpha}\NormalTok{(capa_check)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = capa_check)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.82      0.83    0.79      0.54 4.7 0.026    6 0.68     0.55
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.77 0.82 0.87 
+## 
+##  Reliability if an item is dropped:
+##                  raw_alpha std.alpha G6(smc) average_r S/N alpha se   var.r
+## competent_score       0.75      0.75    0.68      0.50 3.0    0.038 0.01021
+## productive_score      0.77      0.78    0.71      0.54 3.5    0.034 0.00910
+## skilled_score         0.74      0.75    0.68      0.50 3.0    0.039 0.01493
+## finexp_score          0.83      0.83    0.77      0.63 5.0    0.025 0.00063
+##                  med.r
+## competent_score   0.51
+## productive_score  0.51
+## skilled_score     0.46
+## finexp_score      0.63
+## 
+##  Item statistics 
+##                    n raw.r std.r r.cor r.drop mean   sd
+## competent_score  137  0.83  0.85  0.79   0.71  6.1 0.77
+## productive_score 137  0.81  0.81  0.73   0.64  5.9 0.85
+## skilled_score    137  0.85  0.85  0.79   0.71  6.0 0.82
+## finexp_score     137  0.75  0.73  0.58   0.53  5.9 0.93
+## 
+## Non missing response frequency for each item
+##                     2    3    4    5    6    7 miss
+## competent_score  0.00 0.00 0.05 0.09 0.55 0.31    0
+## productive_score 0.00 0.00 0.07 0.18 0.50 0.25    0
+## skilled_score    0.00 0.01 0.04 0.18 0.52 0.25    0
+## finexp_score     0.01 0.01 0.03 0.26 0.43 0.26    0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# run t-test to examine if perceived capabilities are different across conditions}
+\NormalTok{capa_check_t <-}\StringTok{ }\NormalTok{data_clean }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{select}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{'Overqual'}\NormalTok{, }\StringTok{'competent_score'}\NormalTok{, }\StringTok{'productive_score'}\NormalTok{, }\StringTok{'skilled_score'}\NormalTok{, }\StringTok{'finexp_score'}\NormalTok{))}
+
+\NormalTok{capa_check_t}\OperatorTok{$}\NormalTok{mean_capa <-}\StringTok{ }\KeywordTok{rowMeans}\NormalTok{(capa_check_t[}\DecValTok{2}\OperatorTok{:}\DecValTok{5}\NormalTok{], }\DataTypeTok{na.rm =}\NormalTok{ T)}
+
+\NormalTok{capa_test <-}\StringTok{ }\KeywordTok{t.test}\NormalTok{(mean_capa }\OperatorTok{~}\StringTok{ }\NormalTok{Overqual, }\DataTypeTok{data =}\NormalTok{ capa_check_t, }\DataTypeTok{paired =}\NormalTok{ F, }\DataTypeTok{var.equal =}\NormalTok{ T)}
+\NormalTok{capa_test}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Two Sample t-test
+## 
+## data:  mean_capa by Overqual
+## t = -1.9622, df = 135, p-value = 0.0518
+## alternative hypothesis: true difference in means between group Low and group High is not equal to 0
+## 95 percent confidence interval:
+##  -0.453402594  0.001782815
+## sample estimates:
+##  mean in group Low mean in group High 
+##           5.855072           6.080882
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{require}\NormalTok{(broom)}
+
+\KeywordTok{tidy}\NormalTok{(}\KeywordTok{t.test}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ capa_check_t, mean_capa }\OperatorTok{~}\StringTok{ }\NormalTok{Overqual, }\DataTypeTok{paired =}\NormalTok{ F, }\DataTypeTok{var.equal =}\NormalTok{ T))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 10
+##   estimate estimate1 estimate2 statistic p.value parameter conf.low conf.high
+##      <dbl>     <dbl>     <dbl>     <dbl>   <dbl>     <dbl>    <dbl>     <dbl>
+## 1   -0.226      5.86      6.08     -1.96  0.0518       135   -0.453   0.00178
+## # ... with 2 more variables: method <chr>, alternative <chr>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Commitment manipulation check (Commitment)}
+\NormalTok{commit_check <-}\StringTok{ }\NormalTok{data_clean }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{select}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{'commit_score'}\NormalTok{, }\StringTok{'commit_ind_score'}\NormalTok{, }\StringTok{'stay_score'}\NormalTok{, }\StringTok{'extrhrs_score'}\NormalTok{))}
+
+\KeywordTok{alpha}\NormalTok{(commit_check)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = commit_check)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean  sd median_r
+##       0.74      0.74    0.71      0.42 2.9 0.034  4.9 0.9     0.42
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.68 0.74 0.81 
+## 
+##  Reliability if an item is dropped:
+##                  raw_alpha std.alpha G6(smc) average_r S/N alpha se  var.r
+## commit_score          0.63      0.63    0.55      0.36 1.7    0.051 0.0177
+## commit_ind_score      0.60      0.61    0.54      0.34 1.6    0.055 0.0204
+## stay_score            0.70      0.69    0.64      0.43 2.2    0.042 0.0389
+## extrhrs_score         0.77      0.79    0.72      0.55 3.7    0.033 0.0074
+##                  med.r
+## commit_score      0.34
+## commit_ind_score  0.29
+## stay_score        0.34
+## extrhrs_score     0.51
+## 
+##  Item statistics 
+##                    n raw.r std.r r.cor r.drop mean   sd
+## commit_score     137  0.80  0.81  0.75   0.65  5.4 1.03
+## commit_ind_score 137  0.84  0.83  0.78   0.66  4.8 1.31
+## stay_score       137  0.79  0.75  0.61   0.54  3.9 1.43
+## extrhrs_score    137  0.56  0.62  0.39   0.34  5.2 0.94
+## 
+## Non missing response frequency for each item
+##                     1    2    3    4    5    6    7 miss
+## commit_score     0.00 0.01 0.04 0.14 0.27 0.43 0.12    0
+## commit_ind_score 0.01 0.04 0.10 0.20 0.34 0.23 0.09    0
+## stay_score       0.04 0.14 0.21 0.28 0.22 0.05 0.06    0
+## extrhrs_score    0.00 0.01 0.01 0.16 0.43 0.31 0.07    0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# run t-test to examine if perceived commitments are different across conditions}
+\NormalTok{commit_check_t <-}\StringTok{ }\NormalTok{data_clean }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{select}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{'Commitment'}\NormalTok{, }\StringTok{'commit_score'}\NormalTok{, }\StringTok{'commit_ind_score'}\NormalTok{, }\StringTok{'stay_score'}\NormalTok{, }\StringTok{'extrhrs_score'}\NormalTok{))}
+
+\NormalTok{commit_check_t}\OperatorTok{$}\NormalTok{mean_commit <-}\StringTok{ }\KeywordTok{rowMeans}\NormalTok{(capa_check_t[}\DecValTok{2}\OperatorTok{:}\DecValTok{5}\NormalTok{], }\DataTypeTok{na.rm =}\NormalTok{ T)}
+
+\NormalTok{commit_test <-}\StringTok{ }\KeywordTok{t.test}\NormalTok{(mean_commit }\OperatorTok{~}\StringTok{ }\NormalTok{Commitment, }\DataTypeTok{data =}\NormalTok{ commit_check_t, }\DataTypeTok{paired =}\NormalTok{ F, }\DataTypeTok{var.equal =}\NormalTok{ T)}
+\NormalTok{commit_test}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Two Sample t-test
+## 
+## data:  mean_commit by Commitment
+## t = -1.2349, df = 135, p-value = 0.219
+## alternative hypothesis: true difference in means between group Neutral and group High is not equal to 0
+## 95 percent confidence interval:
+##  -0.37363503  0.08639188
+## sample estimates:
+## mean in group Neutral    mean in group High 
+##              5.890625              6.034247
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{require}\NormalTok{(broom)}
+
+\KeywordTok{tidy}\NormalTok{(}\KeywordTok{t.test}\NormalTok{(mean_commit }\OperatorTok{~}\StringTok{ }\NormalTok{Commitment, }\DataTypeTok{data =}\NormalTok{ commit_check_t, }\DataTypeTok{paired =}\NormalTok{ F, }\DataTypeTok{var.equal =}\NormalTok{ T))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 10
+##   estimate estimate1 estimate2 statistic p.value parameter conf.low conf.high
+##      <dbl>     <dbl>     <dbl>     <dbl>   <dbl>     <dbl>    <dbl>     <dbl>
+## 1   -0.144      5.89      6.03     -1.23   0.219       135   -0.374    0.0864
+## # ... with 2 more variables: method <chr>, alternative <chr>
+\end{verbatim}
+
+I precisely followed the original work's manipulation check procedure. I
+combined the four measures used in the original work to create a measure
+for candidate's perceived capability. (Cronbach's alpha = 0.81) While
+the overall Cronbach's alpha value showed the consistency among the four
+measures was good, the participants randomly assigned to the extremely
+high-capability conditions did not rate the candidate higher in
+perceived capability than those assigned to the moderately
+high-capability condition. The t-test results were significant only at
+alpha = 0.1 level. (t = -1.96, d.f. = 135, p-value = 0.0518) I combined
+four commitment measures used in the original work to create a perceived
+organizational commitment score. (Cronbach's alpha = 0.74) The overall
+Cronbach's alpha value fell under acceptable range. However, the
+commitment manipulation did not seem to be effective for the
+participants in this study. Participants randomly assigned to the
+high-commitment conditions did not rate the candidate higher in
+commitment than those assinged to the neutral-commitment conditions. (t
+= -1.23, d.f. = 135, p-value = 0.219) The fact that manipulations were
+not effective (especially commitment conditions) to the participants in
+this replication study may suggest that the sample used for this study
+was substantially different than the original study's sample. The
+original work's manipulations were very effective. (All manipulation
+checks were significant with p \textless{} 0.001).\\
+
+\hypertarget{confirmatory-analysis}{%
+\subsubsection{Confirmatory analysis}\label{confirmatory-analysis}}
+
+\emph{Side-by-side graph with original graph is ideal here}
+
+I ran two t-tests: one for neutral commitment condition, the other for
+high commitment condition. The choice of key statistical model is
+determined by the original work, as the original paper ran two t-tests.
+
+\hypertarget{neutral-commitment-condition}{%
+\paragraph{Neutral commitment
+condition}\label{neutral-commitment-condition}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{t.test}\NormalTok{(offer_score }\OperatorTok{~}\StringTok{ }\NormalTok{Overqual, }\DataTypeTok{data =}\NormalTok{ data_neutral_commit, }\DataTypeTok{paired =}\NormalTok{ F, }\DataTypeTok{var.equal =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Two Sample t-test
+## 
+## data:  offer_score by Overqual
+## t = -1.4823, df = 62, p-value = 0.1433
+## alternative hypothesis: true difference in means between group Low and group High is not equal to 0
+## 95 percent confidence interval:
+##  -0.9458523  0.1403782
+## sample estimates:
+##  mean in group Low mean in group High 
+##           5.242424           5.645161
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{require}\NormalTok{(broom)}
+\KeywordTok{tidy}\NormalTok{(}\KeywordTok{t.test}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ data_neutral_commit, offer_score }\OperatorTok{~}\StringTok{ }\NormalTok{Overqual, }\DataTypeTok{paired =}\NormalTok{ F, }\DataTypeTok{var.equal =}\NormalTok{ T))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 10
+##   estimate estimate1 estimate2 statistic p.value parameter conf.low conf.high
+##      <dbl>     <dbl>     <dbl>     <dbl>   <dbl>     <dbl>    <dbl>     <dbl>
+## 1   -0.403      5.24      5.65     -1.48   0.143        62   -0.946     0.140
+## # ... with 2 more variables: method <chr>, alternative <chr>
+\end{verbatim}
+
+I found no statistically significant results from the first t-test
+(neutral-commitment condition). While the mean value of likelihood of
+getting an offer for the Extremely-high capability condition (mean =
+5.65) was greater than that for the Moderately-high contition (mean =
+5.24), the t-test results were not significant. (t = -1.48, df = 62,
+p-value = 0.14)
+
+\hypertarget{high-commitment-condition}{%
+\paragraph{High commitment condition}\label{high-commitment-condition}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{t.test}\NormalTok{(offer_score }\OperatorTok{~}\StringTok{ }\NormalTok{Overqual, }\DataTypeTok{data =}\NormalTok{ data_high_commit, }\DataTypeTok{paired =}\NormalTok{ F, }\DataTypeTok{var.equal =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Two Sample t-test
+## 
+## data:  offer_score by Overqual
+## t = -0.35063, df = 71, p-value = 0.7269
+## alternative hypothesis: true difference in means between group Low and group High is not equal to 0
+## 95 percent confidence interval:
+##  -0.6224871  0.4363010
+## sample estimates:
+##  mean in group Low mean in group High 
+##           5.555556           5.648649
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{require}\NormalTok{(broom)}
+\KeywordTok{tidy}\NormalTok{(}\KeywordTok{t.test}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ data_high_commit, offer_score }\OperatorTok{~}\StringTok{ }\NormalTok{Overqual, }\DataTypeTok{paired =}\NormalTok{ F, }\DataTypeTok{var.equal =}\NormalTok{ T))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 10
+##   estimate estimate1 estimate2 statistic p.value parameter conf.low conf.high
+##      <dbl>     <dbl>     <dbl>     <dbl>   <dbl>     <dbl>    <dbl>     <dbl>
+## 1  -0.0931      5.56      5.65    -0.351   0.727        71   -0.622     0.436
+## # ... with 2 more variables: method <chr>, alternative <chr>
+\end{verbatim}
+
+I found no statistically significant results from the second t-test
+(high-commitment condition). While the mean value of likelihood of
+getting an offer for the Extremely-high capability condition (mean =
+5.65) was greater than that for the Moderately-high contition (mean =
+5.56), the t-test results were not significant. (t = -0.35, df = 71,
+p-value = 0.73)
+
+\begin{quote}
+(INSERT A PLOT HERE; a bar graph - with original paper's graph)
+\end{quote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{summ_mean_sd}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 4 x 6
+##   Commitment Overqual variable        n  mean    sd
+##   <fct>      <fct>    <chr>       <dbl> <dbl> <dbl>
+## 1 Neutral    Low      offer_score    33  5.24 1.17 
+## 2 Neutral    High     offer_score    31  5.64 0.985
+## 3 High       Low      offer_score    36  5.56 1.34 
+## 4 High       High     offer_score    37  5.65 0.889
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ summ_mean_sd, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Commitment, }\DataTypeTok{y =}\NormalTok{ mean,}
+                                \DataTypeTok{ymin =}\NormalTok{ mean }\OperatorTok{-}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(sd), }\DataTypeTok{ymax =}\NormalTok{ mean }\OperatorTok{+}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(sd), }\DataTypeTok{fill =}\NormalTok{ Overqual)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{stat =} \StringTok{"identity"}\NormalTok{, }\DataTypeTok{position =} \KeywordTok{position_dodge}\NormalTok{()) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_errorbar}\NormalTok{(}\DataTypeTok{position=}\KeywordTok{position_dodge}\NormalTok{(}\FloatTok{0.9}\NormalTok{), }\DataTypeTok{width =} \FloatTok{.2}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_y_continuous}\NormalTok{(}\DataTypeTok{breaks =} \DecValTok{1}\OperatorTok{:}\DecValTok{7}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.direction =} \StringTok{"vertical"}\NormalTok{,}
+        \DataTypeTok{legend.position =} \StringTok{"right"}\NormalTok{,}
+        \DataTypeTok{axis.line =} \KeywordTok{element_line}\NormalTok{(),}
+        \DataTypeTok{panel.grid.major.x =} \KeywordTok{element_blank}\NormalTok{(),}
+        \DataTypeTok{panel.grid.major.y =} \KeywordTok{element_line}\NormalTok{(}\DataTypeTok{color =} \StringTok{"grey"}\NormalTok{, }\DataTypeTok{size =} \FloatTok{0.15}\NormalTok{),}
+        \DataTypeTok{panel.background =} \KeywordTok{element_blank}\NormalTok{(),}
+        \DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{hjust =} \FloatTok{0.5}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x =} \StringTok{"Commitment"}\NormalTok{, }\DataTypeTok{y =} \StringTok{"Likelihood of Offer"}\NormalTok{, }\DataTypeTok{fill =} \StringTok{"Capability"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Capability x Commitment: Likelihood of Offer across all Four Conditions"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{replication_galperin2020_files/figure-latex/unnamed-chunk-29-1.pdf}
+
+\hypertarget{exploratory-analyses}{%
+\subsubsection{Exploratory analyses}\label{exploratory-analyses}}
+
+\hypertarget{two-way-anova}{%
+\paragraph{Two-way ANOVA}\label{two-way-anova}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Check normality assumption (QQ plot)}
+\CommentTok{#ggqqplot(data_clean, "offer_score", ggtheme = theme_bw()) +}
+\CommentTok{#  facet_grid(Overqual ~ Commitment)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{result_aov <-}\StringTok{ }\NormalTok{data_clean }\OperatorTok{%>%}\StringTok{ }\KeywordTok{anova_test}\NormalTok{(offer_score }\OperatorTok{~}\StringTok{ }\NormalTok{Overqual}\OperatorTok{*}\NormalTok{Commitment)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Coefficient covariances computed by hccm()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{result_aov}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## ANOVA Table (type II tests)
+## 
+##                Effect DFn DFd     F     p p<.05   ges
+## 1            Overqual   1 133 1.564 0.213       0.012
+## 2          Commitment   1 133 0.705 0.403       0.005
+## 3 Overqual:Commitment   1 133 0.661 0.418       0.005
+\end{verbatim}
+
+The two-way ANOVA results show that there was no statitically
+significant interaction between Capability and Commitment condition for
+the likelihood of getting an offer.
+
+\hypertarget{two-way-ancova}{%
+\paragraph{Two-way ANCOVA}\label{two-way-ancova}}
+
+Since the results of t-tests and two-way ANOVA were not statistically
+significant, I examined the possibility of other factors, such as work
+experience and age, interfering with the results.
+
+\hypertarget{check-linearity-assumption}{%
+\subparagraph{Check linearity
+assumption}\label{check-linearity-assumption}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggscatter}\NormalTok{(}
+  \DataTypeTok{data =}\NormalTok{ data_clean, }\DataTypeTok{x =} \StringTok{"workexperience"}\NormalTok{, }\DataTypeTok{y =} \StringTok{"offer_score"}\NormalTok{,}
+  \DataTypeTok{facet.by =} \KeywordTok{c}\NormalTok{(}\StringTok{"Commitment"}\NormalTok{, }\StringTok{"Overqual"}\NormalTok{),}
+  \DataTypeTok{short.panel.labs =}\NormalTok{ F,}
+  \DataTypeTok{xlab =} \KeywordTok{c}\NormalTok{(}\StringTok{"Work Experience (in years)"}\NormalTok{),}
+  \DataTypeTok{ylab =} \KeywordTok{c}\NormalTok{(}\StringTok{"Likelihood of Offer"}\NormalTok{),}
+\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{stat_smooth}\NormalTok{(}\DataTypeTok{method =} \StringTok{"loess"}\NormalTok{, }\DataTypeTok{span =} \FloatTok{0.9}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `geom_smooth()` using formula 'y ~ x'
+\end{verbatim}
+
+\includegraphics{replication_galperin2020_files/figure-latex/unnamed-chunk-32-1.pdf}
+
+\hypertarget{homogeneity-of-regression-slopes}{%
+\subparagraph{Homogeneity of regression
+slopes}\label{homogeneity-of-regression-slopes}}
+
+This assumption checks that there is not significant interaction betwen
+the covariate and the grouping variables.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data_clean }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{anova_test}\NormalTok{(}
+\NormalTok{    offer_score }\OperatorTok{~}\StringTok{ }\NormalTok{workexperience }\OperatorTok{+}\StringTok{ }\NormalTok{Overqual }\OperatorTok{+}\StringTok{ }\NormalTok{Commitment }\OperatorTok{+}\StringTok{ }\NormalTok{Overqual}\OperatorTok{*}\NormalTok{Commitment }\OperatorTok{+}\StringTok{ }\NormalTok{workexperience}\OperatorTok{*}\NormalTok{Overqual }\OperatorTok{+}\StringTok{ }\NormalTok{workexperience}\OperatorTok{*}\NormalTok{Commitment }\OperatorTok{+}\StringTok{ }\NormalTok{workexperience}\OperatorTok{*}\NormalTok{Commitment}\OperatorTok{*}\NormalTok{Overqual}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Coefficient covariances computed by hccm()
+\end{verbatim}
+
+\begin{verbatim}
+## ANOVA Table (type II tests)
+## 
+##                               Effect DFn DFd     F     p p<.05   ges
+## 1                     workexperience   1 129 5.647 0.019     * 0.042
+## 2                           Overqual   1 129 1.022 0.314       0.008
+## 3                         Commitment   1 129 0.679 0.412       0.005
+## 4                Overqual:Commitment   1 129 0.720 0.398       0.006
+## 5            workexperience:Overqual   1 129 0.814 0.369       0.006
+## 6          workexperience:Commitment   1 129 0.806 0.371       0.006
+## 7 workexperience:Overqual:Commitment   1 129 2.002 0.160       0.015
+\end{verbatim}
+
+I already know that there is no statistically significant interaction
+effect between Capability (Overqual) and Commitment. Here I ran another
+ANOVA to show that there is no significant interaction.
+
+\hypertarget{interaction-effect-after-controlling-for-participants-work-experience}{%
+\subparagraph{Interaction effect after controlling for participant's
+work
+experience}\label{interaction-effect-after-controlling-for-participants-work-experience}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{work_aov <-}\StringTok{ }\NormalTok{data_clean }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{anova_test}\NormalTok{(offer_score }\OperatorTok{~}\StringTok{ }\NormalTok{workexperience }\OperatorTok{+}\StringTok{ }\NormalTok{Overqual}\OperatorTok{*}\NormalTok{Commitment)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Coefficient covariances computed by hccm()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{get_anova_table}\NormalTok{(work_aov)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## ANOVA Table (type II tests)
+## 
+##                Effect DFn DFd     F     p p<.05   ges
+## 1      workexperience   1 132 5.629 0.019     * 0.041
+## 2            Overqual   1 132 0.995 0.320       0.007
+## 3          Commitment   1 132 0.720 0.398       0.005
+## 4 Overqual:Commitment   1 132 0.561 0.455       0.004
+\end{verbatim}
+
+\hypertarget{interaction-effect-after-controlling-for-participants-age}{%
+\subparagraph{Interaction effect after controlling for participant's
+age}\label{interaction-effect-after-controlling-for-participants-age}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age_aov <-}\StringTok{ }\NormalTok{data_clean }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{anova_test}\NormalTok{(offer_score }\OperatorTok{~}\StringTok{ }\NormalTok{Age }\OperatorTok{+}\StringTok{ }\NormalTok{Overqual}\OperatorTok{*}\NormalTok{Commitment)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Coefficient covariances computed by hccm()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{get_anova_table}\NormalTok{(age_aov)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## ANOVA Table (type II tests)
+## 
+##                Effect DFn DFd     F     p p<.05   ges
+## 1                 Age   1 132 4.492 0.036     * 0.033
+## 2            Overqual   1 132 1.103 0.295       0.008
+## 3          Commitment   1 132 0.781 0.379       0.006
+## 4 Overqual:Commitment   1 132 0.470 0.494       0.004
+\end{verbatim}
+
+Even after adjustment for work experience and age (separate test for
+each), there was no statistically significant interaction between
+Capability and Commitment on the likelihood of getting an offer.
+
+\begin{quote}
+FILL IN THE BELOW
+\end{quote}
+
+\hypertarget{discussion}{%
+\subsection{Discussion}\label{discussion}}
+
+\hypertarget{summary-of-replication-attempt}{%
+\subsubsection{Summary of Replication
+Attempt}\label{summary-of-replication-attempt}}
+
+Open the discussion section with a paragraph summarizing the primary
+result from the confirmatory analysis and the assessment of whether it
+replicated, partially replicated, or failed to replicate the original
+result.
+
+\hypertarget{commentary}{%
+\subsubsection{Commentary}\label{commentary}}
+
+Add open-ended commentary (if any) reflecting (a) insights from
+follow-up exploratory analysis, (b) assessment of the meaning of the
+replication (or not) - e.g., for a failure to replicate, are the
+differences between original and present study ones that definitely,
+plausibly, or are unlikely to have been moderators of the result, and
+(c) discussion of any objections or challenges raised by the current and
+original authors about the replication attempt. None of these need to be
+long.
+
+\end{document}

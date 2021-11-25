@@ -4,14 +4,14 @@ title: Replication Report for Study 2 by Galperin, Hahl, Stering, & Guo (2020, A
 author: "Jiwon Byun (jwbyun@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
   html_document:
     toc: yes
     toc_depth: 3
     toc_float:
       collapsed: no
-  pdf_document:
-    toc: yes
-    toc_depth: '3'
 ---
 
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
@@ -98,7 +98,7 @@ The sample size for the 80% power (based on the original effect of the second t-
 
 ### Planned Sample
 
-The sample consists of `150` participants recruited from Prolific. In order to participate in the study, individuals should have an experience hiring people for the organization because this study addresses job decision making processes of hiring managers in the labor market. They also have to be residents of U.S. because job candidate's qualification and evaluations depend on the nuiances in the labor market, which may be different across different regions.
+The sample will consist of `150` participants recruited from Prolific. In order to participate in the study, individuals should have an experience hiring people for the organization because this study addresses job decision making processes of hiring managers in the labor market. 
 \
 
 ### Materials
@@ -112,7 +112,6 @@ The survey experiment materials were coded in Qualtrics. Participants recuited o
 
 All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
 \
-* `What do we need to put here? (Jiwon)`
 
 
 ### Procedure 
@@ -126,6 +125,16 @@ Participants were randomly assigned to view either the extremely highcapability 
 Participants were then asked about their likelihood of giving the candidate a job offer based on the same scale used in Study 1. This variable served as the dependent variable." (Galperin et al., 2020)
 
 For this replication, the original work's procedure (described in the quotation above) was followed precisely.
+
+\
+
+#### Manipulation Checks
+
+"As a manipulation check after rating their likelihood to give the candidate an offer, participants were then asked to evaluate the candidate’s capability by rating him on a 7-point scale (1 = low and 7 = high) on four criteria related to capability: ‘‘how competent the candidate would be in his job’’; ‘‘how productive the candidate was in his previous job’’; ‘‘how skilled the candidate is’’; and ‘‘how much finance experience the candidate has.’’ We combined these four measures to create a measure for the candidate’s perceived capability (Cronbach’s alpha = .88). Participants randomly assigned to the extremely high-capability conditions (N = 106, mean = 5.86, S.D. = .82) rated the candidate higher in perceived capability (t = − 6.60, d.f. = 210, p < .001, two-tailed test) than those assigned to the moderately high-capability condition (N = 106, mean = 4.99, S.D. = 1.08).
+
+Participants were also asked about perceived commitment after these ratings. They were asked to rate (1 = low, 7 = high) the candidate on the following four dimensions: ‘‘likely commitment to the organization,’’ ‘‘commitment to the industry,’’ ‘‘willingness to stay with the company,’’ and ‘‘willingness to work extra hours.’’ We added commitment to the industry to the measure (compared with the Study 1 scale) to address the change in industry. These ratings were averaged to create a perceived organizational commitment score (Cronbach’s alpha = .89). Participants randomly assigned to the highcommitment conditions (N = 105, mean = 5.44, S.D. = 1.16) rated the candidate higher in commitment (t = − 5.94, d.f. = 210, p < .001, two-tailed test) than those assigned to the neutral-commitment conditions (N = 107, mean = 4.51, S.D. = 1.57)." (Galpein et al., 2020)
+
+For this replication, the original work's procedure (described in the quotation above) for manipulation checks was followed precisely.
 
 \
 
@@ -154,7 +163,7 @@ Hence, I ran the third Pilot B with the original survey design. The sampling str
 
 
 
-### Differences from Original Study (EDITING)
+### Differences from Original Study 
 
 The most important difference would be that I will be using a different sample. While the original work recruited participants through Qualtrics panel, I will recruit participants through Prolific. While I do not foresee any systematic differences between two platforms, some substantial differences may exist when filtering for the target participants. This may cause differences between the sample of this study and that of original paper. \
 I acknowledge that any unforeseen issues are the sole responsiblitity of mine. \
@@ -163,28 +172,52 @@ I acknowledge that any unforeseen issues are the sole responsiblitity of mine. \
 DIFFERENCES BETWEEN SAMPLES ARE VERY IMPORTANT HERE. So I probably need to elaborate on how and why sampling is important and how I might end up with a very different sample.
 ```
 
+> EDITING THIS PART
 
+* nature of the sample, sample size, how COVID has influenced the way people are thinking about hiring
+
+* Sample size. Original study had N = 212. For this study I have N = 137. Sample size with 80% power was 152, I could not even have as many.
+
+* Participants really hiring managers?  The participants were Qualtrics-verified hiring managers who were U.S. based. All the participants could provide evidence of having served as a hiring manager. (On Prolific it's just self-report.)
+
+* Timing is really important. With hiring there are a lot of time sensitivites. Although the original work was published in 2020, Study 2 was conducted December 2016 on Qualtrics. My study was conducted November 2021. How people think about hiring could have changed over the 5-year time period, especially after the outbreak of COVID-19 pandemic.
 
 
 ### Methods Addendum (Post Data Collection)
 
 You can comment this section out prior to final report with data collection.
 
+> EDITING THIS PART
+
 #### Actual Sample
   Sample size, demographics, data exclusions based on rules spelled out in analysis plan
+  
+  * sample size: N = 137. Original work had 212, my planned sample was N = 150.
+  
+  * demographics: U.S. residents. Original plan was to recruit internationally. However, Pilot B raised concerns. Job candidate's qualification and evaluations depend on the nuiances in the labor market, which may be different across different regions. So I decided to limit the sample to residents of U.S. only, which follows the original work's approach since the original sample had hiring managers who were U.S. based.
+  
+  * data exclusions: Included eligibility check question in the beginning. Those who reported that they did not have any hiring experience were excluded from the study.
+
+
+
+
 
 #### Differences from pre-data collection methods plan
-  Any differences from what was described as the original plan, or “none”.
+
+None.
+\
 
 
 
 
-## Results (EDITING)
+
+
+## Results
 
 
 ### Data preparation
 
-First, when the study is done, download data from Qualtrics using `qualtRics` package. (Other than `qualtRics` package, load other essential packages for data analysis and visualization, such as: `tidyverse`, `knitr`, `ggplot2`, `stats`, and etc.) \
+First, when the study is done, download data from Qualtrics using `qualtRics` package. (Other than `qualtRics` package, load other essential packages for data analysis and visualization, such as: `tidyverse`, `knitr`, `ggplot2`, `psych`, `stats`, and etc.) \
 Second, clean the data. Check for missing values and exclude observations with missing values. If needed, conduct data manipulation. Clean and manipulate data so that I have a clean tidy data. \
 Third, conduct descriptive analyses. Before running the main statistical models, run some descriptive analysis and show the descriptives as needed. \
 Fourth, conduct main statistical analysis. Present the findings in a table. \
@@ -202,14 +235,12 @@ library(tidyverse)
 library(knitr)
 library(psych)
 library(haven)
-library(readxl)
 library(Rmisc)
 library(purrr)
 library(broom)
-library(car)
-library(psych)
 library(rstatix)
-
+library(ggpubr)
+library(psych)
 ```
 
 \
@@ -255,13 +286,15 @@ data <- tibble::rowid_to_column(data, "id")
 
 
 
+#### Prepare data for analysis - create columns etc.
+
 
 ```{r}
 ### Clean data (first step)
 
 # select needed columns
 data <- data %>%
-  select(c('ResponseId', 'id', 'companychk', 'candatchk', 'Location', 'interview', 'offer', 'opencncrn', 'openresolv', 'referral', 'competent', 'productive', 'skilled', 'finexp', 'committed', 'commit_ind', 'extrhrs', 'teamwork', 'stay', 'flightrsk', 'oe_qual', 'oe_comm', 'oe_interview', 'oe_offer', 'oe_referral', 'ethnicity', 'race_1', 'race_2', 'race_3', 'race_4', 'race_5', 'race_6', 'race_7', 'race_8', 'race_8_TEXT', 'gender', 'Age', 'educ', 'workexperience', 'Profile_DO_high_overqual_profil', 'Profile_DO_low_overqual_profile', 'CommitmentManipulation_DO_highcommitment_HR', 'CommitmentManipulation_DO_neutralcommitment_HR'))
+  dplyr::select(c('ResponseId', 'id', 'companychk', 'candatchk', 'Location', 'interview', 'offer', 'opencncrn', 'openresolv', 'referral', 'competent', 'productive', 'skilled', 'finexp', 'committed', 'commit_ind', 'extrhrs', 'teamwork', 'stay', 'flightrsk', 'oe_qual', 'oe_comm', 'oe_interview', 'oe_offer', 'oe_referral', 'ethnicity', 'race_1', 'race_2', 'race_3', 'race_4', 'race_5', 'race_6', 'race_7', 'race_8', 'race_8_TEXT', 'gender', 'Age', 'educ', 'workexperience', 'Profile_DO_high_overqual_profil', 'Profile_DO_low_overqual_profile', 'CommitmentManipulation_DO_highcommitment_HR', 'CommitmentManipulation_DO_neutralcommitment_HR'))
 
 
 # data manipulation - scores
@@ -431,9 +464,26 @@ data <- data %>%
   mutate(Hispanic = ifelse(!is.na(race_3), 1, 0)) %>%
   mutate(Asian = ifelse(!is.na(race_4), 1, 0)) %>%
   mutate(Native = ifelse(!is.na(race_5), 1, 0)) %>%
-  mutate(Decline = ifelse(!is.na(race_6), 1, 0))
+  mutate(Decline = ifelse(!is.na(race_7), 1, 0))
+# variables with no obs dropped (race_6, race_8, race_8_TEXT)
 
-# variables with no obs dropped
+# create multiple race variable
+data <- data %>%
+  mutate(Race_sum = White + Black + Hispanic + Asian + Native + Decline)
+
+data <- data %>%
+  mutate(Race_multi = ifelse(Race_sum > 1, 1, 0))
+
+# create one race variable (factor)
+data <- data %>%
+  mutate(race = ifelse(Race_multi == 1, "Multirace",
+                       ifelse(White == 1, "White",
+                              ifelse(Black == 1, "Black",
+                                     ifelse(Hispanic == 1, "Hispanic",
+                                            ifelse(Asian == 1, "Asian",
+                                                   ifelse(Native == 1, "Native",
+                                                          ifelse(Decline == 1, "Decline", NA)))))))) %>%
+  mutate(race = as.factor(race))
 
 # gender
 data <- data %>%
@@ -444,10 +494,9 @@ data <- data %>%
   mutate(educ = as.factor(educ))
 
 
-summary(data$educ)
+#summary(data$educ)
 
 # add education level (ordinal variable)
-
 # educ_ordinal
 data <- data %>%
   mutate(educ_ordinal = ifelse(educ == "Less than High School", 1,
@@ -459,6 +508,7 @@ data <- data %>%
                                                                   ifelse(educ == "Doctoral Degree", 7,
                                                                          ifelse(educ == "Professional Degree (JD, MD)", 8, NA)))))))))
 ```
+
 
 
 
@@ -475,98 +525,127 @@ data <- data %>%
   mutate(Commitment = as.factor(Commitment))
 
 
-# Check number of participants in each condition
-table(data$Overqual, data$Commitment)
 
 ```
 
-###### Nov 23, 2021 (EDITING)
-
-
-
-
-
 ```{r}
-# overqual - high (condition1)
-
-data_cleaning <- data_cleaning |>
-  mutate(cond1_high_overqual = ifelse(is.na(Profile_DO_high_overqual_profil), 0, 1))
-
-data_cleaning <- data_cleaning |>
-  mutate(cond1_low_overqual = ifelse(is.na(Profile_DO_low_overqual_profile), 0, 1))
-
-# commit - high (condition2)
-
-data_cleaning <- data_cleaning |>
-  mutate(cond2_high_commit = ifelse(is.na(CommitmentManipulation_DO_highcommitment_HR), 0, 1))
-
-data_cleaning <- data_cleaning |>
-  mutate(cond2_neutral_commit = ifelse(is.na(CommitmentManipulation_DO_neutralcommitment_HR), 0, 1))
-
-
-
+# Before selecting out variables, let's save this version as a csv file
+#write.csv(data, "/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/data_fin_wrangled.csv", row.names = F)
 ```
 
 
 ```{r}
-# clean data (first step)
-data_brief <- data_cleaning |>
-  select(c('offer_score', 'cond1_high_overqual', 'cond1_low_overqual', 'cond2_high_commit', 'cond2_neutral_commit', 'Profile_DO_high_overqual_profil', 'Profile_DO_low_overqual_profile', 'CommitmentManipulation_DO_highcommitment_HR', 'CommitmentManipulation_DO_neutralcommitment_HR'))
+# clean data (select needed columns only - exclude open-ended questions as well)
+data_clean <- data %>%
+  dplyr::select(c('id', 'Commitment', 'Overqual', 'offer_score', 'interview_score', 'refer', 'competent_score', 'productive_score', 'skilled_score', 'finexp_score', 'commit_score', 'commit_ind_score', 'extrhrs_score', 'teamwork_score', 'stay_score', 'flight_score', 'gender', 'Age', 'ethnic_hispanic', 'race', 'educ_ordinal', 'workexperience', 'White', 'Black', 'Hispanic', 'Asian', 'Native', 'Decline', 'educ'))
 
-data_brief <- data_cleaning |>
-  select(c('offer_score', 'cond1_high_overqual', 'cond1_low_overqual', 'cond2_high_commit', 'cond2_neutral_commit'))
 
+data_clean <- data_clean %>%
+  mutate(Commitment = factor(Commitment, levels = c("Neutral", "High"), labels = c("Neutral", "High"))) %>%
+  mutate(Overqual = factor(Overqual, levels = c("Low", "High"), labels = c("Low", "High")))
+
+# save the clean data
+#write.csv(data_clean, "/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/data_fin_clean.csv", row.names = F)
 ```
 
-
-#### Prepare data for analysis - create columns etc.
 
 ```{r}
-#data_brief <- data_brief |>
-#  mutate(cond1_high_overqual = factor(cond1_high_overqual, levels = c(0, 1), labels = c("Low", "High")))
+# Data with neutral commitment condition (for t-test)
+data_neutral_commit <- data_clean %>%
+  filter(Commitment == "Neutral")
 
-
-# only for neutral commitment condition
-data_neutral <- data_brief |>
-  filter(cond2_high_commit == 0) |>
-  select(c("offer_score", "cond1_high_overqual")) |>
-  mutate(cond1_high_overqual = factor(cond1_high_overqual, levels = c(0, 1), labels = c("Low", "High")))
-  
-
-# only for high commitment condition
-data_high <- data_brief |>
-  filter(cond2_high_commit == 1) |>
-  select(c("offer_score", "cond1_high_overqual")) |>
-  mutate(cond1_high_overqual = factor(cond1_high_overqual, levels = c(0, 1), labels = c("Low", "High")))
-
+# Data with high commitment condition (fot t-test)
+data_high_commit <- data_clean %>%
+  filter(Commitment == "High")
 ```
+
+
 
 ### Descriptive statistics
 
-
-#### Pilot B
-
 ```{r}
-library(psych)
-describe(data_brief)
-```
-
-```{r}
-describe(data_neutral)
+# Check number of participants in each condition
+kable(table(data$Overqual, data$Commitment), caption = "Number of participants in each condition")
 ```
 
 
 ```{r}
-describe(data_high)
+kable(describe(data_clean), caption = "Overall Descriptive Statistics")
 ```
+
+```{r}
+desc_tab <- data_clean %>%
+  dplyr::group_by(Commitment, Overqual) %>%
+  dplyr::summarise(Age = mean(Age, na.rm = T),
+            WorkExperience = mean(workexperience, na.rm = T),
+            Offer = mean(offer_score),
+            Interview = mean(interview_score),
+            Educ_level = mean(educ_ordinal, na.rm = T))
+
+kable(desc_tab, caption = "Key Descriptive Statistics for Each Condition")
+
+```
+
+```{r}
+summ_mean_sd <- data_clean %>%
+  group_by(Commitment, Overqual) %>%
+  get_summary_stats(offer_score, type = "mean_sd")
+kable(summ_mean_sd)
+```
+
+
+
+```{r}
+ggplot(data = data_clean, aes(x = Age)) +
+  geom_histogram(aes(y = ..density..)) +
+  geom_density(col = "blue") +
+  facet_grid(Overqual ~ Commitment) +
+  theme_classic() +
+  ylab("Density") +
+  ggtitle("Histogram of participant age in each condition")
+
+```
+```{r}
+ggplot(data = data_clean, aes(x = workexperience)) +
+  geom_histogram(aes(y = ..density..)) +
+  geom_density(col = "blue") +
+  facet_grid(Overqual ~ Commitment) +
+  theme_classic() +
+  ylab("Density") +
+  xlab("Work Experience (in years)") +
+  ggtitle("Histogram of participant work experience in each condition")
+```
+
+```{r}
+ggplot(data = data_clean, aes(x = offer_score)) +
+  geom_histogram(aes(y = ..density..)) +
+  geom_density(col = "blue") +
+  theme_classic() +
+  facet_wrap(~ Commitment) +
+  ylab("Density") +
+  xlab("Likelihood of Offer") +
+  ggtitle("Likelihood of getting an offer in each commitment condition")
+```
+
+
+```{r}
+plot_box <- ggboxplot(
+  data = data_clean, x = "Overqual", y = "offer_score",
+  color = "Commitment", palette = "jco"
+)
+
+plot_box
+```
+
+
 
 ```{r}
 commit_labels <- c("Neutral Commitment", "High Commitment")
-names(commit_labels) <- c("0", "1")
+names(commit_labels) <- c("Neutral", "High")
 
-ggplot(data = data_brief, aes(x = cond1_high_overqual, y = offer_score, group = cond1_high_overqual, fill = cond1_high_overqual)) +
-  geom_boxplot(alpha = 0.7) +
-  geom_jitter(width = 0.08, alpha = .8) +
+ggplot(data = data_clean, aes(x = Overqual, y = offer_score, group = Overqual, fill = Overqual)) +
+  geom_boxplot(alpha = 0.6) +
+  geom_jitter(width = 0.1, alpha = 0.6) +
   guides(fill = "none") +
   scale_y_continuous(breaks = 1:7, limits = c(1, 7)) +
   theme(legend.position = c(0.9, 0.15),
@@ -577,60 +656,134 @@ ggplot(data = data_brief, aes(x = cond1_high_overqual, y = offer_score, group = 
         panel.grid = element_blank(), 
         panel.background = element_blank(),
         plot.title = element_text(hjust = 0.5)) +
-  facet_wrap(~cond2_high_commit, labeller = labeller(cond2_high_commit = commit_labels)) +
-  ggtitle("Pilot B Results (pooled)") +
-  labs(x = "Capability", y = "Likely to get an offer")
+  facet_wrap(~Commitment, labeller = labeller(Commitment = commit_labels)) +
+  ggtitle("Final Results (N = 137)") +
+  labs(x = "Capability", y = "Likelihood of an Offer")
 
-ggsave("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/data_boxplot.png")
+#ggsave("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/final_data_boxplot.png")
 ```
 
 
 
 
-### Confirmatory analysis (EDITING)
 
-The analyses as specified in the analysis plan.  
+#### Manipulation check
+
+```{r}
+# Capability manipulatio check (Overqual)
+require(dplyr)
+require(psych)
+
+capa_check <- data_clean %>%
+  dplyr::select(c('competent_score', 'productive_score', 'skilled_score', 'finexp_score'))
+
+alpha(capa_check)
+
+```
+
+
+
+
+```{r}
+# run t-test to examine if perceived capabilities are different across conditions
+capa_check_t <- data_clean %>%
+  dplyr::select(c('Overqual', 'competent_score', 'productive_score', 'skilled_score', 'finexp_score'))
+
+capa_check_t$mean_capa <- rowMeans(capa_check_t[2:5], na.rm = T)
+
+capa_test <- t.test(mean_capa ~ Overqual, data = capa_check_t, paired = F, var.equal = T)
+capa_test
+
+require(broom)
+
+tidy(t.test(data = capa_check_t, mean_capa ~ Overqual, paired = F, var.equal = T))
+```
+
+
+
+
+```{r}
+# Commitment manipulation check (Commitment)
+commit_check <- data_clean %>%
+  dplyr::select(c('commit_score', 'commit_ind_score', 'stay_score', 'extrhrs_score'))
+
+alpha(commit_check)
+```
+
+```{r}
+# run t-test to examine if perceived commitments are different across conditions
+commit_check_t <- data_clean %>%
+  dplyr::select(c('Commitment', 'commit_score', 'commit_ind_score', 'stay_score', 'extrhrs_score'))
+
+commit_check_t$mean_commit <- rowMeans(capa_check_t[2:5], na.rm = T)
+
+commit_test <- t.test(mean_commit ~ Commitment, data = commit_check_t, paired = F, var.equal = T)
+commit_test
+
+require(broom)
+
+tidy(t.test(mean_commit ~ Commitment, data = commit_check_t, paired = F, var.equal = T))
+```
+
+
+I precisely followed the original work's manipulation check procedure. I combined the four measures used in the original work to create a measure for candidate's perceived capability. (Cronbach's alpha = 0.81) While the overall Cronbach's alpha value showed the consistency among the four measures was good, the participants randomly assigned to the extremely high-capability conditions did not rate the candidate higher in perceived capability than those assigned to the moderately high-capability condition. The t-test results were significant only at alpha = 0.1 level. (t = -1.96, d.f. = 135, p-value = 0.0518)
+I combined four commitment measures used in the original work to create a perceived organizational commitment score. (Cronbach's alpha = 0.74) The overall Cronbach's alpha value fell under acceptable range. However, the commitment manipulation did not seem to be effective for the participants in this study. Participants randomly assigned to the high-commitment conditions did not rate the candidate higher in commitment than those assinged to the neutral-commitment conditions. (t = -1.23, d.f. = 135, p-value = 0.219)
+The fact that manipulations were not effective (especially commitment conditions) to the participants in this replication study may suggest that the sample used for this study was substantially different than the original study's sample. The original work's manipulations were very effective. (All manipulation checks were significant with p < 0.001).
+\
+
+
+### Confirmatory analysis
 
 *Side-by-side graph with original graph is ideal here*
 
-The main statistical model is going to be two t-tests, the same as that from original study. One t-test is to be conducted for Neutral commitment condition and the other t-test is going to be conducted for High commitment condition.
+I ran two t-tests: one for neutral commitment condition, the other for high commitment condition. The choice of key statistical model is determined by the original work, as the original paper ran two t-tests.
 
-
-#### Pilot B
-
-Below are the key analyses results from Pilot B.
-\
-
-```{r, echo = TRUE}
-#neutral_t <- t.test(offer_score ~ cond1_high_overqual, data = data_neutral)
-#neutral_t
-
-# could not run the model because I do not have enough observations.
-```
-
-\
-
-For the first t-test, I could not run the model because I did not have enough observations. This is due to small sample size and randomization. I expect this problem to be resolved itself when I get enough sample size for the study.
+#### Neutral commitment condition
 
 ```{r}
-high_t <- t.test(offer_score ~ cond1_high_overqual, data = data_high, paired = FALSE)
-high_t
+t.test(offer_score ~ Overqual, data = data_neutral_commit, paired = F, var.equal = T)
+
+require(broom)
+tidy(t.test(data = data_neutral_commit, offer_score ~ Overqual, paired = F, var.equal = T))
 ```
 
-The above shows the results for the second t-test. (For high commitment group.)
-\
+I found no statistically significant results from the first t-test (neutral-commitment condition). While the mean value of likelihood of getting an offer for the Extremely-high capability condition (mean = 5.65) was greater than that for the Moderately-high contition (mean = 5.24), the t-test results were not significant. (t = -1.48, df = 62, p-value = 0.14)
 
+
+#### High commitment condition
 
 ```{r}
-data_highcommit <- data %>%
-  filter(Commitment == "High")
+t.test(offer_score ~ Overqual, data = data_high_commit, paired = F, var.equal = T)
 
-t.test(offer_score ~ Overqual, data = data_highcommit)
+require(broom)
+tidy(t.test(data = data_high_commit, offer_score ~ Overqual, paired = F, var.equal = T))
+```
 
-data_neutralcommit <- data %>%
-  filter(Commitment == "Neutral")
-t.test(offer_score ~ Overqual, data = data_neutralcommit)
+I found no statistically significant results from the second t-test (high-commitment condition). While the mean value of likelihood of getting an offer for the Extremely-high capability condition (mean = 5.65) was greater than that for the Moderately-high contition (mean = 5.56), the t-test results were not significant. (t = -0.35, df = 71, p-value = 0.73)
 
+
+
+> (INSERT A PLOT HERE; a bar graph - with original paper's graph)
+
+```{r}
+summ_mean_sd
+```
+
+```{r}
+ggplot(data = summ_mean_sd, aes(x = Commitment, y = mean,
+                                ymin = mean - sqrt(sd), ymax = mean + sqrt(sd), fill = Overqual)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  geom_errorbar(position=position_dodge(0.9), width = .2) +
+  scale_y_continuous(breaks = 1:7) +
+  theme(legend.direction = "vertical",
+        legend.position = "right",
+        axis.line = element_line(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(color = "grey", size = 0.15),
+        panel.background = element_blank(),
+        plot.title = element_text(hjust = 0.5)) +
+  labs(x = "Commitment", y = "Likelihood of Offer", fill = "Capability") +
+  ggtitle("Capability x Commitment: Likelihood of Offer across all Four Conditions")
 ```
 
 
@@ -638,10 +791,81 @@ t.test(offer_score ~ Overqual, data = data_neutralcommit)
 
 ### Exploratory analyses
 
+
+#### Two-way ANOVA
+
+```{r}
+# Check normality assumption (QQ plot)
+#ggqqplot(data_clean, "offer_score", ggtheme = theme_bw()) +
+#  facet_grid(Overqual ~ Commitment)
 ```
-Planning to conduct ANOVA or ANCOVA here
+
+```{r}
+result_aov <- data_clean %>% anova_test(offer_score ~ Overqual*Commitment)
+result_aov
 ```
-Any follow-up analyses desired (not required).  
+
+The two-way ANOVA results show that there was no statitically significant interaction between Capability and Commitment condition for the likelihood of getting an offer.
+
+
+
+
+#### Two-way ANCOVA
+
+Since the results of t-tests and two-way ANOVA were not statistically significant, I examined the possibility of other factors, such as work experience and age, interfering with the results.
+
+##### Check linearity assumption
+
+```{r}
+ggscatter(
+  data = data_clean, x = "workexperience", y = "offer_score",
+  facet.by = c("Commitment", "Overqual"),
+  short.panel.labs = F,
+  xlab = c("Work Experience (in years)"),
+  ylab = c("Likelihood of Offer"),
+) +
+  stat_smooth(method = "loess", span = 0.9)
+```
+
+##### Homogeneity of regression slopes
+
+This assumption checks that there is not significant interaction betwen the covariate and the grouping variables.
+
+```{r}
+data_clean %>%
+  anova_test(
+    offer_score ~ workexperience + Overqual + Commitment + Overqual*Commitment + workexperience*Overqual + workexperience*Commitment + workexperience*Commitment*Overqual
+  )
+```
+
+I already know that there is no statistically significant interaction effect between Capability (Overqual) and Commitment. Here I ran another ANOVA to show that there is no significant interaction.
+
+
+##### Interaction effect after controlling for participant's work experience
+
+```{r}
+work_aov <- data_clean %>%
+  anova_test(offer_score ~ workexperience + Overqual*Commitment)
+
+get_anova_table(work_aov)
+```
+
+##### Interaction effect after controlling for participant's age
+
+```{r}
+age_aov <- data_clean %>%
+  anova_test(offer_score ~ Age + Overqual*Commitment)
+
+get_anova_table(age_aov)
+```
+
+Even after adjustment for work experience and age (separate test for each), there was no statistically significant interaction between Capability and Commitment on the likelihood of getting an offer.
+
+
+
+
+
+> FILL IN THE BELOW
 
 ## Discussion
 
