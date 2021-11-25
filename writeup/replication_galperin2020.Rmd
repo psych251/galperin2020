@@ -4,14 +4,14 @@ title: Replication Report for Study 2 by Galperin, Hahl, Stering, & Guo (2020, A
 author: "Jiwon Byun (jwbyun@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: '3'
   html_document:
     toc: yes
     toc_depth: 3
     toc_float:
       collapsed: no
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
 ---
 
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
@@ -185,18 +185,13 @@ DIFFERENCES BETWEEN SAMPLES ARE VERY IMPORTANT HERE. So I probably need to elabo
 
 ### Methods Addendum (Post Data Collection)
 
-You can comment this section out prior to final report with data collection.
-
-> EDITING THIS PART
-
 #### Actual Sample
-  Sample size, demographics, data exclusions based on rules spelled out in analysis plan
-  
-  * sample size: N = 137. Original work had 212, my planned sample was N = 150.
-  
-  * demographics: U.S. residents. Original plan was to recruit internationally. However, Pilot B raised concerns. Job candidate's qualification and evaluations depend on the nuiances in the labor market, which may be different across different regions. So I decided to limit the sample to residents of U.S. only, which follows the original work's approach since the original sample had hiring managers who were U.S. based.
-  
-  * data exclusions: Included eligibility check question in the beginning. Those who reported that they did not have any hiring experience were excluded from the study.
+
+* Sample size: My final sample consists of N=137 participants. I originally planned to have a sample size of N=150. However, I could not recruit 150 participants due to the limited budget. I had to run multiple pilot studies as I encountered minor issues as I was conducting pilot B. As a result, I spent more than my original budget for the pilot studies. Therefore, I recruited as many participants as I could within my constrained budget, which resulted with a sample with 137 participants. (The original work had a sample of N=212.)
+
+* Demographics: The final sample consists of individuals who currently reside in the U.S. The original plan was to recruit internationally. However, Pilot B raised concerns. Job candidate's qualification and evaluations depend on the nuiances in the labor market, which may be different across different regions. So I decided to limit the sample to residents of U.S. only, which follows the original work's approach since the original sample had hiring managers who were U.S. based.
+
+* Data exclusions: Individuals who failed to check eligibility question were excluded from the final sample. As an eligibility check, the survey asked participants if they had any hiring experience in the beginning. Those who reported that they did not have any hiring experience were excluded from the study. Furthermore, individuals who entered the survey and dropped out voluntarily without completing the questionnaire were also excluded from the final sample.
 
 
 
@@ -590,7 +585,7 @@ kable(desc_tab, caption = "Key Descriptive Statistics for Each Condition")
 summ_mean_sd <- data_clean %>%
   group_by(Commitment, Overqual) %>%
   get_summary_stats(offer_score, type = "mean_sd")
-kable(summ_mean_sd)
+kable(summ_mean_sd, caption = "Mean and s.d. of Likelihood of Offer across All Conditions")
 ```
 
 
@@ -734,11 +729,11 @@ The fact that manipulations were not effective (especially commitment conditions
 
 ### Confirmatory analysis
 
-*Side-by-side graph with original graph is ideal here*
-
 I ran two t-tests: one for neutral commitment condition, the other for high commitment condition. The choice of key statistical model is determined by the original work, as the original paper ran two t-tests.
 
-#### Neutral commitment condition
+\
+
+#### T-test for neutral-commitment conditions
 
 ```{r}
 t.test(offer_score ~ Overqual, data = data_neutral_commit, paired = F, var.equal = T)
@@ -749,8 +744,9 @@ tidy(t.test(data = data_neutral_commit, offer_score ~ Overqual, paired = F, var.
 
 I found no statistically significant results from the first t-test (neutral-commitment condition). While the mean value of likelihood of getting an offer for the Extremely-high capability condition (mean = 5.65) was greater than that for the Moderately-high contition (mean = 5.24), the t-test results were not significant. (t = -1.48, df = 62, p-value = 0.14)
 
+\
 
-#### High commitment condition
+#### T-test for high-commitment condition
 
 ```{r}
 t.test(offer_score ~ Overqual, data = data_high_commit, paired = F, var.equal = T)
@@ -763,7 +759,6 @@ I found no statistically significant results from the second t-test (high-commit
 
 
 
-> (INSERT A PLOT HERE; a bar graph - with original paper's graph)
 
 ```{r}
 summ_mean_sd
@@ -788,9 +783,13 @@ ggplot(data = summ_mean_sd, aes(x = Commitment, y = mean,
 
 
 
+> For reference, the original work's corresponding figure:
+![Alt text](/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/original_paper/original_figure.png)
+
 
 ### Exploratory analyses
 
+\
 
 #### Two-way ANOVA
 
@@ -807,7 +806,8 @@ result_aov
 
 The two-way ANOVA results show that there was no statitically significant interaction between Capability and Commitment condition for the likelihood of getting an offer.
 
-
+\
+\
 
 
 #### Two-way ANCOVA
@@ -838,10 +838,10 @@ data_clean %>%
   )
 ```
 
-I already know that there is no statistically significant interaction effect between Capability (Overqual) and Commitment. Here I ran another ANOVA to show that there is no significant interaction.
+I already know that there is no statistically significant interaction effect between Capability (Overqual) and Commitment. However, just as a sanity check, I ran another ANOVA to show that there is no significant interaction between Capability (Overqual) and Commitment here.
+\
 
-
-##### Interaction effect after controlling for participant's work experience
+##### Interaction effect after controlling for participant's work experience (ANCOVA)
 
 ```{r}
 work_aov <- data_clean %>%
@@ -850,7 +850,11 @@ work_aov <- data_clean %>%
 get_anova_table(work_aov)
 ```
 
-##### Interaction effect after controlling for participant's age
+There was no statistically significant interaction between Capability and Commitment on the likelihood of getting an offer after controlling for participant's work experience (in years).
+
+\
+
+##### Interaction effect after controlling for participant's age (ANCOVA)
 
 ```{r}
 age_aov <- data_clean %>%
@@ -859,9 +863,9 @@ age_aov <- data_clean %>%
 get_anova_table(age_aov)
 ```
 
-Even after adjustment for work experience and age (separate test for each), there was no statistically significant interaction between Capability and Commitment on the likelihood of getting an offer.
+After adjusting for participant's age, I found no statistically significant interaction between Capability and Commitment on the likelihood of getting an offer.
 
-
+\
 
 
 
