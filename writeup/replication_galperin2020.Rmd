@@ -31,21 +31,21 @@ Employers' selection of job applicants is an important labor market proesses for
 Most studies have focused on job signaling and applicant capabilities when trying to understand selection processes in labor markets. On the other hand, increasing number of studies suggest that selection decisions are affected not only by perceptions of applicantss' capability but also by perceptions of applicants' commitment to the organization. \
 While previous literature investigated both the effect of perceptions of applicants' capability and the effect of perceptions of applicants' commitment on the likelihood of a candidate's being selected for a job, the relationship between the two dimensions had been understudied. In an attempt to shed light on such a gap in the literature, Galperin, Hahl, Sterling, and Guo (Gelperin et al. henceforth) conducted a series of online field experiments and published an article in ASQ in the year of 2020. (For reference, see `Links` section in the below.) \
 Galperin et al. (2020) suggested that signals that influence perceptions of capability in labor markets may have discernable effects of the perceptions of a candidate's commitment, which also affects the likelihood of the candidate's being selected for the job. The paper included four studies, three of which were online field experiments. In this study, I plan to replicate Study 2. \
-\
+
 
 ### Justification for choice of study
 
-In the original paper, the authors conducted a direct test of the effect of applicants' commitment and high-capability rejection. \
-Study 2 was conducted to directly manipulated perceived commitment of an applicant to complement one of the other studies where they could not directly manipulate commitment. This is important because the main contribution of the study is suggested (and proved) mediation effect of commitment on likelihood of a job offer. \
-\
+In the original paper, the authors conducted a direct test of the effect of applicants' commitment and high-capability rejection. 
+Study 2 was conducted to directly manipulated perceived commitment of an applicant to complement one of the other studies where they could not directly manipulate commitment. This is important because the main contribution of the study is suggested (and proved) mediation effect of commitment on likelihood of a job offer. 
+
 
 
 ### Anticipated challenges
 
-I anticipate two challenges while attempting to replicate the results. \
-First, I may run into sample issue. This study is about job signals and hiring managers' decision making in making job offers. Hence, it is important that I only have hiring managers (defined by someone with experiences as a hiring manager) in the sample. Since I have to rely on Prolifics to do the sampling, less appropriate sample might be acquired in the end. Similar issue applies to random assignment of participants. \
-Second, survey design might be difficult. The main part of this replication study is manipulating commitment of a job applicant. Since commitment could mean different things both conceptually and practically, it is essential that I manipulate the main concepts elaborately. To overcome this challenge, I plan to reach out to original authors and try to acquire survey items that they used for the original study. \
-\
+I anticipate two challenges while attempting to replicate the results. 
+First, I may run into sample issue. This study is about job signals and hiring managers' decision making in making job offers. Hence, it is important that I only have hiring managers (defined by someone with experiences as a hiring manager) in the sample. Since I have to rely on Prolifics to do the sampling, less appropriate sample might be acquired in the end. Similar issue applies to random assignment of participants. 
+Second, survey design might be difficult. The main part of this replication study is manipulating commitment of a job applicant. Since commitment could mean different things both conceptually and practically, it is essential that I manipulate the main concepts elaborately. To overcome this challenge, I plan to reach out to original authors and try to acquire survey items that they used for the original study.
+
 
 
 ### Links
@@ -67,7 +67,6 @@ For the main study, participants will be recruited to fill out a "survey for hir
 The study will have the same structure as that of the original study: 2 by 2 between-subjects design. Participants will be randomly assigned to one of the four conditions. (2 capability conditions X 2 commitment conditions) They will be given the same stimuli as the original study. \
 I plan to conduct a manipulation check for both candidate's perceived capability and perceived commitment by combining the questionnaires included in the survey. \
 With the data acquired from the survey experiment, I plan to conduct two t-tests to replicate the key results of Study 2. As an exploratory analysis, I plan to conduct a two-way ANOVA to examine the interaction effects. \
-\
 
 
 
@@ -92,7 +91,6 @@ Since the original work did have two t-tests, I needed to take the results and m
 * 95% power: 248
 
 The sample size for the 80% power (based on the original effect of the second t-test) was 152. I could not have 152 participants due to some constraints (mainly financial.) The original study paid the participants high compensation (`$6.00`) for this cognitively engaging study, I want to provide a reasonable amount of compensation to each participant. Considering the approximate time needed to complete the study and the hourly pay, I decided to pay `$2.00` each. My budget is limited at about `$400.00` for the study, so I decided have a sample size of `150`.
-\
 \
 
 
@@ -126,7 +124,6 @@ Participants were then asked about their likelihood of giving the candidate a jo
 
 For this replication, the original work's procedure (described in the quotation above) was followed precisely.
 
-\
 
 #### Manipulation Checks
 
@@ -135,9 +132,6 @@ For this replication, the original work's procedure (described in the quotation 
 Participants were also asked about perceived commitment after these ratings. They were asked to rate (1 = low, 7 = high) the candidate on the following four dimensions: ‘‘likely commitment to the organization,’’ ‘‘commitment to the industry,’’ ‘‘willingness to stay with the company,’’ and ‘‘willingness to work extra hours.’’ We added commitment to the industry to the measure (compared with the Study 1 scale) to address the change in industry. These ratings were averaged to create a perceived organizational commitment score (Cronbach’s alpha = .89). Participants randomly assigned to the highcommitment conditions (N = 105, mean = 5.44, S.D. = 1.16) rated the candidate higher in commitment (t = − 5.94, d.f. = 210, p < .001, two-tailed test) than those assigned to the neutral-commitment conditions (N = 107, mean = 4.51, S.D. = 1.57)." (Galpein et al., 2020)
 
 For this replication, the original work's procedure (described in the quotation above) for manipulation checks was followed precisely.
-
-\
-
 
 
 
@@ -150,7 +144,6 @@ I plan to conduct the same manipulation check analyses of those from original wo
 Since the original work aims to explore the interactional effects of capability and commitment on a candidate's likelihood of getting an offer, I plan to conduct a two-wawy ANOVA as an exploratogy analysis. Two-way ANOVA can be a good statitical model since I am trying to examine the interation effect of candidate's capability and commitment (Capability X Commitment) on the likelihood of receiving an offer. By using the two-way factorial design, I can effectively examine the potential interaction effect between Capability and Commitment.
 
 
-
 #### Pilot B and Sampling
 
 While the first pilot (Pilot A) went smoothly, I had some issues with Pilot B. So I had to run Pilot B three times to identify the appropriate strategy to run the study on Prolific. Three pilots were conducted on Prolific between November 12, 2021 and November 14, 2021. All three pilots were conducted with sample size of N=4. The participants were recruited on Prolific. They had to have hiring experience to be eligible for the study.
@@ -161,26 +154,14 @@ Hence, I ran the third Pilot B with the original survey design. The sampling str
 
 
 
-
-
 ### Differences from Original Study 
 
-The most important difference would be that I will be using a different sample. While the original work recruited participants through Qualtrics panel, I will recruit participants through Prolific. While I do not foresee any systematic differences between two platforms, some substantial differences may exist when filtering for the target participants. This may cause differences between the sample of this study and that of original paper. \
-I acknowledge that any unforeseen issues are the sole responsiblitity of mine. \
+The most important difference is that my study involves a different sample. First, the sample size will be different. The original work a sample size of N=212. My sample will have fewer participants than that of original paper. Since the study involves 2 x 2 design, such a difference in sample sizes may result in different statistical power.
+Furthermore, the nature of the sample may vary. While the original work recruited participants through Qualtrics panel, I will recruit participants through Prolific. Substantial differences may exist when filtering for the target participants. The most important aspect of the sample is that the sample should include only individuals who served as hiring managers. For the original study, the participants were Qualtrics-verified hiring managers who were U.S. based. All the participants could provide evidence of having served as a hiring manager. On the other hand, I do not have a means of verifying participants' experience as hiring managers. I have to rely on self-report on Prolific. Hence, it is possible that the nature of my sample will be different from the original study.
+Another important difference is timing. This research studies hiring in the labor market. With hiring, timing is very important because there are a lot of time sensitivities. Although the original work was published in 2020, Study 2 was conducted in December 2016. This replication is conducted in November 2021. Since there is 5-year time difference, how people think about hiring could have changed substantially over those 5 years, expecially since the outbreak of the COVID-19 pandemic.
+I acknowledge that any unforeseen issues are the sole responsiblitity of mine.
+\
 
-```
-DIFFERENCES BETWEEN SAMPLES ARE VERY IMPORTANT HERE. So I probably need to elaborate on how and why sampling is important and how I might end up with a very different sample.
-```
-
-> EDITING THIS PART
-
-* nature of the sample, sample size, how COVID has influenced the way people are thinking about hiring
-
-* Sample size. Original study had N = 212. For this study I have N = 137. Sample size with 80% power was 152, I could not even have as many.
-
-* Participants really hiring managers?  The participants were Qualtrics-verified hiring managers who were U.S. based. All the participants could provide evidence of having served as a hiring manager. (On Prolific it's just self-report.)
-
-* Timing is really important. With hiring there are a lot of time sensitivites. Although the original work was published in 2020, Study 2 was conducted December 2016 on Qualtrics. My study was conducted November 2021. How people think about hiring could have changed over the 5-year time period, especially after the outbreak of COVID-19 pandemic.
 
 
 ### Methods Addendum (Post Data Collection)
@@ -195,14 +176,12 @@ DIFFERENCES BETWEEN SAMPLES ARE VERY IMPORTANT HERE. So I probably need to elabo
 
 
 
-
-
 #### Differences from pre-data collection methods plan
 
 None.
+
+
 \
-
-
 
 
 
@@ -724,14 +703,13 @@ tidy(t.test(mean_commit ~ Commitment, data = commit_check_t, paired = F, var.equ
 I precisely followed the original work's manipulation check procedure. I combined the four measures used in the original work to create a measure for candidate's perceived capability. (Cronbach's alpha = 0.81) While the overall Cronbach's alpha value showed the consistency among the four measures was good, the participants randomly assigned to the extremely high-capability conditions did not rate the candidate higher in perceived capability than those assigned to the moderately high-capability condition. The t-test results were significant only at alpha = 0.1 level. (t = -1.96, d.f. = 135, p-value = 0.0518)
 I combined four commitment measures used in the original work to create a perceived organizational commitment score. (Cronbach's alpha = 0.74) The overall Cronbach's alpha value fell under acceptable range. However, the commitment manipulation did not seem to be effective for the participants in this study. Participants randomly assigned to the high-commitment conditions did not rate the candidate higher in commitment than those assinged to the neutral-commitment conditions. (t = -1.23, d.f. = 135, p-value = 0.219)
 The fact that manipulations were not effective (especially commitment conditions) to the participants in this replication study may suggest that the sample used for this study was substantially different than the original study's sample. The original work's manipulations were very effective. (All manipulation checks were significant with p < 0.001).
-\
 
+\
 
 ### Confirmatory analysis
 
 I ran two t-tests: one for neutral commitment condition, the other for high commitment condition. The choice of key statistical model is determined by the original work, as the original paper ran two t-tests.
 
-\
 
 #### T-test for neutral-commitment conditions
 
@@ -744,7 +722,6 @@ tidy(t.test(data = data_neutral_commit, offer_score ~ Overqual, paired = F, var.
 
 I found no statistically significant results from the first t-test (neutral-commitment condition). While the mean value of likelihood of getting an offer for the Extremely-high capability condition (mean = 5.65) was greater than that for the Moderately-high contition (mean = 5.24), the t-test results were not significant. (t = -1.48, df = 62, p-value = 0.14)
 
-\
 
 #### T-test for high-commitment condition
 
@@ -757,8 +734,9 @@ tidy(t.test(data = data_high_commit, offer_score ~ Overqual, paired = F, var.equ
 
 I found no statistically significant results from the second t-test (high-commitment condition). While the mean value of likelihood of getting an offer for the Extremely-high capability condition (mean = 5.65) was greater than that for the Moderately-high contition (mean = 5.56), the t-test results were not significant. (t = -0.35, df = 71, p-value = 0.73)
 
+\
 
-
+#### Summary: Capability x Commitment and Likelihood of receiving an offer across all four conditions
 
 ```{r}
 summ_mean_sd
@@ -786,10 +764,10 @@ ggplot(data = summ_mean_sd, aes(x = Commitment, y = mean,
 > For reference, the original work's corresponding figure:
 ![Alt text](/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/original_paper/original_figure.png)
 
+\
 
 ### Exploratory analyses
 
-\
 
 #### Two-way ANOVA
 
@@ -807,8 +785,6 @@ result_aov
 The two-way ANOVA results show that there was no statitically significant interaction between Capability and Commitment condition for the likelihood of getting an offer.
 
 \
-\
-
 
 #### Two-way ANCOVA
 
