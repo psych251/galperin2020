@@ -33,14 +33,14 @@ While previous literature investigated both the effect of perceptions of applica
 Galperin et al. (2020) suggested that signals that influence perceptions of capability in labor markets may have discernable effects of the perceptions of a candidate's commitment, which also affects the likelihood of the candidate's being selected for the job. The paper included four studies, three of which were online field experiments. In this study, I plan to replicate Study 2. \
 
 
-### Justification for choice of study
+### Justification for Choice of Study
 
 In the original paper, the authors conducted a direct test of the effect of applicants' commitment and high-capability rejection. 
 Study 2 was conducted to directly manipulated perceived commitment of an applicant to complement one of the other studies where they could not directly manipulate commitment. This is important because the main contribution of the study is suggested (and proved) mediation effect of commitment on likelihood of a job offer. 
 
 
 
-### Anticipated challenges
+### Anticipated Challenges
 
 I anticipate two challenges while attempting to replicate the results. 
 First, I may run into sample issue. This study is about job signals and hiring managers' decision making in making job offers. Hence, it is important that I only have hiring managers (defined by someone with experiences as a hiring manager) in the sample. Since I have to rely on Prolifics to do the sampling, less appropriate sample might be acquired in the end. Similar issue applies to random assignment of participants. 
@@ -50,8 +50,8 @@ Second, survey design might be difficult. The main part of this replication stud
 
 ### Links
 
-* Project repository (on Github): [Link to project repository](https://github.com/psych251/galperin2020.git)
-* Original paper (as hosted in your repo): [Link to original paper](https://github.com/psych251/galperin2020/blob/1176bad85fcced90757aa9a19be77c14f0b70a5f/original_paper/galperin_et_al_2020.pdf)
+* Project repository: [Link to project repository](https://github.com/psych251/galperin2020.git)
+* Original paper: [Link to original paper](https://github.com/psych251/galperin2020/blob/1176bad85fcced90757aa9a19be77c14f0b70a5f/original_paper/galperin_et_al_2020.pdf)
 
 
 \
@@ -60,7 +60,7 @@ Second, survey design might be difficult. The main part of this replication stud
 ## Methods
 
 
-### Description of the steps required to replicate the results
+### Description of the Steps Required to Replicate the Results 
 
 To replicate the results of Study 2, I plan to run the same online experiment on Prolific. Prior to running the main study, I plan to run two pilot studies. The first pilot study will involve non-naive participants, whereas the second pilot study will have naive participants on MTurk. \
 For the main study, participants will be recruited to fill out a "survey for hiring managers" through Prolific in October-November 2021. \
@@ -108,7 +108,6 @@ The survey experiment materials were coded in Qualtrics. Participants recuited o
 
 * Survey material: [Link to the survey](https://stanforduniversity.qualtrics.com/jfe/preview/SV_3egYJH4CkorsKzk?Q_CHL=preview&Q_SurveyVersionID=current)
 
-All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
 \
 
 
@@ -123,7 +122,7 @@ Participants were randomly assigned to view either the extremely highcapability 
 Participants were then asked about their likelihood of giving the candidate a job offer based on the same scale used in Study 1. This variable served as the dependent variable." (Galperin et al., 2020)
 
 For this replication, the original work's procedure (described in the quotation above) was followed precisely.
-
+\
 
 #### Manipulation Checks
 
@@ -158,13 +157,13 @@ Hence, I ran the third Pilot B with the original survey design. The sampling str
 
 The most important difference is that my study involves a different sample. First, the sample size will be different. The original work a sample size of N=212. My sample will have fewer participants than that of original paper. Since the study involves 2 x 2 design, such a difference in sample sizes may result in different statistical power.
 Furthermore, the nature of the sample may vary. While the original work recruited participants through Qualtrics panel, I will recruit participants through Prolific. Substantial differences may exist when filtering for the target participants. The most important aspect of the sample is that the sample should include only individuals who served as hiring managers. For the original study, the participants were Qualtrics-verified hiring managers who were U.S. based. All the participants could provide evidence of having served as a hiring manager. On the other hand, I do not have a means of verifying participants' experience as hiring managers. I have to rely on self-report on Prolific. Hence, it is possible that the nature of my sample will be different from the original study.
-Another important difference is timing. This research studies hiring in the labor market. With hiring, timing is very important because there are a lot of time sensitivities. Although the original work was published in 2020, Study 2 was conducted in December 2016. This replication is conducted in November 2021. Since there is 5-year time difference, how people think about hiring could have changed substantially over those 5 years, expecially since the outbreak of the COVID-19 pandemic.
+Another important difference is timing. This research studies hiring in the labor market. With hiring, timing is very important because there are a lot of time sensitivities. Although the original work was published in 2020, Study 2 was conducted in December 2016. This replication is conducted in November 2021. Since there is 5-year time difference, how people think about hiring could have changed substantially over those 5 years, especially since the outbreak of the COVID-19 pandemic.
 I acknowledge that any unforeseen issues are the sole responsiblitity of mine.
 \
 
 
 
-### Methods Addendum (Post Data Collection)
+### Methods Addendum
 
 #### Actual Sample
 
@@ -176,7 +175,7 @@ I acknowledge that any unforeseen issues are the sole responsiblitity of mine.
 
 
 
-#### Differences from pre-data collection methods plan
+#### Differences from Pre-Data Collection Methods Plan
 
 None.
 
@@ -189,7 +188,7 @@ None.
 ## Results
 
 
-### Data preparation
+### Data Preparation
 
 First, when the study is done, download data from Qualtrics using `qualtRics` package. (Other than `qualtRics` package, load other essential packages for data analysis and visualization, such as: `tidyverse`, `knitr`, `ggplot2`, `psych`, `stats`, and etc.) \
 Second, clean the data. Check for missing values and exclude observations with missing values. If needed, conduct data manipulation. Clean and manipulate data so that I have a clean tidy data. \
@@ -205,21 +204,26 @@ Lastly, if needed, run some additional analysis. (Check for homoscedasticity, co
 
 ```{r, echo = TRUE}
 library(qualtRics)
+library(foreign)
+library(ggplot2)
+library(MASS)
+library(Hmisc)
 library(tidyverse)
 library(knitr)
-library(psych)
+library(gridExtra)
 library(haven)
 library(Rmisc)
 library(purrr)
 library(broom)
 library(rstatix)
 library(ggpubr)
+library(reshape2)
 library(psych)
 ```
 
 \
 
-#### Import data
+#### Import Data
 
 ```{r, echo = TRUE}
 # load survey
@@ -238,7 +242,7 @@ data_fin_raw <- read_csv("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/
 
 \
 
-#### Data exclusion / filtering
+#### Data Exclusion / Filtering
 
 ```{r}
 data_raw <- data_fin_raw
@@ -260,7 +264,7 @@ data <- tibble::rowid_to_column(data, "id")
 
 
 
-#### Prepare data for analysis - create columns etc.
+#### Prepare Data for Analysis - Create Columns, etc.
 
 
 ```{r}
@@ -535,7 +539,7 @@ data_high_commit <- data_clean %>%
 
 
 
-### Descriptive statistics
+### Descriptive Statistics
 
 ```{r}
 # Check number of participants in each condition
@@ -546,6 +550,15 @@ kable(table(data$Overqual, data$Commitment), caption = "Number of participants i
 ```{r}
 kable(describe(data_clean), caption = "Overall Descriptive Statistics")
 ```
+
+```{r}
+kable(table(data_clean$gender, data_clean$race), caption = "Participant Race and Gender")
+```
+
+```{r}
+kable(table(data_clean$educ), caption = "Participant Education Level")
+```
+
 
 ```{r}
 desc_tab <- data_clean %>%
@@ -634,17 +647,17 @@ ggplot(data = data_clean, aes(x = Overqual, y = offer_score, group = Overqual, f
   ggtitle("Final Results (N = 137)") +
   labs(x = "Capability", y = "Likelihood of an Offer")
 
-#ggsave("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/final_data_boxplot.png")
+ggsave("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/final_data_boxplot.png")
 ```
 
 
 
 
 
-#### Manipulation check
+#### Manipulation Checks
 
 ```{r}
-# Capability manipulatio check (Overqual)
+# Capability manipulation check (Overqual)
 require(dplyr)
 require(psych)
 
@@ -706,12 +719,12 @@ The fact that manipulations were not effective (especially commitment conditions
 
 \
 
-### Confirmatory analysis
+### Confirmatory Analysis
 
 I ran two t-tests: one for neutral commitment condition, the other for high commitment condition. The choice of key statistical model is determined by the original work, as the original paper ran two t-tests.
 
 
-#### T-test for neutral-commitment conditions
+#### T-test for Neutral-Commitment Conditions
 
 ```{r}
 t.test(offer_score ~ Overqual, data = data_neutral_commit, paired = F, var.equal = T)
@@ -723,7 +736,7 @@ tidy(t.test(data = data_neutral_commit, offer_score ~ Overqual, paired = F, var.
 I found no statistically significant results from the first t-test (neutral-commitment condition). While the mean value of likelihood of getting an offer for the Extremely-high capability condition (mean = 5.65) was greater than that for the Moderately-high contition (mean = 5.24), the t-test results were not significant. (t = -1.48, df = 62, p-value = 0.14)
 
 
-#### T-test for high-commitment condition
+#### T-test for High-Commitment Conditions
 
 ```{r}
 t.test(offer_score ~ Overqual, data = data_high_commit, paired = F, var.equal = T)
@@ -736,11 +749,19 @@ I found no statistically significant results from the second t-test (high-commit
 
 \
 
-#### Summary: Capability x Commitment and Likelihood of receiving an offer across all four conditions
+#### Summary: Capability x Commitment and Likelihood of an Offer across All 4 Conditions
 
 ```{r}
 summ_mean_sd
 ```
+
+```{r}
+png("test.png")
+p <- tableGrob(summ_mean_sd)
+grid.arrange(p)
+dev.off
+```
+
 
 ```{r}
 ggplot(data = summ_mean_sd, aes(x = Commitment, y = mean,
@@ -757,6 +778,9 @@ ggplot(data = summ_mean_sd, aes(x = Commitment, y = mean,
         plot.title = element_text(hjust = 0.5)) +
   labs(x = "Commitment", y = "Likelihood of Offer", fill = "Capability") +
   ggtitle("Capability x Commitment: Likelihood of Offer across all Four Conditions")
+
+ggsave("/Users/jbyun/Dropbox/2021 Fall/PSYCH 251/galperin2020/data/final_bargraph.png")
+
 ```
 
 
@@ -766,7 +790,7 @@ ggplot(data = summ_mean_sd, aes(x = Commitment, y = mean,
 
 \
 
-### Exploratory analyses
+### Exploratory Analyses
 
 
 #### Two-way ANOVA
@@ -790,7 +814,7 @@ The two-way ANOVA results show that there was no statitically significant intera
 
 Since the results of t-tests and two-way ANOVA were not statistically significant, I examined the possibility of other factors, such as work experience and age, interfering with the results.
 
-##### Check linearity assumption
+##### Check Linearity Assumptions
 
 ```{r}
 ggscatter(
@@ -803,7 +827,7 @@ ggscatter(
   stat_smooth(method = "loess", span = 0.9)
 ```
 
-##### Homogeneity of regression slopes
+##### Homogeneity of Regression Slopes
 
 This assumption checks that there is not significant interaction betwen the covariate and the grouping variables.
 
@@ -817,7 +841,7 @@ data_clean %>%
 I already know that there is no statistically significant interaction effect between Capability (Overqual) and Commitment. However, just as a sanity check, I ran another ANOVA to show that there is no significant interaction between Capability (Overqual) and Commitment here.
 \
 
-##### Interaction effect after controlling for participant's work experience (ANCOVA)
+##### Interaction Effect after Controlling for Participant's Work Experience (ANCOVA)
 
 ```{r}
 work_aov <- data_clean %>%
@@ -830,7 +854,7 @@ There was no statistically significant interaction between Capability and Commit
 
 \
 
-##### Interaction effect after controlling for participant's age (ANCOVA)
+##### Interaction Effect after Controlling for Participant's Age (ANCOVA)
 
 ```{r}
 age_aov <- data_clean %>%
@@ -840,19 +864,47 @@ get_anova_table(age_aov)
 ```
 
 After adjusting for participant's age, I found no statistically significant interaction between Capability and Commitment on the likelihood of getting an offer.
+\
+
+##### Ordinal Logistic Regression
+
+```{r}
+data_clean <- data_clean %>%
+  mutate(offer_score = as.factor(offer_score))
+
+model <- polr(offer_score ~ Commitment + Overqual + Age + workexperience + gender, data = data_clean, Hess = T)
+
+summary(model)
+```
+
+```{r}
+ctable <- coef(summary(model))
+```
+
+```{r}
+p <- pnorm(abs(ctable[, "t value"]), lower.tail = F) * 2
+
+# combined table
+ctable <- cbind(ctable, "p value" = p)
+ctable
+```
+
+Results of ordinal logistic regression are also statistically not significant
 
 \
 
 
 
-> FILL IN THE BELOW
 
 ## Discussion
 
 ### Summary of Replication Attempt
 
-Open the discussion section with a paragraph summarizing the primary result from the confirmatory analysis and the assessment of whether it replicated, partially replicated, or failed to replicate the original result.  
+I ran two t-tests (one for high-commitment conditions, another for neutral-commitment conditions) as confirmatory analyses. Confirmatory analyses results are statistically insignificant at $\alpha = 0.05$ level. To sum up, this study failed to replicate the original results.
 
 ### Commentary
 
-Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.
+I conducted multiple exploratory analyses: 2-way ANOVA (Capability x Commitment), 2 ANCOVA's (one adjusting for age, the other adjusting for work experience), and ordinal logistic regression. I found no statitically significant effect for the main effects (Capability x Commitment). However, participant's age and work experience seemed to have statistically significant associations with the outcome variable. This indicates that participants' work experience and age could be important when they are evaluating job candidates' resumes in the hiring processes.
+This failure to replicate indicates importance of the sample and timing in hiring studies. I confirmed that the same stimuli failed to manipulate conditions by manipulation checks. This may be attributed to the different natures of the samples. It might require some experience in the part of hiring managers when it comes to evaluating nuances in resumes. While the original study relied on Qualtrics to verify the participants' experience as hiring managers, I had to rely on self-reports on Prolific. Since different individuals may interpret the term "hiring managers" differently, I could have ended up with a very different sample compared to that of original study.
+Furthermore, the 5-year time difference should be accounted for. While the original experiment was conducted in December 2016, this study was conducted in November 2021. With hiring, timing is very important because there are a lot of time sentivities that could relate to economy, labor market conditions, etc. How people think about hiring could have changed substantially over the 5-year time period, especially with the COVID-19 pandemic. (It is widely known that the outbreak of COVID-19 pandemic in late 2019 has changed the labor market conditions, the meaning of work, etc.)
+The future research should account for the importance of the timing and the nature of sample for studies about hiring in the labor market.
