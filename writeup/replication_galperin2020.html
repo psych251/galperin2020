@@ -11,7 +11,7 @@
 
 <meta name="author" content="Jiwon Byun (jwbyun@stanford.edu)" />
 
-<meta name="date" content="2021-12-01" />
+<meta name="date" content="2021-12-03" />
 
 <title>Replication Report for Study 2 by Galperin, Hahl, Stering, &amp; Guo (2020, Administrative Science Quarterly)</title>
 
@@ -1501,7 +1501,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Replication Report for Study 2 by Galperin, Hahl, Stering, &amp; Guo (2020, Administrative Science Quarterly)</h1>
 <h4 class="author">Jiwon Byun (<a href="mailto:jwbyun@stanford.edu" class="email">jwbyun@stanford.edu</a>)</h4>
-<h4 class="date">December 01, 2021</h4>
+<h4 class="date">December 03, 2021</h4>
 
 </div>
 
@@ -3313,7 +3313,7 @@ dev.off</code></pre>
 ##     .External(C_devoff, as.integer(which))
 ##     dev.cur()
 ## }
-## &lt;bytecode: 0x7ff7401537b8&gt;
+## &lt;bytecode: 0x7faaa098f7b0&gt;
 ## &lt;environment: namespace:grDevices&gt;</code></pre>
 <pre class="r"><code>ggplot(data = summ_mean_sd, aes(x = Commitment, y = mean,
                                 ymin = mean - sqrt(sd), ymax = mean + sqrt(sd), fill = Overqual)) +
@@ -3426,11 +3426,13 @@ dev.off</code></pre>
 ## 2            Overqual   1 132 1.103 0.295       0.008
 ## 3          Commitment   1 132 0.781 0.379       0.006
 ## 4 Overqual:Commitment   1 132 0.470 0.494       0.004</code></pre>
-<p>After adjusting for participant’s age, I found no statistically significant interaction between Capability and Commitment on the likelihood of getting an offer.<br />
+<p>After adjusting for participant’s age, I found no statistically significant interaction between Capability and Commitment on the likelihood of getting an offer.</p>
+<p><br />
 </p>
 </div>
-<div id="ordinal-logistic-regression" class="section level5">
-<h5>Ordinal Logistic Regression</h5>
+</div>
+<div id="ordinal-logistic-regression" class="section level4">
+<h4>Ordinal Logistic Regression</h4>
 <pre class="r"><code>data_clean &lt;- data_clean %&gt;%
   mutate(offer_score = as.factor(offer_score))
 
@@ -3496,7 +3498,6 @@ ctable</code></pre>
 <p>Results of ordinal logistic regression are also statistically not significant</p>
 <p><br />
 </p>
-</div>
 </div>
 </div>
 </div>

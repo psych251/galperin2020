@@ -864,9 +864,10 @@ get_anova_table(age_aov)
 ```
 
 After adjusting for participant's age, I found no statistically significant interaction between Capability and Commitment on the likelihood of getting an offer.
+
 \
 
-##### Ordinal Logistic Regression
+#### Ordinal Logistic Regression
 
 ```{r}
 data_clean <- data_clean %>%
